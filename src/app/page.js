@@ -14,7 +14,7 @@ export default async function Home() {
             <p className="font-bold bottom-[85px] text-center lg:text-left m-auto lg:left-[340px] text-black text-3xl lg:text-5xl lg:leading-[130%] lg:tracking-[0px] mb-10">
               <span className="inline text-gray-200">내 손안의</span> <span className="inline text-blue-500">SMART</span><br/><span className="inline text-gray-200">세무 회계</span> <span className="inline text-red-500">MinTAX</span>
             </p>
-            <p className="text-center lg:text-left lg:left-[340px] text-white text-sm lg:text-lg  lg:leading-[150%]">
+            <p className="text-center lg:text-left lg:left-[340px] text-white text-sm lg:text-lg  lg:leading-[150%] lg:block hidden">
               모바일 앱 하나로 사업현황을 실시간으로 관리<br/>스마트한 서비스제공
             </p>
           </div>          
@@ -22,9 +22,9 @@ export default async function Home() {
 
       <div className="wrapper w-full lg:w-[1200px] m-auto text-center">        
 
-        <div className=" leading-[160%] lg:leading-[140%] tracking-[-2px] lg:tracking-[-4px] lg:h-[360px]">  
+        <div className=" leading-[160%] lg:leading-[140%] tracking-[-2px] lg:tracking-[-3px] lg:h-[360px]">  
           <div className="w-full lg:max-w-[870px] m-auto mt-0 relrative lg:pt-[92px] ">
-            <p className="text-xl lg:text-4xl w-[340px] lg:w-full mt-0 lg:ml-[10px] m-auto tracking-[-2px] lg:tracking-[-3px]">매달 인출되는 기장료, 제대로 된 서비스를 받고 계신가요?</p>              
+            <p className="text-xl lg:text-4xl w-[340px] lg:w-full mt-0 lg:ml-[10px] m-auto tracking-[-2px] lg:tracking-[-2px] pt-10">매달 인출되는 기장료, 제대로 된 서비스를 받고 계신가요?</p>              
             <p className="mt-10 lg:mt-0 text-xl lg:text-4xl  mb-10 w-[280px] lg:w-full m-auto lg:mb-10"><span className="text-md lg:min-w-[800px]"><span className="text-blue-600 font-bold">실시간 사업현황 관리</span>가 가능한 MinTAX <span className="text-blue-600 font-bold">스마트 기장 서비스</span></span></p>
             
             <p className="px-10 text-center lg:text-center  leading-[180%] mb-0 lg:mb-0 text-[13px] lg:text-lg font-semibold text-gray-500 tracking-[0px]">APP설치 하나로 금융거래내역 관리, 카드매출매입 관리, 경영리포트,<br />
@@ -57,7 +57,7 @@ export default async function Home() {
             <p className="text-center lg:text-left text-[12px] mb-3 lg:text-[14px] font-bold text-gray-500">– 카드채권의 일별 승인액과 입금 예정내역을 간편히 조회해보세요.</p>
             <p className="text-center lg:text-left text-[12px]  lg:text-[14px] font-bold text-gray-500">– 세금이력 조회를 위해 담당세무대리인에게 연락할 필요가 없습니다.<br/>기납부내역, 고지내역, 체납내역, 환급내역을 확인할 수 있습니다.</p>
           </div>
-          <div className="mt-20 lg:mt-0 lg:w-[400px] mr-0 lg:mr-16">
+          <div className="mt-20 lg:mt-0 lg:w-[400px] mr-0 lg:mr-16 pb-10">
             <img src="/phone1.png"/>
           </div>
 

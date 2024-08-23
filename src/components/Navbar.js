@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Navbar() {
 
-  return (<div className="h-[50px] bg-slate-900 text-white">        
+  return (<div className="h-[50px] bg-slate-900 text-white lg:block hidden">        
    <div className="w-[1000px] h-full text-center m-auto leading-[50px]">
       <Link className="mr-10 text-xl" href="#">🌞</Link>
       <Link className="mr-10 text-md hover:text-blue-300" href={'/smart'}>SMART서비스</Link>
