@@ -11,7 +11,7 @@ export default async function Home() {
 
   return (
     <main className="z-0 lg:pt-[110px]">
-      <Login />        
+      {/* <Login />         */}
       <div className="bg-[url('/main_bg.png')] w-1200 m-auto h-72 lg:max-w-[1920px] lg:h-[585px] bg-left-bottom lg:bg-top lg:bg-cover lg:bg-no-repeat relative stop-dragging z-0">
       <div className="m-auto  lg:w-[1000px] p-1 h-full pt-[110px] lg:pt-[350px]">
             <p className="font-bold bottom-[85px] text-center lg:text-left m-auto lg:left-[340px] text-black text-3xl lg:text-5xl lg:leading-[130%] lg:tracking-[0px] mb-10">
@@ -26,7 +26,7 @@ export default async function Home() {
       <div className="wrapper w-full lg:w-[1200px] m-auto text-center">        
 
         <div className=" leading-[160%] lg:leading-[140%] tracking-[-2px] lg:tracking-[-3px] lg:h-[360px]">  
-          <Consulting />
+          {/* <Consulting /> */}
           <div className="w-full lg:max-w-[870px] m-auto mt-0 relrative lg:pt-[92px] ">
             <p className="text-xl lg:text-4xl w-[340px] lg:w-full mt-0 lg:ml-[10px] m-auto tracking-[-2px] lg:tracking-[-2px] pt-10">매달 인출되는 기장료, 제대로 된 서비스를 받고 계신가요?</p>              
             <p className="mt-10 lg:mt-0 text-xl lg:text-4xl  mb-10 w-[280px] lg:w-full m-auto lg:mb-10"><span className="text-md lg:min-w-[800px]"><span className="text-blue-600 font-bold">실시간 사업현황 관리</span>가 가능한 MinTAX <span className="text-blue-600 font-bold">스마트 기장 서비스</span></span></p>
