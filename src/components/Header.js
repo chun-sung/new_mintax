@@ -1,9 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import Navbar from "./Navbar";
+import Rsidebar from "./Rsidebar";
 
 export default function Header() {
 
-    return (<div className="h-[60px] xl:w-[1000px] m-auto" > 
+    return (<header className="fixed w-full stop stop-dragging z-50">
+    <div className="h-[60px] w-full m-auto bg-white border-b border-gray" > 
         <div className="m-auto w-[80px] pt-2.5">
             <Link href="/">
               <Image
@@ -21,7 +24,10 @@ export default function Header() {
                 height="40"
                 alt="menu_button"
             />
-    </div>);
+    </div>
+    <Navbar />
+    <Rsidebar />
+    </header>);
       
 }
  

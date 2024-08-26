@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { db } from '@vercel/postgres'
 import Login from "@/components/Login";
+import Consulting from "@/components/Consulting";
 
 
 export default async function Home() {
@@ -9,7 +10,7 @@ export default async function Home() {
   console.log(rows[0].name);
 
   return (
-    <main className="z-0">
+    <main className="z-0 lg:pt-[110px]">
       <Login />        
       <div className="bg-[url('/main_bg.png')] w-1200 m-auto h-72 lg:max-w-[1920px] lg:h-[585px] bg-left-bottom lg:bg-top lg:bg-cover lg:bg-no-repeat relative stop-dragging z-0">
       <div className="m-auto  lg:w-[1000px] p-1 h-full pt-[110px] lg:pt-[350px]">
@@ -25,6 +26,7 @@ export default async function Home() {
       <div className="wrapper w-full lg:w-[1200px] m-auto text-center">        
 
         <div className=" leading-[160%] lg:leading-[140%] tracking-[-2px] lg:tracking-[-3px] lg:h-[360px]">  
+          <Consulting />
           <div className="w-full lg:max-w-[870px] m-auto mt-0 relrative lg:pt-[92px] ">
             <p className="text-xl lg:text-4xl w-[340px] lg:w-full mt-0 lg:ml-[10px] m-auto tracking-[-2px] lg:tracking-[-2px] pt-10">매달 인출되는 기장료, 제대로 된 서비스를 받고 계신가요?</p>              
             <p className="mt-10 lg:mt-0 text-xl lg:text-4xl  mb-10 w-[280px] lg:w-full m-auto lg:mb-10"><span className="text-md lg:min-w-[800px]"><span className="text-blue-600 font-bold">실시간 사업현황 관리</span>가 가능한 MinTAX <span className="text-blue-600 font-bold">스마트 기장 서비스</span></span></p>
@@ -68,6 +70,106 @@ export default async function Home() {
         {/* <div className="h-[2000px] bg-white "></div> */}
 
       </div> 
+
+      <section className="text-gray-600 body-font">
+        <div className="container px-5 pb-24 mx-auto">
+          <div className="flex flex-col text-center w-full mb-20">
+            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Our Team</h1>
+            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
+          </div>
+          <div className="flex flex-wrap -m-2">
+            <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/80x80"/>
+                <div className="flex-grow">
+                  <h2 className="text-gray-900 title-font font-medium">Holden Caulfield</h2>
+                  <p className="text-gray-500">UI Designer</p>
+                </div>
+              </div>
+            </div>
+            <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/84x84"/>
+                <div className="flex-grow">
+                  <h2 className="text-gray-900 title-font font-medium">Henry Letham</h2>
+                  <p className="text-gray-500">CTO</p>
+                </div>
+              </div>
+            </div>
+            <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/88x88"/>
+                <div className="flex-grow">
+                  <h2 className="text-gray-900 title-font font-medium">Oskar Blinde</h2>
+                  <p className="text-gray-500">Founder</p>
+                </div>
+              </div>
+            </div>
+            <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/90x90"/>
+                <div className="flex-grow">
+                  <h2 className="text-gray-900 title-font font-medium">John Doe</h2>
+                  <p className="text-gray-500">DevOps</p>
+                </div>
+              </div>
+            </div>
+            <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/94x94"/>
+                <div className="flex-grow">
+                  <h2 className="text-gray-900 title-font font-medium">Martin Eden</h2>
+                  <p className="text-gray-500">Software Engineer</p>
+                </div>
+              </div>
+            </div>
+            <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/98x98"/>
+                <div className="flex-grow">
+                  <h2 className="text-gray-900 title-font font-medium">Boris Kitua</h2>
+                  <p className="text-gray-500">UX Researcher</p>
+                </div>
+              </div>
+            </div>
+            <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/100x90"/>
+                <div className="flex-grow">
+                  <h2 className="text-gray-900 title-font font-medium">Atticus Finch</h2>
+                  <p className="text-gray-500">QA Engineer</p>
+                </div>
+              </div>
+            </div>
+            <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/104x94"/>
+                <div className="flex-grow">
+                  <h2 className="text-gray-900 title-font font-medium">Alper Kamu</h2>
+                  <p className="text-gray-500">System</p>
+                </div>
+              </div>
+            </div>
+            <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/108x98"/>
+                <div className="flex-grow">
+                  <h2 className="text-gray-900 title-font font-medium">Rodrigo Monchi</h2>
+                  <p className="text-gray-500">Product Manager</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <style jsx>{`
+          .pwa { display: none }
+
+          .pwaBtn:hover ~ .pwa { 
+            display: block;
+            color: grey;
+          }
+      `}</style>  */}
 
     </main>
   );
