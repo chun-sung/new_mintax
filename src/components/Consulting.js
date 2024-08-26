@@ -17,7 +17,7 @@ export default function Consulting() {
     // const [content, setContent] = useState('')
     
     // const dispatch = useDispatch()
-    const user = ''
+    const user = { user_id : null } 
     return <>
     <div className=" lg:mt-[50px] lg:mb-[50px] z-0">
 
