@@ -26,7 +26,7 @@ export default function Header() {
             />
     </div>
     <Navbar />
-    {/* <Rsidebar /> */}
+    <Rsidebar />
     </header>);
       
 }
