@@ -14,7 +14,7 @@ export default function Create() {
 
     const router = useRouter()
     // const { user } = useSelector( state => state.user)
-
+    const { user } = {}
     return <>
         <Seo title='글작성 | MinTAX'/>
         {/* <PageTop /> */}
