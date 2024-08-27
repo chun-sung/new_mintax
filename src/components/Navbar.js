@@ -7,7 +7,7 @@ export default function Navbar() {
 
   const pathname = usePathname();
 
-  return (<nav className="lg:h-[50px] border rounded bg-white lg:bg-slate-900 lg:text-white lg:block">
+  return (<nav className="lg:h-[50px] border lg:border-0 rounded bg-white lg:bg-slate-900 lg:text-white lg:block">
    <div className="mt-3 lg:mt-0 lg:w-[1000px] h-full text-center m-auto leading-[50px]">
       <Link className="mr-0 lg:mr-5 text-xl block hidden lg:inline" href="#">🌞</Link>
       <Link href={'/smart'}
