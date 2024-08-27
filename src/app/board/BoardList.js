@@ -86,14 +86,15 @@ export default function BoardList() {
                                             <td className="lg:text-md hover:text-blue-500 hover:font-bold">
                                                 <span className="relative inline-block text-left text-[15px] lg:text-[16px] p-1 w-full cursor-pointer" onClick={()=> {
                                                     router.push(`/board/${article_idx}?page=${page}`,{state: {page:page}}, {article_idx: article_idx})}}>
-                                                    {title} { comment_length == null  ? null :<b className="top-[2px] text-sm text-blue-500">({comment_length})</b> } { dayjs(regist_date).format('YY.MM.DD') == dayjs().format('YY.MM.DD') 
-                                                                ? <span className=" bottom-[4px] lg:bottom-[-1px] left-[-25px] lg:right-[50px] bg-red-500 text-white rounded-2xl text-right font-bold text-[10px] lg:text-[12px] lg:p-0.5 p-1 lg:px-2 shadow-md" >New</span> 
+                                                    {title} { comment_length == null  ? null :<b className="top-[2px] text-sm text-blue-500">({comment_length})</b> } { 
+                                                    // dayjs(regist_date).format('YY.MM.DD') == dayjs().format('YY.MM.DD') 
+                                                                '' ? <span className=" bottom-[4px] lg:bottom-[-1px] left-[-25px] lg:right-[50px] bg-red-500 text-white rounded-2xl text-right font-bold text-[10px] lg:text-[12px] lg:p-0.5 p-1 lg:px-2 shadow-md" >New</span> 
                                                                 : null
                                                             }
                                                 </span>                                                
                                             </td >
                                             <td className="lg:text-md">
-                                                <span className="text-[12px] lg:text-[16px]">{dayjs(regist_date).format("YY.MM.DD")}</span>
+                                                {/* <span className="text-[12px] lg:text-[16px]">{dayjs(regist_date).format("YY.MM.DD")}</span> */}
                                             </td>
                                             <td className="">
                                                 <span className="text-[12px] lg:text-[16px]">{nickName}</span>

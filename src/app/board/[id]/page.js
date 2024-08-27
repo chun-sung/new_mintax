@@ -132,7 +132,7 @@ export default function Detail() {
                         <tr className=" text-[13px] lg:text-md lg:border-b border-2 bg-slate-300 h-10">
                             <th width="20%">No.{article[0]?.article_idx}</th>
                             <th width="40%"></th>
-                            <th width="20%">{dayjs(article[0]?.regist_date).format("YY.MM.DD")}</th>
+                            {/* <th width="20%">{dayjs(article[0]?.regist_date).format("YY.MM.DD")}</th> */}
                             <th width="30%" className="">{article[0]?.nickName}</th>
                         </tr>
                     </thead>
@@ -168,7 +168,7 @@ export default function Detail() {
                           let commentData = { comment, nickName_comment: user.nickName,
                                               regist_userid_comment: user.user_id,
                                               article_idx_comment: article[0].article_idx,
-                                              regist_date_comment: dayjs(Date.now()).format('YYYY.MM.DD HH:mm.ss')
+                                              // regist_date_comment: dayjs(Date.now()).format('YYYY.MM.DD HH:mm.ss')
                           }
                           fetch('/api/board/comments', {
                             method: 'POST',
@@ -212,7 +212,7 @@ export default function Detail() {
                   return <div className="text-center mb-2 text-sm bg-orange-000 w-full lg:w-[900px] m-auto stop-dragging" key={i}>
                             <span className="inline-block bg-zinc-300 p-0.5 lg:p-1 px-3 lg:px-4 rounded-xl">{item.comment}</span>
                             <span className="text-[12px] lg:text-[12px] ml-2 mr-2 rounded-full bg-indigo-400 text-white py-[1px] px-2 pb-0.5 leading-[10%]">{item.nickName_comment}</span>
-                            <span className="text-[12px] lg:text-[12px]">{dayjs(item.regist_date_comment).format('YY.MM.DD')}</span>
+                            {/* <span className="text-[12px] lg:text-[12px]">{dayjs(item.regist_date_comment).format('YY.MM.DD')}</span> */}
                             { user.user_id == item.regist_userid_comment
                              ? <span className="hover:bg-red-500 ml-2 w-[15px] h-[15px] inline-block text-[12px] text-white lg:text-[12px] leading-[40%] bg-red-300 rounded-full p-1 cursor-pointer" onClick={()=>{
   

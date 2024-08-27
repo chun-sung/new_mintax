@@ -27,7 +27,7 @@ export default function Create() {
                 <table className="w-full mt-9 lg:w-[900px] border-l-[1px] border-r-[1px] m-auto">
                                 <thead className="">
                                     <tr className=" text-[13px] lg:text-md lg:border-b border-2 bg-slate-300 h-10">
-                                        <th width="50%">작성일: {dayjs(Date.now()).format('YY.MM.DD')}</th>
+                                        {/* <th width="50%">작성일: {dayjs(Date.now()).format('YY.MM.DD')}</th> */}
                                         {/* <th width="10%"></th>
                                         <th width="10%"></th> */}
                                         <th width="50%" className="">작성자: {user.nickName}</th>
@@ -65,7 +65,7 @@ export default function Create() {
                       }
 
                       // 나중에 조회수 및 보여주기 적용할 것                    
-                      let data = { board_idx:1, title, contents, user_id: user.user_id, nickName: user.nickName, regist_date: dayjs(Date.now()).format('YYYY.MM.DD HH:mm.ss') }
+                      // let data = { board_idx:1, title, contents, user_id: user.user_id, nickName: user.nickName, regist_date: dayjs(Date.now()).format('YYYY.MM.DD HH:mm.ss') }
 
                       fetch('/api/board/write',{
                         method: 'POST',

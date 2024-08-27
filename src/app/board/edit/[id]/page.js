@@ -50,7 +50,7 @@ export default function Create() {
                 <table className="w-full mt-9 lg:w-[900px] border-l-[1px] border-r-[1px] m-auto">
                                 <thead className="">
                                     <tr className=" text-[13px] lg:text-md lg:border-b border-2 bg-slate-300 h-10">
-                                        <th width="50%">수정일: {dayjs(Date.now()).format('YY.MM.DD')}</th>
+                                        {/* <th width="50%">수정일: {dayjs(Date.now()).format('YY.MM.DD')}</th> */}
                                         {/* <th width="10%"></th>
                                         <th width="10%"></th> */}
                                         <th width="50%" className="">수정: {user.nickName}</th>
@@ -95,7 +95,7 @@ export default function Create() {
                       let data = {title, contents, article_idx: id.id,
                                         modify_userid: user.user_id,
                                         nickName: user.nickName, 
-                                        modify_date: dayjs(Date.now()).format('YY.MM.DD HH:mm:ss')
+                                        // modify_date: dayjs(Date.now()).format('YY.MM.DD HH:mm:ss')
                                   }
 
                       fetch('/api/board/update',{
