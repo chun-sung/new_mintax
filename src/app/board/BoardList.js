@@ -107,7 +107,7 @@ export default function BoardList() {
             </div>
                 <p className="mt-3 mb-10 text-center"> {page} <span>Page</span></p>
                  </div>
-                 <Pagination
+                 {/* <Pagination
                     activePage={page}
                     itemsCountPerPage={limit}
                     totalItemsCount={posts.length}
@@ -115,7 +115,7 @@ export default function BoardList() {
                     prevPageText="‹"
                     nextPageText="›"            
                     onChange={handlePageChange}
-                />
+                /> */}
         </div>    
     </>
 }
