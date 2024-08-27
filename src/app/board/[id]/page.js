@@ -1,11 +1,11 @@
 'use client'
-import PageTop from "@/app/components/PageTop";
-import Seo from "@/app/components/Seo";
+import PageTopPure from "@/components/PageTopPure";
+import Seo from "@/components/Seo";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
-import dayjs from "dayjs"             // 날짜 포맷 
-import { useSelector } from "react-redux";
-import { useQuery } from "@tanstack/react-query";
+// import dayjs from "dayjs"             // 날짜 포맷 
+// import { useSelector } from "react-redux";
+// import { useQuery } from "@tanstack/react-query";
  
 export default function Detail() {
 
