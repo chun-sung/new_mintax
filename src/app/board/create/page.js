@@ -1,5 +1,5 @@
 'use client'
-import PageTop from "@/components/PageTop";
+import PageTopPure from "@/components/PageTopPure";
 import Seo from "@/components/Seo";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -13,7 +13,7 @@ export default function Create() {
     const [ contents, setContents] = useState('');
 
     const router = useRouter()
-    const { user } = useSelector( state => state.user)
+    // const { user } = useSelector( state => state.user)
 
     return <>
         <Seo title='글작성 | MinTAX'/>
