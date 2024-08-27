@@ -1,3 +1,4 @@
+'use client'
 // import BoardList from "./BoardList";
 import Seo from "@/components/Seo";
 import PageTopPure from "@/components/PageTopPure";
