@@ -18,7 +18,7 @@ export default function Header() {
               />
             </Link>
         </div>
-            <Image className="absolute top-[20px] left-[15px] hover:scale-110 hover:border-[3px] border-red-300 lg:hidden block"
+            <Image className="absolute top-[20px] left-[15px] hover:scale-110 hover:border-[2px] border-red-300 lg:hidden block"
                 src="/hamburger.svg"
                 width="40"
                 height="40"

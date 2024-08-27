@@ -3,7 +3,7 @@
 export default function Login() {
 
   return (
-		<div className="absolute border-stone-400 border-[1px] bg-gray-100  w-[320px] lg:w-[380px] lg:mt-10 top-[140px] lg:top-[200px] p-5 h-58 shadow-2xl z-10 rounded left-[50%] translate-x-[-50%]">
+		<div className="absolute border-stone-400 border-[1px] bg-gray-100  w-[320px] lg:w-[380px] lg:mt-10 top-[140px] lg:top-[200px] p-5 h-58 lg:h-58 shadow-2xl z-10 rounded left-[50%] translate-x-[-50%]">
 			<div className="text-center mb-2">                   
 					<span className="text-md text-black">Welcome to MinTax</span>
 			</div>

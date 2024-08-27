@@ -1,10 +1,13 @@
-import { Inter } from "next/font/google";
+import { Inter, Advent_Pro } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
+const advent_Pro = Advent_Pro({ 
+  weight: ['400', '700'],
+  subsets: ["latin"]
+});
 
 export const metadata = {
   title: "New MinTax",
@@ -17,9 +20,8 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} antialiased`}>
         <Header />
-        {/* <Navbar /> */}
         {children}
         <Footer />
       </body>
