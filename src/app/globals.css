@@ -2,13 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* 모든 스크롤 삭제 */
+/* body {
   -ms-overflow-style: none;
 }
 
 ::-webkit-scrollbar {
  display: none;
-}
+} */
 
 /* :root {
   --foreground-rgb: 0, 0, 0;
