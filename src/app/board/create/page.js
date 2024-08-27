@@ -30,7 +30,7 @@ export default function Create() {
                                         {/* <th width="50%">작성일: {dayjs(Date.now()).format('YY.MM.DD')}</th> */}
                                         {/* <th width="10%"></th>
                                         <th width="10%"></th> */}
-                                        <th width="50%" className="">작성자: {user.nickName}</th>
+                                        <th width="50%" className="">작성자: {user?.nickName}</th>
                                     </tr>
                                 </thead>
                                 <tbody className="text-sm lg:text-md">                            
