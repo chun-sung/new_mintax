@@ -12,28 +12,28 @@ export default function Navbar() {
       <Link className="mr-0 lg:mr-5 text-xl block hidden lg:inline" href="#">🌞</Link>
       <Link href={'/smart'}
         className={clsx("border-b ml-4 lg:ml-0 block text-left lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border lg:border-black hover:border-gray-500",{
-          'lg:bg-slate-600 bg-red-300': pathname === '/smart'
+          'lg:bg-slate-600 bg-gray-300': pathname === '/smart'
         })}>SMART서비스
       </Link>
       <Link href={'/himoney'} 
         className={clsx("border-b ml-4 lg:ml-0 text-left block lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border lg:border-black hover:border-gray-500",{
-          'lg:bg-slate-600 bg-red-300': pathname === '/himoney'
+          'lg:bg-slate-600 bg-gray-300': pathname === '/himoney'
         })}>고소득자 플랜</Link>
       <Link  href={'/bubin'} 
         className={clsx("border-b ml-4 lg:ml-0 text-left block lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border lg:border-black hover:border-gray-500",{
-          'lg:bg-slate-600 bg-red-300': pathname === '/bubin'
+          'lg:bg-slate-600 bg-gray-300': pathname === '/bubin'
         })}>법인 컨설팅</Link>
       <Link  href={'/consult'} 
         className={clsx("border-b ml-4 lg:ml-0 text-left block lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border lg:border-black hover:border-gray-500",{
-          'lg:bg-slate-600 bg-red-300': pathname === '/consult'
+          'lg:bg-slate-600 bg-gray-300': pathname === '/consult'
         })}>세무상담</Link>    
       <Link href={'/susu'}
         className={clsx("border-b ml-4 lg:ml-0 text-left block lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border lg:border-black hover:border-gray-500",{
-          'lg:bg-slate-600 bg-red-300': pathname === '/susu'
+          'lg:bg-slate-600 bg-gray-300': pathname === '/susu'
         })}>수수료안내</Link>
       <Link href={'/board'}
         className={clsx("border-b ml-4 lg:ml-0 text-left block lg:inline mr-5 lg:mr-[50px] text-md py-1 px-2 lg:rounded-lg lg:border lg:border-black hover:border-gray-500",{
-          'lg:bg-slate-600 bg-red-300': pathname === '/board'
+          'lg:bg-slate-600 bg-gray-300': pathname === '/board'
         })} >게시판</Link>      
       <button className="mt-10 lg:mt-0 mr-[10px] border-[0.5px] bg-gray-300 lg:bg-white text-black hover:text-pink-500 w-[70px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
         >Login</button>        
