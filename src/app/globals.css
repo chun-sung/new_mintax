@@ -40,7 +40,23 @@ body {
     text-wrap: balance;
   }
 } */
-
+.start {
+  opacity: 0;
+  display: block;
+  transform: fade;
+  top: 80px;
+  right: -600px;
+  /* transition: all 0.2s; */
+  transition: all 0.2s;
+}
+.end {
+    opacity: 1;
+    display: block;
+    top: 80px;
+    right: -20px;
+    /* transition: all 0.3s; */
+    transition: all 0.3s;
+}
 
 @media (max-width: 1024px) {
  nav {
