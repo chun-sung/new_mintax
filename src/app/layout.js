@@ -2,6 +2,8 @@ import { Inter, Advent_Pro } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { Providers } from '../redux/provider'
+
 
 const inter = Inter({ subsets: ["latin"] });
 const advent_Pro = Advent_Pro({ 
@@ -21,9 +23,11 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={`${inter.className} antialiased`}>
-        <Header />
-        {children}
-        <Footer />
+        <Providers>
+          <Header />
+            {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
