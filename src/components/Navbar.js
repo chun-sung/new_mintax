@@ -11,7 +11,8 @@ export default function Navbar() {
   const pathname = usePathname();
   const { user } = useSelector(state => state.user);
   
-  return (<nav className={user.menu !== true  ? `hidden` : `lg:h-[50px] border lg:border-0 rounded bg-white lg:bg-slate-900 lg:text-white lg:block` }>
+  return (<nav className={user.menu !== true  ? `hidden lg:block lg:bg-slate-900 lg:text-white` : 
+                                                            `lg:h-[50px] border lg:border-0 rounded bg-white lg:bg-slate-900 lg:text-white lg:block` }>
    <div className="mt-3 lg:mt-0 lg:w-[1000px] h-full text-center m-auto leading-[50px]">
       <Link className="mr-0 lg:mr-5 text-xl block hidden lg:inline" href="#">🌞</Link>
       <Link href={'/smart'}
