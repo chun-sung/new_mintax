@@ -40,21 +40,21 @@ body {
     text-wrap: balance;
   }
 } */
+
 .start {
   opacity: 0;
   display: block;
   transform: fade;
   top: 80px;
-  right: -600px;
-  /* transition: all 0.2s; */
+  right: -600px;  
   transition: all 0.2s;
 }
+
 .end {
     opacity: 1;
     display: block;
     top: 80px;
-    right: -20px;
-    /* transition: all 0.3s; */
+    right: -35px;        
     transition: all 0.3s;
 }
 
@@ -63,9 +63,7 @@ body {
   position: absolute;
   height: 100vh;
   width: 320px;
-  border: 1px solid grey; 
-  /* right: -280px; */
-  right: -30px;
-  
+  border: 1px solid grey;   
+  right: -30px;  
  }
 }

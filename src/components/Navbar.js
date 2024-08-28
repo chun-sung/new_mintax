@@ -14,7 +14,7 @@ export default function Navbar() {
   const dispatch = useDispatch()
   const router = useRouter();
   
-  return (<nav className={user.menu !== true  ? `hidden lg:block lg:bg-slate-900 lg:text-white start` : 
+  return (<nav className={user.menu !== true  ? `hidden lg:block lg:bg-slate-900 lg:text-white start lg:opacity-100` : 
                                                             `lg:h-[50px] border lg:border-0 rounded bg-white lg:bg-slate-900 lg:text-white lg:block start end` }>
    <div className="mt-3 lg:mt-0 lg:w-[1000px] h-full text-center m-auto leading-[50px]">
       <Link className="mr-0 lg:mr-5 text-xl block hidden lg:inline" href="#">🌞</Link>
@@ -44,11 +44,11 @@ export default function Navbar() {
           'lg:bg-slate-600 bg-gray-300': pathname === '/board'
         })}>Board</Link>      
       <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(true));dispatch(SET_MENU_BTN(false));router.push('/')}}
-        className="mt-10 lg:mt-0 mr-[10px] border-[0.5px] bg-gray-300 lg:bg-white text-black hover:text-white lg:hover:text-blue-300 w-[70px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
+        className="mt-10 lg:mt-0 ml-[-20px] mr-[10px] border-[0.5px] bg-gray-300 lg:bg-white text-black hover:text-white lg:hover:text-blue-300 w-[70px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
         >Login</button>        
       <button className="mt-10 lg:mt-0 border-[0.5px] bg-blue-600 text-white lg:text-white hover:text-gray-300 w-[80px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
         >Sign up</button>
-      <Link className="mr-0 lg:mr-5 mt-5 text-sm block lg:inline lg:hidden" href="#">Mode: 🌞</Link>        
+      <Link className="ml-[-80px] mr-0 lg:mr-5 mt-5 text-sm block lg:inline lg:hidden" href="#">Mode: 🌞</Link>        
     </div>        
   </nav>);
 }
