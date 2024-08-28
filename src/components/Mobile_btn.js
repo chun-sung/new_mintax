@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
-import { SET_MENU_BTN } from  "../redux/reducers/userSlice";
+import { SET_LOGIN_WINDOW, SET_MENU_BTN } from  "../redux/reducers/userSlice";
 
 export default function Mobile_btn() {
 
@@ -11,7 +11,7 @@ export default function Mobile_btn() {
     return (
         <Image className="absolute top-[20px] left-[15px] hover:scale-110 hover:border-[2px] border-red-300 lg:hidden block"                
             onClick={() => {
-                dispatch(SET_MENU_BTN(!user.menu));
+                dispatch(SET_MENU_BTN(!user.menu));dispatch(SET_LOGIN_WINDOW(false))
                 console.log(user.menu)}
             }
                 src="/hamburger.svg"

@@ -3,13 +3,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { useDispatch, useSelector } from "react-redux";
-import { SET_MENU_BTN } from  "../redux/reducers/userSlice";
+import { SET_MENU_BTN, SET_LOGIN_WINDOW } from  "../redux/reducers/userSlice";
 
 
 export default function Navbar() {
 
   const pathname = usePathname();
   const { user } = useSelector(state => state.user);
+  const dispatch = useDispatch()
   
   return (<nav className={user.menu !== true  ? `hidden lg:block lg:bg-slate-900 lg:text-white` : 
                                                             `lg:h-[50px] border lg:border-0 rounded bg-white lg:bg-slate-900 lg:text-white lg:block` }>
@@ -40,7 +41,8 @@ export default function Navbar() {
         className={clsx("border-b ml-4 lg:ml-0 text-left block lg:inline mr-5 lg:mr-[50px] text-md py-1 px-2 lg:rounded-lg lg:border lg:border-black hover:border-gray-500",{
           'lg:bg-slate-600 bg-gray-300': pathname === '/board'
         })}>Board</Link>      
-      <button className="mt-10 lg:mt-0 mr-[10px] border-[0.5px] bg-gray-300 lg:bg-white text-black hover:text-white lg:hover:text-blue-300 w-[70px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
+      <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(true));dispatch(SET_MENU_BTN(false)) }}
+        className="mt-10 lg:mt-0 mr-[10px] border-[0.5px] bg-gray-300 lg:bg-white text-black hover:text-white lg:hover:text-blue-300 w-[70px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
         >Login</button>        
       <button className="mt-10 lg:mt-0 border-[0.5px] bg-blue-600 text-white lg:text-white hover:text-gray-300 w-[80px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
         >Sign up</button>

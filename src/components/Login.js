@@ -1,9 +1,14 @@
 'use client'
+import { useDispatch, useSelector } from "react-redux";
+import { SET_MENU_BTN, SET_LOGIN_WINDOW } from  "../redux/reducers/userSlice";
 
 export default function Login() {
 
+	const { user } = useSelector(state => state.user);
+	const dispatch = useDispatch();
+
   return (
-		<div className="absolute border-stone-400 border-[1px] bg-gray-100  w-[320px] lg:w-[380px] lg:mt-10 top-[140px] lg:top-[200px] p-5 h-58 lg:h-58 shadow-2xl z-10 rounded left-[50%] translate-x-[-50%]">
+		<div className={ user.login !== true ? 'hidden' : "absolute border-stone-400 border-[1px] bg-gray-100  w-[320px] lg:w-[380px] lg:mt-10 top-[140px] lg:top-[200px] p-5 h-58 lg:h-58 shadow-2xl z-10 rounded left-[50%] translate-x-[-50%]"}>
 			<div className="text-center mb-2">                   
 					<span className="text-md text-black">Welcome to MinTax</span>
 			</div>
@@ -28,7 +33,7 @@ export default function Login() {
 					}}>확인</button>
 
 					<button className="p-1.5 px-4 shadow rounded bg-red-500 hover:bg-red-300 text-white" onClick={()=> {
-							// dispatch(SET_LOGIN_WINDOW(false))
+							dispatch(SET_LOGIN_WINDOW(false))
 					}}>취소</button>
 			</div>   
   	</div>);
