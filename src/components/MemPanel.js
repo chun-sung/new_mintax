@@ -19,7 +19,7 @@ export default function MemPanel() {
         <div className="absolute border-stone-400 border-[1px] bg-gray-100 w-[320px] lg:w-[380px] pt-2 pb-2 lg:mt-10 lg:left-[20px] top-[70px] lg:top-[90px] lg:p-5 h-180 shadow-2xl z-50 rounded">
             <div className="text-center mb-2">
                 {/* <span>전화번호 입력 후 확인을 눌러주세요</span><br /> */}
-                <span className="text-md ml-[55px] lg:ml-[35px] stop-dragging">Welcome to Register</span>
+                <span className="text-md ml-[45px] lg:ml-[35px] stop-dragging">Welcome to Register</span>
             </div>
             <div className="lg:ml-[20px] lg:w-96 mb-3">   
                 <form>
