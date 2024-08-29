@@ -5,6 +5,7 @@ import Rsidebar from "./Rsidebar";
 import Mobile_btn from "./Mobile_btn";
 import Login from "./Login";
 import Modal from "./Modal";
+import MemPanel from "./MemPanel";
 
 export default function Header() {
 
@@ -27,6 +28,7 @@ export default function Header() {
         <Mobile_btn />
         <Navbar />
         <Login />
+        <MemPanel />
         <Rsidebar />    
     </header>
     </>);

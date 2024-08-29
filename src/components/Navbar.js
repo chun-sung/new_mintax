@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { useDispatch, useSelector } from "react-redux";
-import { SET_MENU_BTN, SET_LOGIN_WINDOW } from  "../redux/reducers/userSlice";
+import { SET_MENU_BTN, SET_LOGIN_WINDOW, SET_MEMBER_PANEL } from  "../redux/reducers/userSlice";
 import { useRouter } from "next/navigation";
 import Login from "./Login";
 
@@ -44,10 +44,11 @@ export default function Navbar() {
         className={clsx("border-b lg:border-0 lg:border-0v ml-4 lg:ml-0 text-left block lg:inline mr-5 lg:mr-[50px] text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-800",{
           'lg:bg-slate-600 bg-gray-200 lg:hover:bg-slate-600': pathname === '/board'
         })}>Board</Link>      
-      <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(true));dispatch(SET_MENU_BTN(false));}}
+      <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(true));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(false));}}
         className="mt-10 lg:mt-0 ml-[-30px] mr-[10px] border-[0.5px] bg-gray-300 lg:bg-white text-black hover:text-white lg:hover:text-blue-300 w-[70px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
         >Login</button>        
-      <button className="mt-10 lg:mt-0 border-[0.5px] bg-blue-600 text-white lg:text-white hover:text-gray-300 w-[80px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
+      <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(false));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(true));}}
+        className="mt-10 lg:mt-0 border-[0.5px] bg-blue-600 text-white lg:text-white hover:text-gray-300 w-[80px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
         >Sign up</button>
       <Link className="ml-[-85px] mr-0 lg:mr-5 mt-5 text-sm block lg:hidden" href="#">Mode: 🌞</Link>  
     </div>        
