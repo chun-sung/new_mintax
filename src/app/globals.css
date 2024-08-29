@@ -58,6 +58,21 @@ body {
   transition: all 0.3s;
 }
 
+.start2 {
+  opacity: 1;
+  display: block;
+  /* transform: blur; */
+  /* transition: all 0.2s; */
+  transition: all 0.1s;
+}
+.end2 {
+    opacity: 0;
+    display: block;
+    /* transition: all 0.3s; */
+    transition: all 0.1s;
+    /* display: none; */
+}
+
 @media (max-width: 1024px) {
  nav {
   position: absolute;

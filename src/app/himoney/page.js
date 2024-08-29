@@ -1,10 +1,12 @@
+import Modal from "@/components/Modal";
 import PageTopPure from "@/components/PageTopPure";
 import Seo from "@/components/Seo";
 
 export default function Himoney() {
     return <>
         <Seo title='고소득-MinTAX'/>      
-        <PageTopPure />  
+        <PageTopPure />
+        <Modal />
         <h1 className="text-center pt-[130px] text-2xl stop-dragging">고소득자 텍스플랜</h1>
         <section className="text-gray-600 body-font">
             <div className="container px-5 py-24 mx-auto">

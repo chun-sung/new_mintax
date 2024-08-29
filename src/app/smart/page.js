@@ -1,3 +1,4 @@
+import Modal from "@/components/Modal";
 import PageTopPure from "@/components/PageTopPure";
 import Seo from "@/components/Seo";
 
@@ -5,6 +6,7 @@ export default function Smart() {
     return <>
         <Seo title='Smart-MinTAX' />
         <PageTopPure />
+        <Modal />
         <h1 className="text-center pt-[130px] text-2xl stop-dragging">SMART 서비스</h1>
         
         <section className="text-gray-600 body-font overflow-hidden">

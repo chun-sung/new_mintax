@@ -2,12 +2,14 @@
 // import BoardList from "./BoardList";
 import Seo from "@/components/Seo";
 import PageTopPure from "@/components/PageTopPure";
+import Modal from "@/components/Modal";
 
 export default function Board() {
   
     return <>
         <Seo title='게시판-MinTAX'/>
         <PageTopPure />
+        <Modal />
         {/* <PageTop /> */}
         <h1 className="text-center pt-[130px] text-2xl stop-dragging">고객 게시판</h1>
 
