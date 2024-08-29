@@ -22,10 +22,10 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={`${inter.className} antialiased`}>
+      <body className={`relative ${inter.className} antialiased`}>        
         <Providers>
-          <Header />
-            {children}
+          <Header />          
+            {children}          
           <Footer />
         </Providers>
       </body>

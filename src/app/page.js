@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { db } from '@vercel/postgres'
 import Consulting from "@/components/Consulting";
-import Modal from "@/components/Modal";
-
 
 export default async function Home() {
   const data = await db`SELECT * FROM users`;
@@ -10,8 +8,7 @@ export default async function Home() {
   console.log(rows[0].name);
 
   return (
-    <main className="z-0 lg:pt-[110px]">
-      <Modal />
+    <main className="z-0 lg:pt-[110px]">          
       <div className="bg-[url('/main_bg.png')] w-1200 m-auto h-72 lg:max-w-[1920px] lg:h-[585px] bg-left-bottom lg:bg-top lg:bg-cover lg:bg-no-repeat relative stop-dragging z-0">
       <div className="m-auto  lg:w-[1000px] p-1 h-full pt-[110px] lg:pt-[350px]">
             <p className="font-bold bottom-[85px] text-center lg:text-left m-auto lg:left-[340px] text-black text-3xl lg:text-5xl lg:leading-[130%] lg:tracking-[0px] mb-10">

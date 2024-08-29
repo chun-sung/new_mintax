@@ -1,12 +1,10 @@
-import Modal from "@/components/Modal";
 import PageTopPure from "@/components/PageTopPure";
 import Seo from "@/components/Seo";
 
 export default function Bubin() {
     return <>
         <Seo title='컨설팅-MinTAX'/>
-        <PageTopPure />
-        <Modal />
+        <PageTopPure />        
         <h1 className="text-center pt-[130px] text-2xl stop-dragging">법인 컨설팅</h1>
 
         <section className="text-gray-600 body-font">

@@ -1,4 +1,3 @@
-import Modal from "@/components/Modal";
 import PageTopPure from "@/components/PageTopPure";
 import Seo from "@/components/Seo";
 
@@ -6,7 +5,6 @@ export default function Susu() {
     return <>
         <Seo title='수수료-MinTAX'/>
         <PageTopPure />
-        <Modal />
         <h1 className="text-center pt-[130px] text-2xl stop-dragging">수수료 안내</h1>
 
         <section className="text-gray-600 body-font">
