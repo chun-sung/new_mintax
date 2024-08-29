@@ -40,8 +40,7 @@ export default async function Home() {
         <hr className="text-center w-[300px] lg:w-[900px] m-auto my-20 bg-gray-300 h-[2px]" />
 
         <div className="m-auto lg:flex lg:justify-between items-center lg:w-[1200px] px-14 lg:h-[360px]">
-          <div className="">
-            {/* <img className="w-[350px] m-auto lg:w-[400px] h-40 lg:h-50" src="/money.png"/> */}
+          <div className="">            
             <Image width={"400"} height={"200"} className="w-[350px] m-auto lg:w-[400px] h-40 lg:h-50" src="/money.png"/>
           </div>
           <div className="mt-0 lg:mt-0  ">
@@ -62,14 +61,12 @@ export default async function Home() {
             <p className="text-center lg:text-left text-[12px] mb-3 lg:text-[14px] font-bold text-gray-500">– 카드채권의 일별 승인액과 입금 예정내역을 간편히 조회해보세요.</p>
             <p className="text-center lg:text-left text-[12px]  lg:text-[14px] font-bold text-gray-500">– 세금이력 조회를 위해 담당세무대리인에게 연락할 필요가 없습니다.<br/>기납부내역, 고지내역, 체납내역, 환급내역을 확인할 수 있습니다.</p>
           </div>
-          <div className="mt-20 lg:mt-0 lg:w-[400px] mr-0 lg:mr-16 pb-10">
-            {/* <img src="/phone1.png"/> */}
+          <div className="mt-20 lg:mt-0 lg:w-[400px] mr-0 lg:mr-16 pb-10">            
             <Image width={"400"} height={"200"} src="/phone1.png"/>
           </div>
 
         </div>
-        <hr className="text-center w-[300px] lg:w-[900px] m-auto my-20 bg-gray-300 h-[2px]" />
-        {/* <div className="h-[2000px] bg-white "></div> */}
+        <hr className="text-center w-[300px] lg:w-[900px] m-auto my-20 bg-gray-300 h-[2px]" />        
 
       </div> 
 
@@ -164,15 +161,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      {/* <style jsx>{`
-          .pwa { display: none }
-
-          .pwaBtn:hover ~ .pwa { 
-            display: block;
-            color: grey;
-          }
-      `}</style>  */}
-
     </main>
   );
 }
