@@ -1,6 +1,4 @@
 'use client'
-import Image from "next/image";
-import Link from "next/link";
 import Navbar from "./Navbar";
 import Rsidebar from "./Rsidebar";
 import Login from "./Login";
@@ -34,7 +32,7 @@ export default function Header() {
     <Modal />
     <header className="fixed w-full stop stop-dragging z-50">         
         {/* <Mobile_btn /> */}
-        <Navbar mode={mode} setMode={setMode} />
+        {/* <Navbar mode={mode} setMode={setMode} /> */}
         <Login />
         <MemPanel />
         <Rsidebar />    

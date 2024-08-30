@@ -101,7 +101,7 @@ export default function Navbar({mode, setMode}) {
         className="mt-10 lg:mt-0 border-[0.5px] bg-blue-700 text-white lg:text-black hover:text-white w-[80px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
         >Sign up</button>
       <Link onClick={()=>{
-        // if(typeof window != undefined ) {
+        if(typeof window != undefined ) {
           if(mode == 'lightMode') {                                    
                   document.cookie = 'mode=darkMode; max-age=' + (3600 * 24 * 400)
                   setMode('darkMode')
@@ -119,7 +119,7 @@ export default function Navbar({mode, setMode}) {
               }, 100)
               router.refresh()
           }
-        // }  
+        }  
       }}
         className="ml-[-85px] mr-0 lg:mr-5 mt-5 text-sm block lg:hidden" href="#">Mode: { mode == 'darkMode' ? '🌙' : '🌞' }
       </Link>  
