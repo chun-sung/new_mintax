@@ -6,6 +6,7 @@ import Modal from "./Modal";
 import MemPanel from "./MemPanel";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Mobile_btn from "./Mobile_btn";
 
 export default function Header() {
 
