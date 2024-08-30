@@ -31,8 +31,8 @@ export default function Header() {
     return (<>
     <Modal />
     <header className="fixed w-full stop stop-dragging z-50">         
-        {/* <Mobile_btn /> */}
-        {/* <Navbar mode={mode} setMode={setMode} /> */}
+        <Mobile_btn />
+        <Navbar mode={mode} setMode={setMode} />
         <Login />
         <MemPanel />
         <Rsidebar />    
