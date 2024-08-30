@@ -1,6 +1,6 @@
 'use client'
 import { useDispatch, useSelector } from "react-redux";
-import { SET_MENU_BTN, SET_LOGIN_WINDOW } from  "../redux/reducers/userSlice";
+import { SET_LOGIN_WINDOW } from  "../redux/reducers/userSlice";
 
 export default function Login() {
 

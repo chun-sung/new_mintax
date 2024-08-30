@@ -1,7 +1,7 @@
 'use client';
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { SET_LOGIN_WINDOW,SET_MEMBER_PANEL} from "../redux/reducers/userSlice"
+import { SET_MEMBER_PANEL} from "../redux/reducers/userSlice"
 
 export default function MemPanel() {
     

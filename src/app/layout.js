@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Providers } from '../redux/provider'
-
+import { cookies } from 'next/dist/client/components/headers'
 
 const inter = Inter({ subsets: ["latin"] });
 const advent_Pro = Advent_Pro({ 
@@ -17,12 +17,16 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
+  let mode = cookies().get('mode') 
+
   return (
     <html lang="ko">
       <head>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content={`${ mode?.value == undefined || mode?.value == 'lightMode' ? '#ffffff' : '#000000' }`} />
       </head>
-      <body className={`relative ${inter.className} antialiased`}>        
+      <body className={`relative ${inter.className} antialiased ${ mode.value == undefined ||  mode.value == 'lightMode' ? 'lightMode' : 'darkMode' }`}>    
         <Providers>
           <Header />          
             {children}          
