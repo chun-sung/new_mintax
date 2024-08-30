@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { db } from '@vercel/postgres'
+// import { db } from '@vercel/postgres'
 import Consulting from "@/components/Consulting";
 
 export default async function Home() {
-  const data = await db`SELECT * FROM users`;
-  let { rows }  =  data 
-  console.log(rows[0].name);
+  // const data = await db`SELECT * FROM users`;
+  // let { rows }  =  data 
+  // console.log(rows[0].name);
 
   return (
     <main className="z-0 lg:pt-[110px]">          
