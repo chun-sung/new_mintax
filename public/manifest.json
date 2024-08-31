@@ -1,6 +1,6 @@
 {
-    "short_name": "MinTAX",
-    "name": "MinTAX",
+    "short_name": "n-MinTAX",
+    "name": "n-MinTAX",
     "start_url": "/",
     "display": "standalone",
     "theme_color": "#ffffff",
