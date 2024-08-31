@@ -16,12 +16,12 @@ export default function MemPanel({mode}) {
     {/* 회원 가입 패널 */}
     { user?.member_panel == true ? 
         <div className="relative m-auto w-[320px] lg:w-[420px]">
-        <div className={ mode == 'lightMode' ? "absolute border-stone-400 border-[1px] bg-white w-[320px] lg:w-[380px] pt-2 pb-2 lg:mt-10 lg:left-[20px] top-[70px] lg:top-[90px] lg:p-5 h-180 shadow-2xl z-50 rounded"
+        <div className={ mode == 'lightMode' ? "absolute border-stone-400 border-[1px] bg-white w-[320px] lg:w-[380px] pt-2 pb-4 lg:mt-10 lg:left-[20px] top-[70px] lg:top-[90px] lg:p-5 h-180 shadow-2xl z-50 rounded"
             : "absolute border-stone-400 border-[1px] bg-gray-500 w-[320px] lg:w-[380px] pt-2 pb-2 lg:mt-10 lg:left-[20px] top-[70px] lg:top-[90px] lg:p-5 h-180 shadow-2xl z-50 rounded"
         }>
             <div className="text-center mb-2">
                 {/* <span>전화번호 입력 후 확인을 눌러주세요</span><br /> */}
-                <span className="text-md ml-[45px] lg:ml-[35px] text-black stop-dragging">Welcome to Register</span>
+                <span className="text-md ml-[10px] lg:ml-[35px] text-black stop-dragging">Welcome to Register</span>
             </div>
             <div className="lg:ml-[20px] lg:w-96 mb-3">   
                 <form>
@@ -51,7 +51,7 @@ export default function MemPanel({mode}) {
                     </div>
                 </form>
             </div>
-            <div className="mt-2 ml-[55px] lg:ml-[45px] text-center text-sm">
+            <div className="mt-2 ml-[20px] lg:ml-[45px] text-center text-sm">
                 <button className="p-1.5 px-4 shadow rounded mr-2 bg-blue-400 hover:bg-blue-500 text-white" 
                 onClick={()=> {
 
