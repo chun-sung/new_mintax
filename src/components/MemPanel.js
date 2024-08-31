@@ -16,7 +16,7 @@ export default function MemPanel({mode}) {
     {/* 회원 가입 패널 */}
     { user?.member_panel == true ? 
         <div className="relative m-auto w-[320px] lg:w-[420px]">
-        <div className={ mode == 'lightMode' ? "absolute border-stone-400 border-[1px] bg-white w-[320px] lg:w-[380px] pt-2 pb-4 lg:mt-10 lg:left-[20px] top-[70px] lg:top-[90px] lg:p-5 h-180 shadow-2xl z-50 rounded"
+        <div className={ mode == 'lightMode' ? "absolute border-stone-400 border-[1px] bg-white w-[320px] lg:w-[380px] pt-4 pb-6 lg:mt-10 lg:left-[20px] top-[70px] lg:top-[90px] lg:p-5 h-180 shadow-2xl z-50 rounded"
             : "absolute border-stone-400 border-[1px] bg-gray-500 w-[320px] lg:w-[380px] pt-2 pb-2 lg:mt-10 lg:left-[20px] top-[70px] lg:top-[90px] lg:p-5 h-180 shadow-2xl z-50 rounded"
         }>
             <div className="text-center mb-2">
