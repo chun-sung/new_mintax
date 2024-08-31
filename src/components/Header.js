@@ -22,10 +22,10 @@ export default function Header() {
     // 초기값 비교는 state 함수가 비동기라 비교하여 적용할 수 없다. 비교는 쿠키에 직접 접근하는 코드로 비교해야 한다.
     if(('; '+document.cookie).split(`; mode=`).pop().split(';')[0] == '' || ('; '+document.cookie).split(`; mode=`).pop().split(';')[0] == 'lightMode') {
         document.cookie = 'mode=lightMode; max-age=' + (3600 * 24 * 400)
-        setMode('lightMode')
+        setMode('lightMode')        
     } else {
         // document.cookie = 'mode=darkMode; max-age=' + (3600 * 24 * 400)
-        setMode('darkMode')
+        setMode('darkMode')        
     }
   },[])
 

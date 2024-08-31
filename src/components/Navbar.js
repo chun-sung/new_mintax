@@ -53,18 +53,18 @@ export default function Navbar({mode, setMode}) {
                   document.cookie = 'mode=darkMode; max-age=' + (3600 * 24 * 400)
                   setMode('darkMode')
                   // console.log(mode)
+                  router.refresh()                    
                   setTimeout(()=> {
                     document.querySelector('.any')?.classList.add('none') // 커버 삭제 display: 'none'
                   }, 100)                                
-                  router.refresh()
           } else {
               document.cookie = 'mode=lightMode; max-age=' + (3600 * 24 * 400)
               setMode('lightMode')
               // console.log(mode)
+              router.refresh()                
               setTimeout(()=> {
                 document.querySelector('.any')?.classList.add('none') // 커버 삭제 display: 'none'
               }, 100)
-              router.refresh()
           }
         // }  
       }}
@@ -106,22 +106,24 @@ export default function Navbar({mode, setMode}) {
                   document.cookie = 'mode=darkMode; max-age=' + (3600 * 24 * 400)
                   setMode('darkMode')
                   // console.log(mode)
-                  router.refresh()
+                  router.refresh();                  
                   setTimeout(()=> {
                     document.querySelector('.any')?.classList.add('none') // 커버 삭제 display: 'none'
+                    document.querySelector('body')?.classList.add('darkMode') // 커버 삭제 display: 'none'
                   }, 100)                                
           } else {
               document.cookie = 'mode=lightMode; max-age=' + (3600 * 24 * 400)
               setMode('lightMode')
               // console.log(mode)
-              router.refresh()
+              router.refresh();                       
               setTimeout(()=> {
                 document.querySelector('.any')?.classList.add('none') // 커버 삭제 display: 'none'
+                document.querySelector('body')?.classList.remove('darkMode') // 커버 삭제 display: 'none'
               }, 100)
           }
         }  
       }}
-        className="ml-[-85px] mr-0 lg:mr-5 mt-5 text-sm block lg:hidden" href="#">Mode: { mode == 'darkMode' ? '🌙' : '🌞' }
+        className="ml-[75px] w-[80px] mr-0 lg:mr-5 mt-5 text-sm block lg:hidden" href="#">Mode: { mode == 'darkMode' ? '🌙' : '🌞' }
       </Link>  
     </div>        
   </nav>   
