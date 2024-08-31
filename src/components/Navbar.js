@@ -45,7 +45,7 @@ export default function Navbar({mode, setMode}) {
             </div>
         </div> 
   <nav className={user.menu !== true  ? `hidden lg:block  lg:bg-slate-900 lg:text-white start lg:opacity-100` : 
-                                                            `bg-slate-100 lg:h-[50px] border lg:border-0 rounded lg:bg-slate-900 lg:text-white lg:block start end` }>
+    `${mode !== 'darkMode' ? 'bg-slate-100 lg:h-[50px] border lg:border-0 rounded lg:bg-slate-900 lg:text-white lg:block start end' :'bg-gray-800 text-white lg:h-[50px] border lg:border-0 rounded lg:bg-slate-900 lg:text-white lg:block start end' }`}>
    <div className="mt-3 lg:mt-0 lg:w-[1000px] text-center m-auto leading-[50px]">
       <Link onClick={()=>{
         // if(typeof window != undefined ) {
