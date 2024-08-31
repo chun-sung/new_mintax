@@ -1,10 +1,10 @@
-import PageTopPure from "@/components/PageTopPure";
+import PageTop from "@/components/PageTop";
 import Seo from "@/components/Seo";
 
 export default function Renew() {
     return <>
         <Seo title='세무상담-MinTAX'/>
-        <PageTopPure />
+        <PageTop />
         <h1 className="text-center pt-[130px] text-2xl stop-dragging">세무상담</h1>
 
         <section className="text-gray-600 body-font relative">

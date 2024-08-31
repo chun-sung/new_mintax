@@ -1,6 +1,6 @@
 'use client'
 import { useDispatch, useSelector } from "react-redux";
-import { SET_MENU_BTN, SET_LOGIN_WINDOW, SET_MEMBER_PANEL } from  "../redux/reducers/userSlice";
+import { SET_MENU_BTN } from  "../redux/reducers/userSlice";
 
 export default function Modal () {
 

@@ -84,7 +84,7 @@ body footer {
   transform: fade;
   top: 60px;
   right: -600px;  
-  transition: all 0.2s;
+  transition: all 0.1s;
 }
 
 .end {
@@ -92,7 +92,7 @@ body footer {
   display: block;
   top: 60px;
   right: -35px;        
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
 
 .start2 {
@@ -107,6 +107,21 @@ body footer {
     display: block;
     /* transition: all 0.3s; */
     transition: all 0.1s;
+    /* display: none; */
+}
+
+.start3 {
+  opacity: 1;
+  display: block;
+  /* transform: blur; */
+  /* transition: all 0.2s; */
+  transition: all 0.3s;
+}
+.end3 {
+    opacity: 0;
+    display: block;
+    /* transition: all 0.3s; */
+    transition: all 0.3s;
     /* display: none; */
 }
 

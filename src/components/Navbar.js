@@ -56,6 +56,7 @@ export default function Navbar({mode, setMode}) {
                   router.refresh()                    
                   setTimeout(()=> {
                     document.querySelector('.any')?.classList.add('none') // 커버 삭제 display: 'none'
+                    document.querySelector('body')?.classList.add('darkMode') // 다크모드 클래스 추가
                   }, 100)                                
           } else {
               document.cookie = 'mode=lightMode; max-age=' + (3600 * 24 * 400)
@@ -64,6 +65,7 @@ export default function Navbar({mode, setMode}) {
               router.refresh()                
               setTimeout(()=> {
                 document.querySelector('.any')?.classList.add('none') // 커버 삭제 display: 'none'
+                document.querySelector('body')?.classList.remove('darkMode') // 다크모드 클래스 추가
               }, 100)
           }
         // }  
@@ -109,7 +111,7 @@ export default function Navbar({mode, setMode}) {
                   router.refresh();                  
                   setTimeout(()=> {
                     document.querySelector('.any')?.classList.add('none') // 커버 삭제 display: 'none'
-                    document.querySelector('body')?.classList.add('darkMode') // 커버 삭제 display: 'none'
+                    document.querySelector('body')?.classList.add('darkMode') // 다크모드 클래스 추가
                   }, 100)                                
           } else {
               document.cookie = 'mode=lightMode; max-age=' + (3600 * 24 * 400)
@@ -118,7 +120,7 @@ export default function Navbar({mode, setMode}) {
               router.refresh();                       
               setTimeout(()=> {
                 document.querySelector('.any')?.classList.add('none') // 커버 삭제 display: 'none'
-                document.querySelector('body')?.classList.remove('darkMode') // 커버 삭제 display: 'none'
+                document.querySelector('body')?.classList.remove('darkMode') // 다크모드 클래스 추가
               }, 100)
           }
         }  

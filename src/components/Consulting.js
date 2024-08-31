@@ -19,7 +19,7 @@ export default function Consulting() {
     const dispatch = useDispatch()
     
     return <>
-    <div className=" lg:mt-[50px] lg:mb-[50px] z-0">
+    <div className=" lg:mt-[50px] lg:mb-[50px] z-20">
 
     {/*상담 신청 & 회원 가입 */}
     <div className="flex mt-10 w-full lg:w-[980px] m-auto lg:m-auto justify-center lg:justify-start mb-10">
