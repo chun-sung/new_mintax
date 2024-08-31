@@ -24,9 +24,10 @@ export default function RootLayout({ children }) {
     <html lang="ko">
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content={`${ mode?.value == undefined || mode?.value == 'lightMode' ? '#ffffff' : '#000000' }`} />
+        {/* <meta name="theme-color" content={`${ mode?.value == undefined || mode?.value == 'lightMode' ? '#ffffff' : '#000000' }`} /> */}
       </head>
-      <body className={`relative ${inter.className} antialiased ${ mode.value == undefined ||  mode.value == 'lightMode' ? 'lightMode' : 'darkMode' }`}>    
+      {/* <body className={`relative ${inter.className} antialiased ${ mode?.value == undefined ||  mode?.value == 'lightMode' ? 'lightMode' : 'darkMode' }`}>        */}
+      <body className={`relative ${inter.className} antialiased`}>       
         <Providers>
           <Header />          
             {children}          
