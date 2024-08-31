@@ -8,7 +8,7 @@ export default function Login({mode}) {
 	const dispatch = useDispatch();
 
   return (
-		<div className={ user.login !== true ? 'hidden' : mode == 'lightMode' ? "absolute border-stone-400 border-[1px] bg-gray-100  w-[320px] lg:w-[380px] lg:mt-10 top-[140px] lg:top-[200px] p-5 h-58 lg:h-58 shadow-2xl z-10 rounded left-[50%] translate-x-[-50%]"
+		<div className={ user.login !== true ? 'hidden' : mode == 'lightMode' ? "absolute border-stone-400 border-[1px] bg-white  w-[320px] lg:w-[380px] lg:mt-10 top-[140px] lg:top-[200px] p-5 h-58 lg:h-58 shadow-2xl z-10 rounded left-[50%] translate-x-[-50%]"
 			: "absolute border-stone-400 border-[1px] bg-gray-500 w-[320px] lg:w-[380px] lg:mt-10 top-[140px] lg:top-[200px] p-5 h-58 lg:h-58 shadow-2xl z-10 rounded left-[50%] translate-x-[-50%]"
 		}>
 			<div className="text-center mb-2">                   
@@ -30,11 +30,11 @@ export default function Login({mode}) {
 					</form>
 			</div>
 			<div className="mt-2 ml-6 text-center text-sm">
-					<button className="p-1.5 px-4 shadow rounded mr-2 bg-blue-500 hover:bg-blue-400 text-white" onClick={()=> { 
+					<button className="p-1.5 px-4 shadow rounded mr-2 bg-blue-400 hover:bg-blue-500 text-white" onClick={()=> { 
 						return loginEnter()
 					}}>확인</button>
 
-					<button className="p-1.5 px-4 shadow rounded bg-red-500 hover:bg-red-300 text-white" onClick={()=> {
+					<button className="p-1.5 px-4 shadow rounded bg-red-400 hover:bg-red-500 text-white" onClick={()=> {
 							dispatch(SET_LOGIN_WINDOW(false))
 					}}>취소</button>
 			</div>   

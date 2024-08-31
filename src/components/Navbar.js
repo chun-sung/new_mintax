@@ -97,10 +97,10 @@ export default function Navbar({mode, setMode}) {
           'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/board'
         })}>Board</Link>      
       <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(true));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(false));}}
-        className="mt-10 lg:mt-0 ml-[-30px] mr-[10px] border-[0.5px] bg-slate-900 hover:lg:bg-white text-white lg:text-white lg:hover:text-black w-[70px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
+        className="mt-10 lg:mt-0 ml-[-30px] mr-[10px] border-[0.5px] bg-slate-700 hover:lg:bg-white text-white lg:text-white lg:hover:text-black w-[70px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
         >Login</button>        
       <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(false));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(true));}}
-        className="mt-10 lg:mt-0 border-[0.5px] bg-blue-700 text-white lg:text-black hover:text-white w-[80px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
+        className="mt-10 lg:mt-0 border-[0.5px] bg-blue-500 text-white lg:text-black hover:text-white w-[80px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
         >Sign up</button>
       <Link onClick={()=>{
         if(typeof window != undefined ) {

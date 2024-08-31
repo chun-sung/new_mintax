@@ -16,7 +16,7 @@ export default function MemPanel({mode}) {
     {/* 회원 가입 패널 */}
     { user?.member_panel == true ? 
         <div className="relative m-auto w-[320px] lg:w-[420px]">
-        <div className={ mode == 'lightMode' ? "absolute border-stone-400 border-[1px] bg-gray-100 w-[320px] lg:w-[380px] pt-2 pb-2 lg:mt-10 lg:left-[20px] top-[70px] lg:top-[90px] lg:p-5 h-180 shadow-2xl z-50 rounded"
+        <div className={ mode == 'lightMode' ? "absolute border-stone-400 border-[1px] bg-white w-[320px] lg:w-[380px] pt-2 pb-2 lg:mt-10 lg:left-[20px] top-[70px] lg:top-[90px] lg:p-5 h-180 shadow-2xl z-50 rounded"
             : "absolute border-stone-400 border-[1px] bg-gray-500 w-[320px] lg:w-[380px] pt-2 pb-2 lg:mt-10 lg:left-[20px] top-[70px] lg:top-[90px] lg:p-5 h-180 shadow-2xl z-50 rounded"
         }>
             <div className="text-center mb-2">
@@ -52,7 +52,7 @@ export default function MemPanel({mode}) {
                 </form>
             </div>
             <div className="mt-2 ml-[55px] lg:ml-[45px] text-center text-sm">
-                <button className="p-1.5 px-4 shadow rounded mr-2 bg-blue-500 hover:bg-blue-400 text-white" 
+                <button className="p-1.5 px-4 shadow rounded mr-2 bg-blue-400 hover:bg-blue-500 text-white" 
                 onClick={()=> {
 
                     if(user_id.length == 0) {                        
@@ -86,7 +86,7 @@ export default function MemPanel({mode}) {
                         }
                     }).catch(err => console.log(err))}}
                 >확인</button>
-                <button className="p-1.5 px-4 rounded shadow bg-red-500 hover:bg-red-300 text-white" 
+                <button className="p-1.5 px-4 rounded shadow bg-red-400 hover:bg-red-500 text-white" 
                     onClick={()=> dispatch(SET_MEMBER_PANEL(false))}
                 >취소</button>
             </div>
