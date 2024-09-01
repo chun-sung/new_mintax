@@ -10,7 +10,7 @@ export default async function Home() {
   return (<>
     <main className="z-0 lg:pt-[110px] start2">    
       <div className="bg-[url('/main_bg.png')] w-1200 m-auto h-72 lg:max-w-[1920px] lg:h-[585px] bg-left-bottom lg:bg-top lg:bg-cover lg:bg-no-repeat relative stop-dragging z-0">
-      <div className="m-auto  lg:w-[1000px] p-1 h-full pt-[110px] lg:pt-[350px]">
+      <div className="m-auto  lg:w-[1000px] p-1 h-full pt-[140px] lg:pt-[350px]">
             <p className="font-bold bottom-[85px] text-center lg:text-left m-auto lg:left-[340px] text-black text-3xl lg:text-5xl lg:leading-[130%] lg:tracking-[0px] mb-10">
               <span className="inline text-gray-200">내 손안의</span> <span className="inline text-blue-500">SMART</span><br/><span className="inline text-gray-200">세무 회계</span> <span className="inline text-red-500">MinTAX</span>
             </p>
