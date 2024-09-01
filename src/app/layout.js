@@ -11,7 +11,6 @@ const advent_Pro = Advent_Pro({
   subsets: ["latin"]
 });
 
-let mode = cookies().get('mode') 
 // console.log(mode?.value)
 
 
@@ -21,7 +20,8 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-
+  
+  let mode = cookies().get('mode') 
 
   return (
     <html lang="ko">            
