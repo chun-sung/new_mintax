@@ -103,7 +103,7 @@ export default function Navbar({mode, setMode}) {
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/board'
           })}>Board</Link>      
           
-        <p className={`h-10 w-[10px] ml-[115px] `}>Guest</p>
+        <p className={`h-10 w-[10px] ml-[115px] lg:hidden `}>Guest</p>
 
         <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(true));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(false));}}
           className="mt-0 lg:mt-0 ml-[-30px] mr-[10px] border-[0.5px] bg-slate-700 hover:lg:bg-white text-white lg:text-white lg:hover:text-black w-[70px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
