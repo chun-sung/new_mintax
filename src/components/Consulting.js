@@ -23,14 +23,14 @@ export default function Consulting() {
 
     {/*상담 신청 & 회원 가입 */}
     <div className="flex mt-10 w-full lg:w-[980px] m-auto lg:m-auto justify-center lg:justify-start mb-10">
-        <p className="shadow-lg bg-blue-600 p-2 lg:p-4 w-[104px] lg:w-[120px] mr-0 lg:mr-0 text-neutral-100 lg:text-sm cursor-pointer hover:bg-red-400" onClick={()=>{
+            <p className="shadow-lg bg-blue-600 p-2 lg:p-4 w-[104px] lg:w-[120px] mr-0 lg:mr-0 text-neutral-100 text-md cursor-pointer hover:bg-red-400" onClick={()=>{
            user?.user_id !== null ? dispatch(SET_CONSULTING_PANEL(true)) : alert('로그인 하시기 바랍니다.')
         }}>상담신청</p>
         { user?.user_id == null ?
-            <p className="shadow-lg bg-gray-400 p-2 lg:p-4 w-[104px] lg:w-[120px] text-white text-sm cursor-pointer hover:bg-red-400" onClick={() => {
+            <p className="shadow-lg bg-gray-400 p-2 lg:p-4 w-[104px] lg:w-[120px] text-white text-md cursor-pointer hover:bg-red-400" onClick={() => {
                 dispatch(SET_MEMBER_PANEL(true))
             }}>회원가입</p>        
-            : <p className="shadow-lg bg-gray-400 p-2 lg:p-4 w-[220px] lg:w-[220px] text-white text-sm" onClick={() => {
+            : <p className="shadow-lg bg-gray-400 p-2 lg:p-4 w-[220px] lg:w-[220px] text-white text-md" onClick={() => {
                 
             }}>궁금한 내용이 있으신가요?</p>     
         }
