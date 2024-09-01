@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
     <html lang="ko">      
       <link rel="icon" href="/favicon.ico" />
       <link rel="manifest" href="/manifest.json" />
-      <meta name="theme-color" content={`${ mode?.value == undefined || mode?.value == 'lightMode' ? '#000000' : '#ffffff'}`} />      
+      <meta name="theme-color" content={`${ mode?.value == undefined || mode?.value == 'lightMode' ? '#ffffff' : '#000000' }`} />      
       <body className={`relative ${inter.className} ${ mode?.value == undefined || mode?.value == 'lightMode' ? 'lightMode' : 'darkMode' }`}>      
         <Providers>
           <Header />          
