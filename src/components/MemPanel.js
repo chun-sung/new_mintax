@@ -21,7 +21,7 @@ export default function MemPanel({mode}) {
         }>
             <div className="text-center mb-2">
                 {/* <span>전화번호 입력 후 확인을 눌러주세요</span><br /> */}
-                <span className="text-md ml-[0px] lg:ml-[10px] text-black stop-dragging">Welcome to Register</span>
+                <span className="text-md ml-[0px] lg:ml-[0px] text-black stop-dragging">Welcome to Register</span>
             </div>
             <div className="lg:ml-[20px] lg:w-96 mb-3">   
                 <form>
