@@ -13,6 +13,10 @@ const advent_Pro = Advent_Pro({
 
 // console.log(mode?.value)
 
+/** @type {import("next").Viewport} */
+export const viewport = {
+  themeColor: 'black',
+}
 
 export const metadata = {
   title: "n-MinTax",
