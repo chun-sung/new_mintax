@@ -21,7 +21,7 @@ export default function Login({mode}) {
 									<input type="text" id="full-name" name="user_id" className="w-56 h-9 bg-gray-200 bg-opacity-50 rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-md outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" 
 									/>
 							</div>
-							<div className="relative sm:mb-0 flex-grow w-full mt-2 ml-[-10px] lg:ml-[-5px]">
+							<div className="relative sm:mb-0 flex-grow w-full mt-2 ml-[-13px] lg:ml-[-5px]">
 									<label htmlFor="name" className="leading-7 text-[12px] text-gray-400 mr-2">PW </label>
 									<input type="password" id="name" name="password" className="w-56 h-9 bg-gray-200 bg-opacity-50 ml-[0.5px] rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" 
 										onKeyUp={()=>{ window.event.keyCode === 13 ? loginEnter() : null }}
