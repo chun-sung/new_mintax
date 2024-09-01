@@ -8,6 +8,12 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Mobile_btn from "./Mobile_btn";
 
+/** @type {import("next").Viewport} */
+export const viewport = {
+    themeColor:  `${ mode?.value == undefined || mode?.value == 'lightMode' ? '#ffffff' : '#000000' }`
+  }
+  
+
 export default function Header() {
 
     const [mode, setMode] = useState('')   
