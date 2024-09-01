@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Providers } from '../redux/provider'
 import { cookies } from 'next/dist/client/components/headers'
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 const advent_Pro = Advent_Pro({ 
@@ -23,10 +24,12 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="ko">      
-      <link rel="icon" href="/favicon.ico" />
-      <link rel="manifest" href="/manifest.json" />
-      <meta name="theme-color" content={`${ mode?.value == undefined || mode?.value == 'lightMode' ? '#ffffff' : '#000000' }`} />      
-      <body className={`relative ${inter.className} ${ mode?.value == undefined || mode?.value == 'lightMode' ? 'lightMode' : 'darkMode' }`}>      
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content={`${ mode?.value == undefined || mode?.value == 'lightMode' ? '#ffffff' : '#000000' }`} />
+      </Head>
+      <body className={`relative ${inter.className} ${ mode?.value == undefined || mode?.value == 'lightMode' ? 'lightMode' : 'darkMode' }`}>        
         <Providers>
           <Header />          
             {children}          
