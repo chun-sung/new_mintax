@@ -23,7 +23,11 @@ export default function Navbar({mode, setMode}) {
             <Link href="/">
             {
                 mode == 'darkMode' ?
-                <Image
+                <Image onClick={()=>{
+                  dispatch(SET_LOGIN_WINDOW(false))
+                  dispatch(SET_MEMBER_PANEL(false))
+                  dispatch( SET_MENU_BTN(false))
+                }}
                     src="/logo_white.svg"
                     width="80"
                     height="60"
@@ -31,7 +35,11 @@ export default function Navbar({mode, setMode}) {
                     className="m-auto"            
                 />
                 :
-                <Image
+                <Image onClick={()=>{
+                  dispatch(SET_LOGIN_WINDOW(false))
+                  dispatch(SET_MEMBER_PANEL(false))
+                  dispatch( SET_MENU_BTN(false))
+                }}
                     src="/logo.svg"
                     width="80"
                     height="60"
