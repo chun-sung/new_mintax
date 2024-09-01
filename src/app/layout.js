@@ -13,9 +13,17 @@ const advent_Pro = Advent_Pro({
 
 // console.log(mode?.value)
 
+// /** @type {import("next").Viewport} */
+// export const viewport = {
+//   themeColor: 'black',
+// }
+
 /** @type {import("next").Viewport} */
 export const viewport = {
-  themeColor: 'black',
+  themeColor: [
+    {mode: 'lightMode', color: '#ffffff' },
+    {mode: 'darkMode', color: '#000000' }    
+  ]
 }
 
 export const metadata = {
