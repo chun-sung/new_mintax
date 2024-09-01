@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { SET_MEMBER_PANEL, SET_CONSULTING_PANEL, SET_LOGIN_WINDOW } from "../redux/reducers/userSlice"
+import { SET_MEMBER_PANEL, SET_CONSULTING_PANEL } from "../redux/reducers/userSlice"
 
 export default function Consulting() {
     

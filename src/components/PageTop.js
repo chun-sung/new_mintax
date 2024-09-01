@@ -3,23 +3,23 @@ import { useEffect, useState } from "react"
 
 export default function PageTop() {
 
-    const [ fade, setFade ] = useState('')
+  const [ fade, setFade ] = useState('')
 
-    // 변경사항이 저장되지 않을 수 있습니다. (새로 고침시 메시지 팝업 뜸)
-    const preventClose = (e) => {
-        e.preventDefault();
-        e.returnValue = "";             //Chrome에서 동작하도록; deprecated
-      };
-       
-    useEffect(() => {
-      (() => {
-        window.addEventListener("beforeunload", preventClose);
-      })();
+  // 변경사항이 저장되지 않을 수 있습니다. (새로 고침시 메시지 팝업 뜸)
+  const preventClose = (e) => {
+      e.preventDefault();
+      e.returnValue = "";             //Chrome에서 동작하도록; deprecated
+    };
       
-      return () => {
-        window.removeEventListener("beforeunload", preventClose);
-      };
-    },[]);    
+  useEffect(() => {
+    (() => {
+      window.addEventListener("beforeunload", preventClose);
+    })();
+    
+    return () => {
+      window.removeEventListener("beforeunload", preventClose);
+    };
+  },[]);    
 
 
     useEffect(()=>{
@@ -38,14 +38,14 @@ export default function PageTop() {
         }, 300)
     })
 
-    return (<>
-            {/* 처음 쿠키 값은 lightMode 에 셋팅 된다. 그에 맞춰 hydration 에러를 처음에 피하기 위해.....  어쨌거나 처음에러만 피하자 이후 미스 매치는 어쩔수 없음*/}
-        {
-            <div className={`any absolute start3 ${fade} ${
-                typeof window == 'undefined' ? 'bg-white'
-                : ('; '+document.cookie).split(`; mode=`).pop().split(';')[0] == 'lightMode' ? 'bg-white' : 'bg-black'
-                } h-full w-full z-0`}>                
-            </div>        
-        }
-    </>)
+  return (<>
+          {/* 처음 쿠키 값은 lightMode 에 셋팅 된다. 그에 맞춰 hydration 에러를 처음에 피하기 위해.....  어쨌거나 처음에러만 피하자 이후 미스 매치는 어쩔수 없음*/}
+      {
+          <div className={`any absolute start3 ${fade} ${
+              typeof window == 'undefined' ? 'bg-white'
+              : ('; '+document.cookie).split(`; mode=`).pop().split(';')[0] == 'lightMode' ? 'bg-white' : 'bg-black'
+              } h-full w-full z-0`}>                
+          </div>        
+      }
+  </>)
 }
