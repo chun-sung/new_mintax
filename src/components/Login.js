@@ -16,7 +16,7 @@ export default function Login({mode}) {
 			</div>
 			<div className="lg:ml-[-28px] lg:w-96 mb-3  text-center">   
 					<form>
-							<div className="relative sm:mb-0 flex-grow w-full mb-2 ml-[-10px] lg:ml-[-2px]">
+							<div className="relative sm:mb-0 flex-grow w-full mb-2 ml-[-9px] lg:ml-[-2px]">
 									<label htmlFor="full-name" className="leading-7 text-[12px] text-gray-400 mr-2">ID </label>
 									<input type="text" id="full-name" name="user_id" className="w-56 h-9 bg-gray-200 bg-opacity-50 rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-md outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" 
 									/>
