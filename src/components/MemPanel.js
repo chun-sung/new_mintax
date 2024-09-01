@@ -31,7 +31,7 @@ export default function MemPanel({mode}) {
                             onChange={(e) => setUserId(e.target.value)} 
                         />
                     </div>
-                    <div className="relative sm:mb-0 flex-grow w-full mt-2 ml-[21px] lg:ml-[8px]">
+                    <div className="relative sm:mb-0 flex-grow w-full mt-2 ml-[22px] lg:ml-[8px]">
                         <label htmlFor="nickName" className="leading-7 text-[12px] text-gray-400 mr-4">이름</label>
                         <input autoComplete="off" type="text" id="nickName" name="nickName" className="w-52 h-9 bg-gray-200 bg-opacity-40 rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" 
                             onChange={(e) => setNickName(e.target.value)}
