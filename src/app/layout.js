@@ -11,6 +11,9 @@ const advent_Pro = Advent_Pro({
   subsets: ["latin"]
 });
 
+let mode = cookies().get('mode') 
+// console.log(mode?.value)
+
 export const viewport = {
   themeColor: `${ mode?.value == undefined || mode?.value == 'lightMode' ? '#ffffff' : '#000000' }`
 }
@@ -22,8 +25,6 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 
-  let mode = cookies().get('mode') 
-  // console.log(mode?.value)
 
   return (
     <html lang="ko">            
