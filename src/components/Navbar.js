@@ -19,7 +19,7 @@ export default function Navbar({mode, setMode}) {
     <div className={mode !== 'darkMode' ? "h-[60px] w-full m-auto bg-white border-b border-gray" :
         "h-[60px] w-full m-auto bg-black border-b-0 lg:border-b-0 border-gray" 
       }> 
-        <div className="m-auto w-[80px] pt-2.5">
+        <div className="relative m-auto w-[80px] pt-2.5">
             <Link href="/">
             {
                 mode == 'darkMode' ?
@@ -47,7 +47,7 @@ export default function Navbar({mode, setMode}) {
                     className="m-auto"            
                   />
             }
-            </Link>
+            </Link>            
         </div>
     </div> 
     <nav className={user.menu !== true  ? `hidden lg:block  lg:bg-slate-900 lg:text-white start lg:opacity-100` : 
@@ -102,11 +102,14 @@ export default function Navbar({mode, setMode}) {
           className={clsx("border-b lg:border-0 lg:border-0v ml-4 lg:ml-0 text-left block lg:inline mr-5 lg:mr-[50px] text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/board'
           })}>Board</Link>      
+          
+        <p className={`h-10 w-[10px] ml-[115px] `}>Guest</p>
+
         <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(true));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(false));}}
-          className="mt-10 lg:mt-0 ml-[-30px] mr-[10px] border-[0.5px] bg-slate-700 hover:lg:bg-white text-white lg:text-white lg:hover:text-black w-[70px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
+          className="mt-0 lg:mt-0 ml-[-30px] mr-[10px] border-[0.5px] bg-slate-700 hover:lg:bg-white text-white lg:text-white lg:hover:text-black w-[70px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
           >Login</button>        
         <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(false));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(true));}}
-          className="mt-10 lg:mt-0 border-[0.5px] bg-blue-500 text-white lg:text-black hover:text-white w-[80px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
+          className="mt-0 lg:mt-0 border-[0.5px] bg-blue-500 text-white lg:text-black hover:text-white w-[80px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
           >Sign up</button>
         <Link onClick={()=>{
           if(typeof window != undefined ) {
