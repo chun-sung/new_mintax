@@ -14,9 +14,11 @@ const advent_Pro = Advent_Pro({
 let mode = cookies().get('mode') 
 // console.log(mode?.value)
 
+/** @type {import("next").Viewport} */
 export const viewport = {
-  themeColor: `${ mode?.value == undefined || mode?.value == 'lightMode' ? '#ffffff' : '#000000' }`
+  themeColor:  `${ mode?.value == undefined || mode?.value == 'lightMode' ? '#ffffff' : '#000000' }`
 }
+
 
 export const metadata = {
   title: "n-MinTax",
