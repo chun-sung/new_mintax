@@ -17,19 +17,19 @@ export default function Login({mode}) {
 			<div className="lg:ml-[-28px] lg:w-96 mb-3  text-center">   
 					<form>
 							<div className="relative sm:mb-0 flex-grow w-full mb-2">
-									<label htmlFor="full-name" className="leading-7 text-[12px] text-gray-600 mr-2">ID </label>
+									<label htmlFor="full-name" className="leading-7 text-[12px] text-gray-400 mr-2">ID </label>
 									<input type="text" id="full-name" name="user_id" className="w-56 h-9 bg-gray-200 bg-opacity-50 rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-md outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" 
 									/>
 							</div>
 							<div className="relative sm:mb-0 flex-grow w-full mt-2 ml-[-4px]">
-									<label htmlFor="name" className="leading-7 text-[12px] text-gray-600 mr-2">PW </label>
+									<label htmlFor="name" className="leading-7 text-[12px] text-gray-400 mr-2">PW </label>
 									<input type="password" id="name" name="password" className="w-56 h-9 bg-gray-200 bg-opacity-50 ml-[0.5px] rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" 
 										onKeyUp={()=>{ window.event.keyCode === 13 ? loginEnter() : null }}
 									/>
 							</div>
 					</form>
 			</div>
-			<div className="mt-2 ml-6 text-center text-sm">
+			<div className="mt-2 ml-1 text-center text-sm">
 					<button className="p-1.5 px-4 shadow rounded mr-2 bg-blue-400 hover:bg-blue-500 text-white" onClick={()=> { 
 						return loginEnter()
 					}}>확인</button>
