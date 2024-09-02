@@ -11,16 +11,12 @@ const advent_Pro = Advent_Pro({
   subsets: ["latin"]
 });
 
-// console.log(mode?.value)
-
-// /** @type {import("next").Viewport} */
-// export const viewport = {
-//   themeColor: 'black',
-// }
+let mode = cookies().get('mode') 
 
 /** @type {import("next").Viewport} */
 export const viewport = {
   themeColor: [
+    {mode: undefined, color: '#ffffff' },
     {mode: 'lightMode', color: '#ffffff' },
     {mode: 'darkMode', color: '#000000' }    
   ]
@@ -33,7 +29,6 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   
-  let mode = cookies().get('mode') 
 
   return (
     <html lang="ko">            
