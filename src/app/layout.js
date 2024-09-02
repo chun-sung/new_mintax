@@ -21,6 +21,8 @@ const advent_Pro = Advent_Pro({
 //   ]
 // }
 
+let mode = cookies().get('mode') 
+
 export const metadata = {
   title: "n-MinTax",
   description: "Audit Company",
