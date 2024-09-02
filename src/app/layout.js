@@ -14,16 +14,16 @@ const advent_Pro = Advent_Pro({
 export const metadata = {
   title: "n-MinTax",
   description: "Audit Company",
-  // themeColor: `${ mode?.value == undefined || mode?.value == 'lightMode' ? '#ffffff' : '#000000' }`
 };
 
 export default function RootLayout({ children }) {
   
   let mode = cookies().get('mode') 
+  // 다크모드를 위해서 아래 <head> 태그를 사용해야 쿠키값이 바로 적용 된다.
   
   return (
     <html lang="ko">
-      <head>
+      <head> 
         <link rel="icon" href="/favicon.ico" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content={`${ mode?.value == undefined || mode?.value == 'lightMode' ? '#ffffff' : '#000000' }`} />

@@ -9,12 +9,12 @@ export default function Login({mode}) {
 
   return (
 		<div className={ user.login !== true ? 'hidden' : mode == 'lightMode' ? "absolute border-stone-400 border-[1px] bg-white  w-[320px] lg:w-[380px] lg:mt-10 top-[140px] lg:top-[200px] p-5 h-58 lg:h-58 shadow-2xl z-10 rounded left-[50%] translate-x-[-50%]"
-			: "absolute border-stone-400 border-[1px] bg-gray-500 w-[320px] lg:w-[380px] lg:mt-10 top-[140px] lg:top-[200px] p-5 h-58 lg:h-58 shadow-2xl z-10 rounded left-[50%] translate-x-[-50%]"
+			: "absolute border-stone-600 border-[1px] bg-gray-700 w-[320px] lg:w-[380px] lg:mt-10 top-[140px] lg:top-[200px] p-5 h-58 lg:h-58 shadow-2xl z-10 rounded left-[50%] translate-x-[-50%]"
 		}>
 			<div className="text-center mb-2">                   
 					<span className="text-md text-black">Welcome to MinTax</span>
 			</div>
-			<div className="lg:ml-[-28px] lg:w-96 mb-3  text-center">   
+			<div className="lg:ml-[-28px] lg:w-96 mb-3 text-center">   
 					<form>
 							<div className="relative sm:mb-0 flex-grow w-full mb-2 ml-[-9px] lg:ml-[-2px]">
 									<label htmlFor="full-name" className="leading-7 text-[12px] text-gray-400 mr-2">ID </label>
