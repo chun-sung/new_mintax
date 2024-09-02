@@ -29,14 +29,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   
   let mode = cookies().get('mode') 
-  
+
   return (
     <html lang="ko">            
       <link rel="icon" href="/favicon.ico" />
       <link rel="manifest" href="/manifest.json" />
-      <meta name="theme-color" content={`${ mode?.value == undefined || mode?.value == 'lightMode' ? '#ffffff' : '#000000' }`} />
+      {/* <meta name="theme-color" content={`${ mode?.value == undefined || mode?.value == 'lightMode' ? '#ffffff' : '#000000' }`} /> */}
 
-      <body className={`relative ${inter.className} ${ mode?.value == undefined || mode?.value == 'lightMode' ? 'lightMode' : 'darkMode' }`}>        
+      {/* <body className={`relative ${inter.className} ${ mode?.value == undefined || mode?.value == 'lightMode' ? 'lightMode' : 'darkMode' }`}>         */}
+      <body className={`relative ${inter.className} ${ mode?.value == undefined || mode?.value == 'lightMode' 
+          ? document.querySelector('body')?.classList.add('lightMode') 
+          : document.querySelector('body')?.classList.remove('lightMode'), document.querySelector('body')?.classList.add('darkMode')
+        }`}>      
+      
         <Providers>
           <Header />          
             {children}          
