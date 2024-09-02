@@ -54,14 +54,13 @@ export default function Navbar({mode, setMode}) {
       `${mode !== 'darkMode' ? 'bg-slate-100 lg:h-[50px] border lg:border-0 rounded lg:bg-slate-900 lg:text-white lg:block start end' :'bg-gray-800 text-white lg:h-[50px] border lg:border-0 rounded lg:bg-slate-900 lg:text-white lg:block start end' }`}>
     <div className="mt-3 lg:mt-0 lg:w-[1000px] text-center m-auto leading-[50px]">
         <Link onClick={()=>{
-          // if(typeof window != undefined ) {
+          if(typeof window != undefined ) {
             if(mode == 'lightMode') {                                    
                     document.cookie = 'mode=darkMode; max-age=' + (3600 * 24 * 400)
                     setMode('darkMode')
                     // console.log(mode)
                     setTimeout(()=> {
                       document.querySelector('.any')?.classList.add('none') // 커버 삭제 display: 'none'
-                      document.querySelector('body')?.classList.add('darkMode') // 다크모드 클래스 추가
                       router.refresh()                    
                     }, 100)                                
             } else {
@@ -70,11 +69,10 @@ export default function Navbar({mode, setMode}) {
                 // console.log(mode)
                 setTimeout(()=> {
                   document.querySelector('.any')?.classList.add('none') // 커버 삭제 display: 'none'
-                  document.querySelector('body')?.classList.remove('darkMode') // 다크모드 클래스 추가
                   router.refresh()                
                 }, 100)
             }
-          // }  
+          }  
         }}
           className="mr-0 align-middle lg:mr-5 text-xl hidden lg:inline-block" href="#">{ mode == 'darkMode' ? '🌙' : '🌞' }</Link>
         <Link href={'/smart'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
