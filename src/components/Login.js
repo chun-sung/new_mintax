@@ -1,6 +1,7 @@
 'use client'
 import { useDispatch, useSelector } from "react-redux";
 import { SET_LOGIN_WINDOW } from  "../redux/reducers/userSlice";
+import clsx from "clsx";
 
 export default function Login({mode}) {
 
@@ -13,19 +14,22 @@ export default function Login({mode}) {
 		}>
 			<div className="text-center mb-2">                   
 					<span className={ mode == 'lightMode' ? "text-md text-black"
-						: "text-md text-white"
+						: "text-md text-gray-400"
 					}>Welcome to MinTax</span>
 			</div>
 			<div className="lg:ml-[-28px] lg:w-96 mb-3 text-center">   
 					<form>
 							<div className="relative sm:mb-0 flex-grow w-full mb-2 ml-[-9px] lg:ml-[-2px]">
 									<label htmlFor="full-name" className="leading-7 text-[12px] text-gray-400 mr-2">ID </label>
-									<input type="text" id="full-name" name="user_id" className="w-52 h-9 bg-gray-200 bg-opacity-50 rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-md outline-none text-gray-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" 
-									/>
+									<input type="text" id="full-name" name="user_id" 
+										className={clsx("w-52 h-9 bg-gray-200 bg-opacity-50 rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-md outline-none text-gray-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out",
+											{ "text-white" : mode === 'darkMode' })}/>
 							</div>
 							<div className="relative sm:mb-0 flex-grow w-full mt-2 ml-[-13px] lg:ml-[-5px]">
 									<label htmlFor="name" className="leading-7 text-[12px] text-gray-400 mr-2">PW </label>
-									<input type="password" id="name" name="password" className="w-52 h-9 bg-gray-200 bg-opacity-50 ml-[0.5px] rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-base outline-none text-gray-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" 
+									<input type="password" id="name" name="password" 
+										className={clsx("w-52 h-9 bg-gray-200 bg-opacity-50 ml-[0.5px] rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-base outline-none text-gray-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" ,
+											 {"text-white" : mode === 'darkMode'})}
 										onKeyUp={()=>{ window.event.keyCode === 13 ? loginEnter() : null }}
 									/>
 							</div>
