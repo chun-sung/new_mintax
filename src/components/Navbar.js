@@ -62,8 +62,8 @@ export default function Navbar({mode, setMode}) {
                     setTimeout(()=> {
                       document.querySelector('.any')?.classList.add('none') // 커버 삭제 display: 'none'
                       document.querySelector('body')?.classList.add('darkMode') // 다크모드 클래스 추가
+                      router.refresh()                    
                     }, 100)                                
-                    router.refresh()                    
             } else {
                 document.cookie = 'mode=lightMode; max-age=' + (3600 * 24 * 400)
                 setMode('lightMode')
@@ -71,8 +71,8 @@ export default function Navbar({mode, setMode}) {
                 setTimeout(()=> {
                   document.querySelector('.any')?.classList.add('none') // 커버 삭제 display: 'none'
                   document.querySelector('body')?.classList.remove('darkMode') // 다크모드 클래스 추가
+                  router.refresh()                
                 }, 100)
-                router.refresh()                
             }
           // }  
         }}
@@ -120,8 +120,8 @@ export default function Navbar({mode, setMode}) {
                     setTimeout(()=> {
                       document.querySelector('.any')?.classList.add('none') // 커버 삭제 display: 'none'
                       document.querySelector('body')?.classList.add('darkMode') // 다크모드 클래스 추가
+                      router.refresh();                  
                     }, 100)                                
-                    router.refresh();                  
             } else {
                 document.cookie = 'mode=lightMode; max-age=' + (3600 * 24 * 400)
                 setMode('lightMode')
@@ -129,8 +129,8 @@ export default function Navbar({mode, setMode}) {
                 setTimeout(()=> {
                   document.querySelector('.any')?.classList.add('none') // 커버 삭제 display: 'none'
                   document.querySelector('body')?.classList.remove('darkMode') // 다크모드 클래스 추가
+                  router.refresh();                       
                 }, 100)
-                router.refresh();                       
             }
           }  
         }}
