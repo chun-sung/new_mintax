@@ -1,4 +1,4 @@
-const { pool } = require('../../../DB/db');
+// const { pool } = require('../../../DB/db');
 import jwt from 'jsonwebtoken'
 import { cookies } from 'next/dist/client/components/headers';
 
