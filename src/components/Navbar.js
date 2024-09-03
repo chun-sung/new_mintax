@@ -49,7 +49,7 @@ export default function Navbar({mode, setMode}) {
                   />
             }
             </Link>            
-            <span className="absolute lg:hidden bottom-[9px] left-[170px] lg:left-[430px] text-blue-400 text-sm">{user.user_id}</span>
+            <span className="absolute lg:hidden bottom-[9px] left-[150px] lg:left-[430px] text-blue-400 text-sm">{user.user_id}</span>
         </div>
     </div> 
     <nav className={user.menu !== true  ? `hidden lg:block  lg:bg-slate-900 lg:text-white start lg:opacity-100` : 
