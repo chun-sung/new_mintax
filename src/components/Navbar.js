@@ -3,10 +3,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { useDispatch, useSelector } from "react-redux";
-import { SET_MENU_BTN, SET_LOGIN_WINDOW, SET_MEMBER_PANEL } from  "../redux/reducers/userSlice";
+import { SET_MENU_BTN, SET_LOGIN_WINDOW, SET_MEMBER_PANEL, SET_LOGOUT } from  "../redux/reducers/userSlice";
 import { useRouter } from "next/navigation";
 import Mobile_btn from "./Mobile_btn";
 import Image from "next/image";
+import axios from "axios";
 
 export default function Navbar({mode, setMode}) {
 
@@ -16,7 +17,7 @@ export default function Navbar({mode, setMode}) {
   const router = useRouter();
 
   return (<>
-    <div className={mode !== 'darkMode' ? "h-[60px] w-full m-auto bg-white border-b border-gray" :
+    <div className={mode !== 'darkMode' ? "relative h-[60px] w-full m-auto bg-white border-b border-gray" :
         "h-[60px] w-full m-auto bg-black border-b-0 lg:border-b-0 border-gray" 
       }> 
         <div className="relative m-auto w-[80px] pt-2.5">
@@ -48,6 +49,7 @@ export default function Navbar({mode, setMode}) {
                   />
             }
             </Link>            
+            <span className="absolute lg:hidden bottom-[9px] left-[170px] lg:left-[430px] text-blue-400 text-sm">{user.user_id}</span>
         </div>
     </div> 
     <nav className={user.menu !== true  ? `hidden lg:block  lg:bg-slate-900 lg:text-white start lg:opacity-100` : 
@@ -101,14 +103,41 @@ export default function Navbar({mode, setMode}) {
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/board'
           })}>Board</Link>      
           
-        <p className={`h-10 w-[10px] ml-[115px] lg:hidden `}>Guest</p>
-
-        <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(true));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(false));}}
-          className="mt-0 lg:mt-0 ml-[-30px] mr-[10px] border-[0.5px] bg-slate-700 hover:lg:bg-white text-white lg:text-white lg:hover:text-black w-[70px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
-          >Login</button>        
-        <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(false));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(true));}}
-          className="mt-0 lg:mt-0 border-[0.5px] bg-blue-500 text-white lg:text-black hover:text-white w-[80px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
-          >Sign up</button>
+        {
+          user.user_id !== null ? <p className={`h-10 w-[10px] ml-[-20px] text-red-500 font-bold inline `}><span className="text-blue-400">{user.user_id}</span></p>
+          :
+          <p className={`h-10 w-[10px] ml-[115px] lg:hidden`}>Guest</p>
+        }
+        {
+          user.user_id !== null ? 
+          <button onClick={()=>{
+            if(confirm('로그아웃 하시겠습니까?')) {
+              axios({
+                  url:"http://localhost:3005/api/logout",
+                  method: "POST",
+                  withCredentials: true,
+              }).then((res) => {
+                  if(res.data.msg == 'success') {
+                      dispatch(SET_LOGOUT(null));
+                      dispatch(SET_CONSULTING_PANEL(false));
+                      dispatch(SET_MENU_BTN(false));
+                      console.log('로그아웃 성공')
+                      router.push('/')
+                  }
+              }).catch(err => console.log(err))
+          }
+          }}
+            className="mt-[30px] lg:mt-0 ml-[20px] mr-[10px] border-[0.5px] bg-slate-700 hover:lg:bg-white text-white lg:text-white lg:hover:text-black w-[70px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
+            >Logout</button>
+          :<>
+            <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(true));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(false));}}
+              className="mt-0 lg:mt-0 ml-[-30px] mr-[10px] border-[0.5px] bg-slate-700 hover:lg:bg-white text-white lg:text-white lg:hover:text-black w-[70px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
+              >Login</button>        
+            <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(false));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(true));}}
+              className="mt-0 lg:mt-0 border-[0.5px] bg-blue-500 text-white lg:text-black hover:text-white w-[80px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
+              >Sign up</button>
+          </>
+        }
         <Link onClick={()=>{
           if(typeof window != undefined ) {
             if(mode == 'lightMode') {                                    

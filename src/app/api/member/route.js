@@ -1,35 +1,38 @@
 // const {pool} = require('../../DB/db');
-import { pool } from '@vercel/postgres'
+import { db } from '@vercel/postgres'
 import bcrypt from 'bcrypt'
 
 
 // 회원 정보 API 제공 (GET)
 export async function GET(req) {
-    const user = await pool`SELECT * FROM users`;
-    let { rows }  =  data 
+    const user = await db`SELECT * FROM members`;
+    let { rows }  =  user 
     console.log(rows)
-    return new Response(JSON.stringify(user))
+    return new Response(JSON.stringify(rows))
 }  
 
 // 회원 가입 (POST)
 export async function POST(req) {   
+
     let body = await req.json()
-    const headers = new Headers();
-    headers.append(`Access-Control-${HEADER_TYPE}`, '*');
-    try {
-        const results = await pool`SELECT * FROM members WHERE user_id='${body.user_id}' `;    
+    console.log('Body.user_id', body.user_id)
+
+    try {        
+        const member = await db`SELECT * FROM members WHERE user_id=${body.user_id}`;    
+        console.log('Member', member.rows)        
         
-        if(results.length == 1) {                                      // ID 중복 체크
-            
+        if(member.rows.length == 1) {                                      // ID 중복 체크
+                        
             return new Response(JSON.stringify({msg: 'id_fail'}))
+
         } else {        
     
             let hash = await bcrypt.hash(body.password, 10)
 
-            await pool`
+            await db`
                 INSERT INTO members(user_id, nickName ,password)
                 Values
-                ('${body.user_id}', '${body.nickName}', '${hash}') 
+                (${body.user_id}, ${body.nickName}, ${hash}) 
             `;
             return new Response(JSON.stringify({msg: 'success'}))
         }
@@ -37,7 +40,6 @@ export async function POST(req) {
 
         throw err;
     } finally {
-
-        pool.end()
+        
     }
 }

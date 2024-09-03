@@ -1,12 +1,56 @@
 'use client'
 import { useDispatch, useSelector } from "react-redux";
-import { SET_LOGIN_WINDOW } from  "../redux/reducers/userSlice";
+import { SET_LOGIN_WINDOW, SET_LOGIN, SET_MENU_BTN } from  "../redux/reducers/userSlice";
 import clsx from "clsx";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Login({mode}) {
 
+	const [user_id, setUserId] = useState('')
+	const [password, setPassword] = useState('')   
+
 	const { user } = useSelector(state => state.user);
 	const dispatch = useDispatch();
+	const router = useRouter();
+
+	// 로그인 함수
+	function loginEnter() {
+		if(user_id == '') {
+			alert('ID를 입력하세요')
+			return 
+		} else if(password == '') {
+			alert('패스워드를 입력하세요')
+			return
+		}
+		let userInfo = {user_id, password}
+
+		fetch('http://localhost:3005//api/login', {
+			method: 'POST',
+			body: JSON.stringify(userInfo)
+		})
+		.then((res) => {
+		return res.json();
+		})
+		.then(data => {
+			console.log('데이터',data)            
+			if(data.msg == 'success') {
+
+				const { user_id, nickName } = data;
+				dispatch(SET_LOGIN({user_id, nickName}))
+				dispatch(SET_LOGIN_WINDOW(false))				
+				router.push('/')          // mypage 이동이 불편할 수도...
+				
+			} else if(data.msg == 'pw_fail') {
+				
+				alert('비밀번호가 틀립니다.')		
+			} else if( data.msg == 'id_fail') {
+
+				alert('존재하지 않는 회원 ID 입니다.')
+			}
+		})
+		.catch((err) => console.log(err))
+	}
 
   return (
 		<div className={ user.login !== true ? 'hidden' : mode == 'lightMode' ? "absolute border-stone-400 border-[1px] bg-white  w-[320px] lg:w-[380px] lg:mt-10 top-[140px] lg:top-[200px] p-5 h-58 lg:h-58 shadow-2xl z-10 rounded left-[50%] translate-x-[-50%]"
@@ -23,7 +67,9 @@ export default function Login({mode}) {
 									<label htmlFor="full-name" className="leading-7 text-[12px] text-gray-400 mr-2">ID </label>
 									<input type="text" id="full-name" name="user_id" 
 										className={clsx("w-52 h-9 bg-gray-200 bg-opacity-50 rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-md outline-none text-gray-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out",
-											{ "text-white" : mode === 'darkMode' })}/>
+											{ "text-white" : mode === 'darkMode' })}
+										onChange={(e) => setUserId(e.target.value)}
+										/>
 							</div>
 							<div className="relative sm:mb-0 flex-grow w-full mt-2 ml-[-13px] lg:ml-[-5px]">
 									<label htmlFor="name" className="leading-7 text-[12px] text-gray-400 mr-2">PW </label>
@@ -31,6 +77,7 @@ export default function Login({mode}) {
 										className={clsx("w-52 h-9 bg-gray-200 bg-opacity-50 ml-[0.5px] rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-base outline-none text-gray-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" ,
 											 {"text-white" : mode === 'darkMode'})}
 										onKeyUp={()=>{ window.event.keyCode === 13 ? loginEnter() : null }}
+										onChange={(e) => setPassword(e.target.value)}
 									/>
 							</div>
 					</form>

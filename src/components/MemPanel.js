@@ -81,17 +81,17 @@ export default function MemPanel({mode}) {
 											nickName,
 											password, 
 									}
-									fetch('https://n-mintax.store/member', {
+									fetch('http://localhost:3005/api/member', {
 											method: 'POST',
 											body: JSON.stringify(user)
 									})
-									.then((res) => {
+									.then((res) => {										
 											return res.json();
 									})
 									.then(data => {
 											if(data.msg == 'success') {
 													alert('회원 가입이 완료되었습니다')   
-													dispatch(SET_MEMBER_PANEL(false))                            
+													dispatch(SET_MEMBER_PANEL(false))   													
 											} else if(data.msg == 'id_fail') {
 													alert('이미 사용중인 아이디 입니다.')
 											}
