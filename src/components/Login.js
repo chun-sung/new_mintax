@@ -33,7 +33,7 @@ export default function Login({mode}) {
 		return res.json();
 		})
 		.then(data => {
-			console.log('데이터',data)            
+			// console.log('데이터',data)            
 			if(data.msg == 'success') {
 
 				const { user_id, nickName } = data;
