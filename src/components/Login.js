@@ -25,7 +25,7 @@ export default function Login({mode}) {
 		}
 		let userInfo = {user_id, password}
 
-		fetch('https://www.n-mintax.store/api/login', {
+		fetch('https://n-mintax.store/api/login', {
 			method: 'POST',
 			body: JSON.stringify(userInfo)
 		})
@@ -33,14 +33,15 @@ export default function Login({mode}) {
 		return res.json();
 		})
 		.then(data => {
-			// console.log('데이터',data)            
+			console.log('데이터',data)            
 			if(data.msg == 'success') {
 
 				const { user_id, nickName } = data;
 				dispatch(SET_LOGIN({user_id, nickName}))
 				dispatch(SET_LOGIN_WINDOW(false))				
-				router.push('/')          // mypage 이동이 불편할 수도...
-				
+				router.push('/');          // mypage 이동이 불편할 수도...
+				// setPassword('');
+				// setUserId('');
 			} else if(data.msg == 'pw_fail') {
 				
 				alert('비밀번호가 틀립니다.')
@@ -48,6 +49,7 @@ export default function Login({mode}) {
 			} else if( data.msg == 'id_fail') {
 
 				alert('존재하지 않는 회원 ID 입니다.')
+				setUserId('');
 			}
 		})
 		.catch((err) => console.log(err))
