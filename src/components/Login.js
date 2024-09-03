@@ -23,7 +23,7 @@ export default function Login({mode}) {
 			alert('패스워드를 입력하세요')
 			return
 		}
-		let userInfo = {user_id, password}
+		let userInfo = {user_id, password} 
 
 		fetch('https://n-mintax.store/api/login', {
 			method: 'POST',

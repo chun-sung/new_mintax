@@ -92,7 +92,7 @@ export default function Consulting() {
                 >확인</button>
                 <button className="p-1.5 px-4 shadow rounded bg-red-500 hover:bg-red-300 text-white" 
                 onClick={()=> dispatch(SET_CONSULTING_PANEL(false))}
-                >취소</button>
+                >취소</button> 
             </div>
         </div> 
         : null
