@@ -34,7 +34,7 @@ export default function PageTop() {
   
     useEffect(()=>{
         setTimeout(()=> {
-            document.querySelector('.any').classList.add('none') // 커버 삭제 display: 'none'
+            document.querySelector('.any')?.classList?.add('none') // 커버 삭제 display: 'none'
         }, 300)
     })
 

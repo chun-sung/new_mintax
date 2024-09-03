@@ -25,7 +25,7 @@ export default function Login({mode}) {
 		}
 		let userInfo = {user_id, password}
 
-		fetch('http://localhost:3005//api/login', {
+		fetch('http://localhost:3005/api/login', {
 			method: 'POST',
 			body: JSON.stringify(userInfo)
 		})
@@ -43,7 +43,8 @@ export default function Login({mode}) {
 				
 			} else if(data.msg == 'pw_fail') {
 				
-				alert('비밀번호가 틀립니다.')		
+				alert('비밀번호가 틀립니다.')
+					
 			} else if( data.msg == 'id_fail') {
 
 				alert('존재하지 않는 회원 ID 입니다.')

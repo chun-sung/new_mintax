@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { useDispatch, useSelector } from "react-redux";
-import { SET_MENU_BTN, SET_LOGIN_WINDOW, SET_MEMBER_PANEL, SET_LOGOUT } from  "../redux/reducers/userSlice";
+import { SET_MENU_BTN, SET_CONSULTING_PANEL ,SET_LOGIN_WINDOW, SET_MEMBER_PANEL, SET_LOGOUT } from  "../redux/reducers/userSlice";
 import { useRouter } from "next/navigation";
 import Mobile_btn from "./Mobile_btn";
 import Image from "next/image";
@@ -101,11 +101,21 @@ export default function Navbar({mode, setMode}) {
         <Link href={'/board'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
           className={clsx("border-b lg:border-0 lg:border-0v ml-4 lg:ml-0 text-left block lg:inline mr-5 lg:mr-[50px] text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/board'
-          })}>Board</Link>      
+          })}>고객게시판</Link>
+        { user.user_id !== null ? 
+          <Link href={'/mypage'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
+            className={clsx("font-bold  lg:hidden border-b lg:border-0 lg:border-0v ml-4 lg:ml-0 text-left block lg:inline mr-5 lg:mr-[50px] text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
+              'lg:bg-white bg-red-200 lg:hover:bg-white text-black': pathname === '/mypage'
+          })}>My Page</Link> : null
+        }
           
         {
-          user.user_id !== null ? <p className={`h-10 w-[10px] ml-[-20px] text-red-500 font-bold inline `}><span className="text-blue-400">{user.user_id}</span></p>
-          :
+          user.user_id !== null ? 
+            <p onClick={()=>{ router.push('/mypage')}} 
+              className={`h-10 w-[10px] ml-[-20px] text-red-500 lg:hover:bg-white inline lg:border-[1px] lg:border-white lg:bg-red-400 lg:rounded-xl p-1`}>
+                <span className="text-blue-400">{user.user_id}</span>
+            </p>
+            :
           <p className={`h-10 w-[10px] ml-[115px] lg:hidden`}>Guest</p>
         }
         {
