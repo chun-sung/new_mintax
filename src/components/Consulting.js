@@ -86,7 +86,7 @@ export default function Consulting() {
                     //     }
                     // })
                     alert('상담 결과는 Mypage에서 확인할 수 있습니다.')
-                    alert('삼담 요청이 접수 되었습니다.')
+                    alert('상담 요청이 접수 되었습니다.')
                     setTitle('')
                     setContent('')
                     dispatch(SET_CONSULTING_PANEL(false))}}
