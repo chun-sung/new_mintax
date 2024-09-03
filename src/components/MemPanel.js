@@ -81,7 +81,7 @@ export default function MemPanel({mode}) {
 											nickName,
 											password, 
 									}
-									fetch('https://min-tax-8h5x.vercel.app/api/member', {
+									fetch('https://n-mintax.store/member', {
 											method: 'POST',
 											body: JSON.stringify(user)
 									})
