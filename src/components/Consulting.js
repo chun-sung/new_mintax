@@ -40,7 +40,7 @@ export default function Consulting() {
     {/* 상담 신청 패널 */}
     <div className="relative m-auto lg:w-[520px]">
     { user?.member_consul == true ? 
-        <div className="absolute border-stone-400 border-[1px] bg-white w-[335px] px-4 lg:px-6 lg:w-[500px] lg:mt-0 top-[-360px] lg:top-[-582px] p-3 h-92 shadow-2xl z-10 rounded left-[50%] translate-x-[-50%] stop-dragging">
+        <div className="absolute border-stone-400 border-[1px] bg-white w-[345px] px-4 lg:px-6 lg:w-[500px] lg:mt-0 top-[-360px] lg:top-[-582px] p-3 h-92 shadow-2xl z-10 rounded left-[50%] translate-x-[-50%] stop-dragging">
             <div className="text-center mb-2">
                 {/* <span>전화번호 입력 후 확인을 눌러주세요</span><br /> */}
                 <span className="text-md stop-dragging">문의 내용</span><br />
@@ -49,13 +49,13 @@ export default function Consulting() {
                 <form>
                     <div className="relative sm:mb-0 w-full mb-2">
                         <label htmlFor="full-name" className="leading-7 text-sm text-gray-600"></label>
-                        <input autoComplete="off" placeholder="제목" type="text" id="full-name" name="name" className="w-full bg-gray-200 bg-opacity-40 rounded border text-sm border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent outline-none text-gray-00 px-1 leading-8 transition-colors duration-200 ease-in-out" 
+                        <input autoComplete="off" placeholder="제목" type="text" id="full-name" name="name" className="tracking-tight w-full bg-gray-200 bg-opacity-40 rounded border text-md text-base border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent outline-none text-gray-700 px-1 leading-8 transition-colors duration-200 ease-in-out" 
                             onChange={(e) => setTitle(e.target.value)} 
                         />
                     </div>
                     <div className="relative sm:mb-0 flex-grow w-full mt-2">
                         <label htmlFor="name" className="leading-7 text-sm text-gray-900"></label>
-                        <textarea autoComplete="off" placeholder="내용" type="text" id="name" name="telNumber" className="resize-none w-full h-[210px] bg-gray-200 bg-opacity-40 rounded border border-gray-400 text-sm focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent outline-none text-gray-700 px-1 leading-normal transition-colors duration-200 ease-in-out" 
+                        <textarea autoComplete="off" placeholder="내용" type="text" id="name" name="telNumber" className="tracking-tight resize-none w-full h-[210px] bg-gray-200 bg-opacity-40 rounded border border-gray-400 text-md focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent outline-none text-gray-700 px-1 leading-normal transition-colors duration-200 ease-in-out" 
                             onChange={(e) => setContent(e.target.value)}
                         />
                     </div>
