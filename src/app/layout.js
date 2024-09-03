@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Providers } from '../redux/provider'
 import { cookies } from 'next/dist/client/components/headers'
+import ReactQueryProvider from "@/components/ReactQueryProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 const advent_Pro = Advent_Pro({ 
@@ -31,9 +32,11 @@ export default function RootLayout({ children }) {
       <body className={`relative ${inter.className} ${ mode?.value == undefined || mode?.value == 'lightMode' ? 'lightMode' : 'darkMode' }`}>        
           
         <Providers>
-          <Header />          
-            {children}          
-          <Footer />
+        <ReactQueryProvider>
+            <Header />          
+              {children}          
+            <Footer />
+          </ReactQueryProvider>
         </Providers>
       </body>
     </html>

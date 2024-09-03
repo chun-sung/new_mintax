@@ -1,14 +1,13 @@
 'use client'
-// import { useMutation, useQuery } from "@tanstack/react-query"
-// import dayjs from "dayjs"             // 날짜 포맷 
-// import Pagination from "react-js-pagination"
+import { useMutation, useQuery } from "@tanstack/react-query"
+import dayjs from "dayjs"             // 날짜 포맷 
+import Pagination from "react-js-pagination"
 import './Pagination.css';
 import { useState, useEffect, useNavigate, useLocation } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Link from "next/link";
-import PageTop from "../components/PageTop";
-// import { useRouter } from "next/router";
+import PageTop from '@/components/PageTop';
 
 
 export default function BoardList() {
@@ -55,7 +54,7 @@ export default function BoardList() {
 
     return <>
         <div className="boardList__section mt-8 bg-neutral-00 p-1 lg:p-10 w-full lg:w-[1200px] m-auto stop-dragging">
-            {/* <PageTop /> */}
+            <PageTop />
             <div className="boardList__wrapper min-h-[500px] lg:h-[600px]">
                 <div className="text-right mb-1 lg:w-[900px] m-auto">
                     <button className="shadow-md inline-block p-1 px-3 bg-blue-400 hover:bg-blue-600 text-white rounded mr-1 mb-1 text-sm stop-dragging"onClick={()=>{
@@ -108,7 +107,7 @@ export default function BoardList() {
             </div>
                 <p className="mt-3 mb-10 text-center"> {page} <span>Page</span></p>
                  </div>
-                 {/* <Pagination
+                 <Pagination
                     activePage={page}
                     itemsCountPerPage={limit}
                     totalItemsCount={posts.length}
@@ -116,7 +115,7 @@ export default function BoardList() {
                     prevPageText="‹"
                     nextPageText="›"            
                     onChange={handlePageChange}
-                /> */}
+                />
         </div>    
     </>
 }

@@ -1,5 +1,5 @@
 'use client'
-// import BoardList from "./BoardList";
+import BoardList from "./BoardList";
 import Seo from "@/components/Seo";
 import PageTop from "@/components/PageTop";
 
@@ -8,10 +8,9 @@ export default function Board() {
   return <>
     <Seo title='게시판-MinTAX'/>
     <PageTop />        
-    {/* <PageTop /> */}
     <h1 className="text-center pt-[130px] text-2xl stop-dragging">고객 게시판</h1>
 
-      {/* <BoardList /> */}
+      <BoardList />
 
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
