@@ -14,7 +14,8 @@ export async function GET(req) {
 // 회원 가입 (POST)
 export async function POST(req) {   
     let body = await req.json()
-
+    const headers = new Headers();
+    headers.append(`Access-Control-${HEADER_TYPE}`, '*');
     try {
         const results = await pool`SELECT * FROM members WHERE user_id='${body.user_id}' `;    
         
