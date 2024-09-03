@@ -92,6 +92,8 @@ export default function Login({mode}) {
 
 					<button className="p-1.5 px-4 shadow rounded bg-red-400 hover:bg-red-500 text-white" onClick={()=> {
 							dispatch(SET_LOGIN_WINDOW(false))
+							setUserId('')
+							setPassword('')
 					}}>취소</button>
 			</div>   
   	</div>

@@ -64,7 +64,7 @@ export default function Navbar({mode, setMode}) {
                     setTimeout(()=> {
                       document.querySelector('.any')?.classList.add('none') // 커버 삭제 display: 'none'
                       router.refresh()                    
-                    }, 100)                                
+                    }, 600)                                
             } else {
                 document.cookie = 'mode=lightMode; max-age=' + (3600 * 24 * 400)
                 setMode('lightMode')
@@ -72,7 +72,7 @@ export default function Navbar({mode, setMode}) {
                 setTimeout(()=> {
                   document.querySelector('.any')?.classList.add('none') // 커버 삭제 display: 'none'
                   router.refresh()                
-                }, 100)
+                }, 600)
             }
           }  
         }}
