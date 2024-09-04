@@ -3,24 +3,23 @@ import PageTopPure from "@/components/PageTopPure";
 import Seo from "@/components/Seo";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-// import { useSelector } from "react-redux";
-// import dayjs from "dayjs"  
+import { useSelector } from "react-redux";
+import dayjs from "dayjs"  
 
 
 export default function Create() {
 
     const [ title, setTitle] = useState('');
-    const [ contents, setContents] = useState('');
+    const [ content, setContent] = useState('');
 
     const router = useRouter()
-    // const { user } = useSelector( state => state.user)
-    const { user } = {}
+    const { user } = useSelector( state => state.user)
     return <>
         <Seo title='글작성 | MinTAX'/>
         {/* <PageTop /> */}
-        <h1 className="text-center mt-10 text-2xl stop-dragging">글작성</h1>
+        <h1 className="text-center pt-[90px] text-2xl stop-dragging">글작성</h1>
 
-        <div className="article__section mt-8 bg-neutral-00 p-1 lg:p-10 w-full lg:w-[1200px] m-auto">
+        <div className="article__section mt-0 bg-neutral-00 p-1 lg:p-10 w-full lg:w-[1200px] m-auto">
             <div className="article__wrapper w-full lg:w-[1000px] h-[600px] lg:h-[600px] m-auto">
             <div className="text-right mb-1 w-full lg:w-[800px] m-auto">                  
                 </div>
@@ -45,7 +44,7 @@ export default function Create() {
                                             <div className="relative">
                                                 {/* <label htmlFor="message" className="leading-7 text-sm text-gray-600">내용</label> */}
                                                 <textarea placeholder="내용" id="message" name="content" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-60 text-sm outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" onChange={(e)=>{
-                                                  setContents(e.target.value)
+                                                  setContent(e.target.value)
                                                 }}></textarea>
                                             </div>                                          
                                         </td>          
@@ -59,13 +58,19 @@ export default function Create() {
                       if(title == '') {
                         alert('제목을 입력해주세요')
                         return
-                      } else if(contents == '') {
+                      } else if(content == '') {
                         alert('내용을 입력해주세요')
                         return
                       }
 
                       // 나중에 조회수 및 보여주기 적용할 것                    
-                      // let data = { board_idx:1, title, contents, user_id: user.user_id, nickName: user.nickName, regist_date: dayjs(Date.now()).format('YYYY.MM.DD HH:mm.ss') }
+                      let data = { board_idx:1,  
+                                   article_idx:1,                                                                   
+                                   title, 
+                                   content,
+                                   user_id: user?.user_id,                                   
+                                   regist_date: dayjs(Date.now()).format('YYYY.MM.DD HH:mm.ss') 
+                                  }
 
                       fetch('/api/board/write',{
                         method: 'POST',

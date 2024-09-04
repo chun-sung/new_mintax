@@ -33,13 +33,13 @@ export default function Login({mode}) {
 		return res.json();
 		})
 		.then(data => {
-			console.log('데이터',data)            
+			// console.log('데이터',data)            
 			if(data.msg == 'success') {
 
 				const { user_id, nickName } = data;
 				dispatch(SET_LOGIN({user_id, nickName}))
 				dispatch(SET_LOGIN_WINDOW(false))				
-				router.push('/');          // mypage 이동이 불편할 수도...				
+				// router.push('/');          // mypage 이동이 불편할 수도...				
 				
 			} else if(data.msg == 'pw_fail') {
 				

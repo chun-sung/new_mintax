@@ -18,7 +18,7 @@ export async function POST(req) {
     try {
         const user = await db`SELECT * FROM members WHERE user_id=${body.user_id}`;   
         const { rows } = user
-        console.log('로우즈',rows)
+        // console.log('로그인',rows)
         let result = Object.values(JSON.parse(JSON.stringify(rows))); //  RowDataPacket 을 data (배열에 담긴 객체)로 최종 처리   
 
         // 존재하지 않는 ID 확인

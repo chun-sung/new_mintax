@@ -6,6 +6,9 @@ export async function GET(req) {      // 여기 코드는 사용않함
     // console.log('쿼리', query)
     try{
       const rows = await db`SELECT * FROM comments WHERE article_idx=${article_idx}`;
+      
+      console.log('검증',rows);
+
       let result = Object.values(JSON.parse(JSON.stringify(rows)));             //  RowDataPacket 을 data (배열에 담긴 객체)로 최종 처리 
         return new Response(JSON.stringify({ result }))
     } catch(err) {

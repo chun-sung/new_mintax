@@ -17,6 +17,7 @@ export default function Detail() {
     const [commentBtn, setCommentBtn] = useState(false);
 
     let id = useParams();
+    console.log(id);
     let router = useRouter();
     
   
@@ -47,17 +48,17 @@ export default function Detail() {
 
 
     // // tanstack/react-query 2  (종속 쿼리)     
-    // let { refetch } = useQuery({   
+    let { refetch } = useQuery({   
 
-    //   queryKey:['comment'],
-    //   queryFn: () =>  fetch(`/api/comments?article_idx=${article.article_idx}`).then(res => res.json()).then( res => { 
-    //     // console.log('댓글리스트',res)
-    //     setComments(res)
-    //     console.log(res);
-    //     return res
-    //   }),
-    //   enabled: !!info       // info 에 데이터가 존재해야 쿼리됨
-    // })
+      queryKey:['comment'],
+      queryFn: () =>  fetch(`/api/comments?article_idx=${article.article_idx}`).then(res => res.json()).then( res => { 
+        // console.log('댓글리스트',res)
+        setComments(res)
+        console.log(res);
+        return res
+      }),
+      enabled: !!info       // info 에 데이터가 존재해야 쿼리됨
+    })
     
 
 
@@ -66,7 +67,7 @@ export default function Detail() {
       queryKey: ['article'],        
       queryFn: () =>  fetch(`/api/comments?article_idx=${id.id}`)
       .then(res => res.json()).then( res => { 
-        // console.log(res)
+        console.log(res)
         setArticle(res)        
         return res
       }),
@@ -208,7 +209,7 @@ export default function Detail() {
 
             { article[0]?.comment_idx !==  null 
 
-              ? article.map(( item, i) => {                     
+              ? article.map((item, i) => {                     
                   return <div className="text-center mb-2 text-sm bg-orange-000 w-full lg:w-[900px] m-auto stop-dragging" key={i}>
                             <span className="inline-block bg-zinc-300 p-0.5 lg:p-1 px-3 lg:px-4 rounded-xl">{item.comment}</span>
                             <span className="text-[12px] lg:text-[12px] ml-2 mr-2 rounded-full bg-indigo-400 text-white py-[1px] px-2 pb-0.5 leading-[10%]">{item.nickName_comment}</span>

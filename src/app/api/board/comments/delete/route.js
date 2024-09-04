@@ -7,7 +7,7 @@ export async function POST(req) {
     try{
       const rows = await db`DELETE FROM comments WHERE comment_idx=${body.comment_idx}`;
 
-      // console.log('결과',rows)
+      console.log('결과',rows)
 
       if(rows.affectedRows == 1) {
         console.log('댓글 1건 삭제 완료')
