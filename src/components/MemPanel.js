@@ -81,7 +81,7 @@ export default function MemPanel({mode}) {
 											nickName,
 											password, 
 									}
-									fetch('http://localhost:3005/api/member', {
+									fetch('https://www.n-mintax.store/api/member', {
 											method: 'POST',
 											body: JSON.stringify(user)
 									})
@@ -98,6 +98,7 @@ export default function MemPanel({mode}) {
 									}).catch(err => console.log(err))}}
 							>확인</button>
 							<button className="p-1.5 px-4 rounded shadow bg-red-400 hover:bg-red-500 text-white" 
+							
 									onClick={()=> dispatch(SET_MEMBER_PANEL(false))}
 							>취소</button>
 					</div>

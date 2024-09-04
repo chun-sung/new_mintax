@@ -25,7 +25,7 @@ export default function Login({mode}) {
 		}
 		let userInfo = {user_id, password} 
 
-		fetch('http://localhost:3005/api/login', {
+		fetch('https://www.n-mintax.store/api/login', {
 			method: 'POST',
 			body: JSON.stringify(userInfo)
 		})
@@ -39,17 +39,14 @@ export default function Login({mode}) {
 				const { user_id, nickName } = data;
 				dispatch(SET_LOGIN({user_id, nickName}))
 				dispatch(SET_LOGIN_WINDOW(false))				
-				router.push('/');          // mypage 이동이 불편할 수도...
-				// setPassword('');
-				// setUserId('');
+				router.push('/');          // mypage 이동이 불편할 수도...				
+				
 			} else if(data.msg == 'pw_fail') {
 				
-				alert('비밀번호가 틀립니다.')
-					
+				alert('비밀번호가 틀립니다.')					
 			} else if( data.msg == 'id_fail') {
 
-				alert('존재하지 않는 회원 ID 입니다.')
-				setUserId('');
+				alert('존재하지 않는 회원 ID 입니다.')				
 			}
 		})
 		.catch((err) => console.log(err))
@@ -68,32 +65,34 @@ export default function Login({mode}) {
 					<form>
 							<div className="relative sm:mb-0 flex-grow w-full mb-2 ml-[-9px] lg:ml-[-2px]">
 									<label htmlFor="full-name" className="leading-7 text-[12px] text-gray-400 mr-2">ID </label>
-									<input type="text" id="full-name" name="user_id" autoComplete="off"
+									<input type="text" id="full-name" name="user_id" 
 										className={clsx("w-52 h-9 bg-gray-200 bg-opacity-50 rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-md outline-none text-gray-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out",
 											{ "text-white" : mode === 'darkMode' })}
 										onChange={(e) => setUserId(e.target.value)}
+										defaultValue={user_id}
 									/>
 							</div>
 							<div className="relative sm:mb-0 flex-grow w-full mt-2 ml-[-13px] lg:ml-[-5px]">
 									<label htmlFor="name" className="leading-7 text-[12px] text-gray-400 mr-2">PW </label>
-									<input type="password" id="name" name="password" autoComplete="off"
+									<input type="password" id="name" name="password" 
 										className={clsx("w-52 h-9 bg-gray-200 bg-opacity-50 ml-[0.5px] rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-base outline-none text-gray-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" ,
 											 {"text-white" : mode === 'darkMode'})}
 										onKeyUp={()=>{ window.event.keyCode === 13 ? loginEnter() : null }}
 										onChange={(e) => setPassword(e.target.value)}
+										defaultValue={password}
 									/>
 							</div>
 					</form>
 			</div>
 			<div className="mt-2 ml-1 text-center text-sm">
-					<button className="p-1.5 px-4 shadow rounded mr-2 bg-blue-400 hover:bg-blue-500 text-white" onClick={()=> { 
-						return loginEnter()
+					<button className="p-1.5 px-4 shadow rounded mr-2 bg-blue-400 hover:bg-blue-500 text-white" onClick={()=> {
+						
+						loginEnter();
 					}}>확인</button>
 
 					<button className="p-1.5 px-4 shadow rounded bg-red-400 hover:bg-red-500 text-white" onClick={()=> {
-							dispatch(SET_LOGIN_WINDOW(false))
-							setUserId('')
-							setPassword('')
+
+						dispatch(SET_LOGIN_WINDOW(false));				
 					}}>취소</button>
 			</div>   
   	</div>
