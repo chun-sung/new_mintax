@@ -63,7 +63,7 @@ export default function Detail() {
 
 
     // tanstack/react-query 3            
-    const { isLoading, error, data, postQuery, refetch } = useQuery({
+    const { isLoading, error, data, postQuery } = useQuery({
       queryKey: ['article'],        
       queryFn: () =>  fetch(`/api/comments?article_idx=${id.id}`)
       .then(res => res.json()).then( res => { 
