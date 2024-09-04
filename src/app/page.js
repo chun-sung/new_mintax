@@ -3,9 +3,9 @@ import { db } from '@vercel/postgres'
 import Consulting from "@/components/Consulting";
 
 export default async function Home() {
-  const data = await db`SELECT * FROM users`;
+  const data = await db`SELECT * FROM members`;
   let { rows }  =  data 
-  console.log(rows[0].name);
+  console.log(rows[0].user_id);
 
   return (<>
     <main className="z-0 lg:pt-[110px] start2">    

@@ -49,8 +49,7 @@ export default function BoardList() {
     if(isLoading) return <div className="text-center mt-10 p-2 bg-red-400 text-white w-36 rounded-lg m-auto">Loading...</div>
 
         // useQuery 에러처리
-    if(error) return <pre>{JSON.stringify(postQuery?.error)}</pre>
-
+    if(error) return <pre>{JSON.stringify(postQuery?.error)}</pre>    
 
     return <>
         <div className="boardList__section mt-8 bg-neutral-00 p-1 lg:p-10 w-full lg:w-[1200px] m-auto stop-dragging">
