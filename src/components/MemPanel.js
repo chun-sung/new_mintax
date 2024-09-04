@@ -81,7 +81,7 @@ export default function MemPanel({mode}) {
 											nickName,
 											password, 
 									}
-									fetch('https://www.n-mintax.store/api/member', {
+									fetch('https://n-mintax.store/api/member', {
 											method: 'POST',
 											body: JSON.stringify(user)
 									})
