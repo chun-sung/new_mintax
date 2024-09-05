@@ -3,7 +3,7 @@ import PageTopPure from "@/components/PageTopPure";
 import Seo from "@/components/Seo";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 // import dayjs from "dayjs"  
 
 

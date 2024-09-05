@@ -64,11 +64,11 @@ export default function Create() {
                       }
 
                       // 나중에 조회수 및 보여주기 적용할 것                    
-                      let data = { board_idx:1,  
-                                   article_idx:1,                                                                   
+                      let data = { board_idx: 1,  
+                                   article_idx: 1,                                                                   
                                    title, 
                                    content,
-                                   user_id: user?.user_id,                                   
+                                   regist_userid: user?.user_id,                                   
                                    regist_date: dayjs(Date.now()).format('YYYY.MM.DD HH:mm.ss') 
                                   }
 

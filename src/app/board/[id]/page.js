@@ -10,7 +10,7 @@ import { useQuery } from "@tanstack/react-query";
 export default function Detail() {
 
    const user = useSelector(state => state.user.user)
-
+    
     const [article, setArticle] = useState([]);
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState('');
@@ -48,27 +48,27 @@ export default function Detail() {
 
 
     // // tanstack/react-query 2  (종속 쿼리)     
-    let { refetch } = useQuery({   
+    // let { refetch } = useQuery({   
 
-      queryKey:['comment'],
-      queryFn: () =>  fetch(`/api/comments?article_idx=${article.article_idx}`).then(res => res.json()).then( res => { 
-        // console.log('댓글리스트',res)
-        setComments(res)
-        console.log(res);
-        return res
-      }),
-      enabled: !!info       // info 에 데이터가 존재해야 쿼리됨
-    })
+    //   queryKey:['comment'],
+    //   queryFn: () =>  fetch(`/api/comments?article_idx=${article.article_idx}`).then(res => res.json()).then( res => { 
+    //     // console.log('댓글리스트',res)
+    //     setComments(res)
+    //     console.log(res);
+    //     return res
+    //   }),
+    //   enabled: !!info       // info 에 데이터가 존재해야 쿼리됨
+    // })
     
 
 
     // tanstack/react-query 3            
-    const { isLoading, error, data, postQuery } = useQuery({
+    const { isLoading, error, data, postQuery, refetch } = useQuery({
       queryKey: ['article'],        
-      queryFn: () =>  fetch(`/api/comments?article_idx=${id.id}`)
+      queryFn: () =>  fetch(`/api/board/comments?article_idx=${id.id}`)
       .then(res => res.json()).then( res => { 
-        console.log(res)
-        setArticle(res)        
+        console.log('Board[id]', res)
+        setArticle(res.result)        
         return res
       }),
     })          
@@ -88,12 +88,12 @@ export default function Detail() {
         </div>
 
       {/* 게시글 출력창 */}
-        <div className="article__section mt-8 bg-neutral-000 p-1 lg:p-10 w-full lg:w-[1200px] m-auto">
+        <div className="article__section mt-[100px] bg-neutral-000 p-1 lg:p-10 w-full lg:w-[1200px] m-auto">
             <div className="article__wrapper w-full lg:w-[1000px] h-full lg:h-full m-auto">
                 <div className="text-right mb-2 w-full lg:w-[900px] m-auto stop-dragging">
                     {/* <button className="shadow-md inline-block p-1 px-3 bg-gray-400 hover:bg-gray-600 text-white rounded mr-1 mb-0 text-sm" onClick={() => router.back()}>뒤로</button> */}
                     <button className="shadow-md inline-block p-1 px-3 bg-gray-400 hover:bg-gray-600 text-white rounded mr-1 mb-0 text-sm" onClick={() => router.push(`/board?page=${pageNumber}`)}>뒤로</button>
-                     { user.user_id == article[0]?.regist_userid ?
+                     { user.user_id !== null ?
                      <> 
                        <button className="shadow-md inline-block p-1 px-3 bg-blue-400 hover:bg-blue-600 text-white rounded mr-1 mb-0 text-sm" onClick={()=> { 
      
@@ -201,6 +201,7 @@ export default function Detail() {
             </div>
 
             {/* isLoading */}
+            
             {
               isLoading == true ? <div className="text-center mt-0 p-2 bg-red-400 text-white w-36 rounded-lg m-auto">Loading...</div> : null
             }
@@ -208,8 +209,8 @@ export default function Detail() {
             {/* 댓글 출력창  */}
 
             { article[0]?.comment_idx !==  null 
-
-              ? article.map((item, i) => {                     
+              
+              ? article?.map((item, i) => {                     
                   return <div className="text-center mb-2 text-sm bg-orange-000 w-full lg:w-[900px] m-auto stop-dragging" key={i}>
                             <span className="inline-block bg-zinc-300 p-0.5 lg:p-1 px-3 lg:px-4 rounded-xl">{item.comment}</span>
                             <span className="text-[12px] lg:text-[12px] ml-2 mr-2 rounded-full bg-indigo-400 text-white py-[1px] px-2 pb-0.5 leading-[10%]">{item.nickName_comment}</span>
@@ -236,6 +237,7 @@ export default function Detail() {
                 })                  
               : <span className="block w-60 text-center text-gray-400 bg-gray-200 m-auto rounded-full p-1 mt-3 mb-3">댓글이 없습니다</span>
             }
+            
       </div>
 
         <section className="text-gray-600 body-font my-20">

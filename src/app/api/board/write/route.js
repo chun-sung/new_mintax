@@ -14,14 +14,14 @@ import { db } from '@vercel/postgres'
 export async function POST(req) {
 
     let body = await req.json()
-    console.log(body)
+    console.log('API Board write',body)
     try{
         await db`
             INSERT INTO articles(board_idx, article_idx, regist_userid, title, content, regist_date)
             Values(
              ${body.board_idx},             
              ${body.article_idx},              
-             ${body.user_id},              
+             ${body.regist_userid},              
              ${body.title},
              ${body.content}, 
              ${body.regist_date}) 
