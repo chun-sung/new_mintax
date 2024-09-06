@@ -30,9 +30,9 @@ export async function POST(req) {
             let hash = await bcrypt.hash(body.password, 10)
 
             await db`
-                INSERT INTO members(user_id, nickName ,password)
+                INSERT INTO members(user_id, nickName ,password, email)
                 Values
-                (${body.user_id}, ${body.nickName}, ${hash}) 
+                (${body.user_id}, ${body.nickName}, ${hash}, ${body.email}) 
             `;
             return new Response(JSON.stringify({msg: 'success'}))
         }

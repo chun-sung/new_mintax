@@ -17,10 +17,9 @@ export async function POST(req) {
     console.log('API Board write',body)
     try{
         await db`
-            INSERT INTO articles(board_idx, article_idx, regist_userid, title, content, regist_date)
+            INSERT INTO articles(board_idx, regist_userid, title, content, regist_date)
             Values(
              ${body.board_idx},             
-             ${body.article_idx},              
              ${body.regist_userid},              
              ${body.title},
              ${body.content}, 

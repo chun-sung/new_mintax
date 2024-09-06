@@ -14,11 +14,11 @@ export async function GET(req) {
       SELECT articles.*, comment_length
       FROM articles
       LEFT JOIN (
-        SELECT article_idx_comment, COUNT(*) AS comment_length
+        SELECT article_idx, COUNT(*) AS comment_length
         FROM comments
-        GROUP BY article_idx_comment
+        GROUP BY article_idx
         ) AS comment_counts
-        ON articles.article_idx = comment_counts.article_idx_comment
+        ON articles.article_idx = comment_counts.article_idx
         ORDER BY articles.article_idx DESC;      
       `;
       let { rows } =  article;

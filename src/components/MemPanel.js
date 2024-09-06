@@ -8,6 +8,7 @@ export default function MemPanel({mode}) {
     
 	const { user } = useSelector((state) => state.user)    
 	const [user_id, setUserId] = useState('')
+	const [email, setEmail] = useState('')
 	const [nickName, setNickName] = useState('')
 	const [password, setPassword] = useState('')
 	const [pwCheck, setPwCheck] = useState('')   
@@ -34,6 +35,14 @@ export default function MemPanel({mode}) {
 												className={clsx("w-52 h-9 bg-gray-200 bg-opacity-40 rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-base outline-none text-gray-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out",
 													{"text-white": mode === "darkMode"})}
 													onChange={(e) => setUserId(e.target.value)} 
+											/>
+									</div>
+									<div className="relative sm:mb-0 flex-grow w-full mb-2 ml-[12px] lg:ml-[20px]">
+											<label htmlFor="id" className="leading-7 text-[12px] text-gray-400 mr-4">Email</label>
+											<input autoComplete="off" type="text" id="email" name="email" 
+												className={clsx("w-52 h-9 bg-gray-200 bg-opacity-40 rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-base outline-none text-gray-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out",
+													{"text-white": mode === "darkMode"})}
+													onChange={(e) => setEmail(e.target.value)} 
 											/>
 									</div>
 									<div className="relative sm:mb-0 flex-grow w-full mt-2 ml-[22px] lg:ml-[8px]">
@@ -80,6 +89,7 @@ export default function MemPanel({mode}) {
 											user_id,
 											nickName,
 											password, 
+											email
 									}
 									fetch('http://localhost:3005/api/member', {
 											method: 'POST',
