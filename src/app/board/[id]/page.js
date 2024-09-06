@@ -215,7 +215,7 @@ export default function Detail() {
             {/* isLoading */}
             
             {
-              isLoading == true ? <div className="text-center mt-0 p-2 bg-red-400 text-white w-36 rounded-lg m-auto">Loading...</div> : null
+              isLoading == true ? <div className="text-center p-2 bg-red-400 text-white w-36 rounded-lg m-auto">Loading...</div> : null
             }
 
             {/* 댓글 출력창  */}

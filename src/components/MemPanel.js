@@ -37,7 +37,7 @@ export default function MemPanel({mode}) {
 													onChange={(e) => setUserId(e.target.value)} 
 											/>
 									</div>
-									<div className="relative sm:mb-0 flex-grow w-full mb-2 ml-[12px] lg:ml-[20px]">
+									<div className="relative sm:mb-0 flex-grow w-full mb-2 mt-2 ml-[12px] lg:ml-[2px]">
 											<label htmlFor="id" className="leading-7 text-[12px] text-gray-400 mr-4">Email</label>
 											<input autoComplete="off" type="text" id="email" name="email" 
 												className={clsx("w-52 h-9 bg-gray-200 bg-opacity-40 rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-base outline-none text-gray-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out",
@@ -91,7 +91,7 @@ export default function MemPanel({mode}) {
 											password, 
 											email
 									}
-									fetch('https://n-mintax.store/api/member', {
+									fetch('https://www.n-mintax.store/api/member', {
 											method: 'POST',
 											body: JSON.stringify(user)
 									})
