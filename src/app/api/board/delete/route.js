@@ -3,7 +3,7 @@ import { db } from '@vercel/postgres'
 export async function POST(req) {      
 
    let body = await req.json()
-
+    console.log("보디",body)
     try{
       const rows = await db`DELETE FROM articles WHERE article_idx=${body.article_idx}`;
 
@@ -16,7 +16,7 @@ export async function POST(req) {
     } catch(err) {
       console.log(err)
     } finally {
-      pool.end()
+      
   }
 }
   

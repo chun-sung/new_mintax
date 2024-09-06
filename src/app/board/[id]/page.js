@@ -17,7 +17,8 @@ export default function Detail() {
     const [commentBtn, setCommentBtn] = useState(false);
 
     let params = useParams();
-    console.log(params.id);
+    console.log('파람스',params);
+    
     const encodeStr = params.id;
     const decodeStr = decodeURIComponent(encodeStr);
     console.log(decodeStr);
@@ -80,7 +81,7 @@ export default function Detail() {
       .then(res => res.json()).then( res => { 
         const obj = res[0]
         console.log('Board[id]', obj)
-        setArticle(res)        
+        setArticle([obj])        
         return res
       }),
     })
@@ -96,7 +97,7 @@ export default function Detail() {
         <Seo title='MinTax 게시판 | MinTAX'/>
         {/* <PageTop /> */}
         <div className="text-center pt-[100px] h-[32px] text-2xl stop-dragging">
-          <h1 className="">{article.title}</h1>
+          <h1 className="">{article[0]?.title}</h1>
         </div>
 
       {/* 게시글 출력창 */}
@@ -109,7 +110,7 @@ export default function Detail() {
                      <> 
                        <button className="shadow-md inline-block p-1 px-3 bg-blue-400 hover:bg-blue-600 text-white rounded mr-1 mb-0 text-sm" onClick={()=> { 
      
-                        user?.user_id == null ? alert('로그인 부탁드립니다') : router.push(`/board/edit/${id.id}?page=${pageNumber}`)
+                        user?.user_id == null ? alert('로그인 부탁드립니다') : router.push(`/board/edit/article_idx=${id}?page=${pageNumber}`)
      
                        }}>수정</button>
                        <button className="shadow-md inline-block p-1 px-3 bg-red-400 hover:bg-red-600 text-white rounded mr-1 mb-0 text-sm" onClick={()=> {
@@ -146,13 +147,13 @@ export default function Detail() {
                             <th width="20%">No.{article[0]?.article_idx}</th>
                             <th width="40%"></th>
                             {/* <th width="20%">{dayjs(article[0]?.regist_date).format("YY.MM.DD")}</th> */}
-                            <th width="30%" className="">{article[0]?.nickName}</th>
+                            <th width="30%" className="">{article[0]?.regist_userid}</th>
                         </tr>
                     </thead>
                 </table>
                 <div className="border-b lg:border border-1 border-slate-200 p-1 w-full lg:w-[900px] m-auto bg-zinc-100">
                     <span  colSpan='4' className="p-1.5 lg:p-3 h-96 text-lg">
-                        <br/>{article[0]?.contents}<br/><br/>
+                        <br/>{article[0]?.content}<br/><br/>
                     </span>          
                 </div>      
                 
@@ -215,7 +216,7 @@ export default function Detail() {
             {/* isLoading */}
             
             {
-              isLoading == true ? <div className="text-center p-2 bg-red-400 text-white w-36 rounded-lg m-auto">Loading...</div> : null
+              isLoading == true ? <div className="text-center mb-[800px] p-2 bg-red-400 text-white w-36 rounded-lg m-auto">Loading...</div> : null
             }
 
             {/* 댓글 출력창  */}
@@ -247,7 +248,7 @@ export default function Detail() {
                             }
                         </div>
                 })                  
-              : <span className="block w-60 text-center text-gray-400 bg-gray-200 m-auto rounded-full p-1 mt-3 mb-3">댓글이 없습니다</span>
+              : <span className="block w-60 text-center text-gray-400 bg-gray-200 m-auto rounded-full p-1 mt-3 mb-[150px] lg:mb-[300px]">댓글이 없습니다</span>
             }
             
       </div>

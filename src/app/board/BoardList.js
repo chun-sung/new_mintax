@@ -54,8 +54,8 @@ export default function BoardList() {
     
 
     return <>
-        <div className="boardList__section mt-8 bg-neutral-00 p-1 lg:p-10 w-full lg:w-[1200px] m-auto stop-dragging">
-            {/* <PageTop /> */}
+        <div className="boardList__section mt-2 bg-neutral-00 p-1 lg:p-10 w-full lg:w-[1200px] m-auto stop-dragging">
+            <PageTop />
             <div className="boardList__wrapper min-h-[500px] lg:h-[600px]">
                 <div className="text-right mb-1 lg:w-[900px] m-auto">
                     <button className="shadow-md inline-block p-1 px-3 bg-blue-400 hover:bg-blue-600 text-white rounded mr-1 mb-1 text-sm stop-dragging"onClick={()=>{
@@ -78,36 +78,36 @@ export default function BoardList() {
                             
                             {
                                 posts?.slice(offset, offset + limit).map(({ article_idx, title, regist_date, regist_userid, comment_length}, i) => {
-                                        return (
-                                                <tr className="border-b border-1 border-slate-200 hover:bg-gray-50" key={i} onClick={()=> {}}>
-                                                        <td className="p-1.5 lg:p-3">
-                                                                {offset + i + 1 }
-                                                        </td>
-                                                        <td className="lg:text-md hover:text-blue-500 hover:font-bold">
-                                                                <span className="relative inline-block text-left text-[15px] lg:text-[16px] p-1 w-full cursor-pointer" onClick={()=> {
-                                                                        router.push(`/board/article_idx=${article_idx}?page=${page}`,{state: {page:page}}, {article_idx: article_idx})}}>
-                                                                        {title} { comment_length == null  ? null :<b className="top-[2px] text-sm text-blue-500">({comment_length})</b> } { 
-                                                                        // dayjs(regist_date).format('YY.MM.DD') == dayjs().format('YY.MM.DD') 
-                                                                                                '' ? <span className=" bottom-[4px] lg:bottom-[-1px] left-[-25px] lg:right-[50px] bg-red-500 text-white rounded-2xl text-right font-bold text-[10px] lg:text-[12px] lg:p-0.5 p-1 lg:px-2 shadow-md" >New</span> 
-                                                                                                : null
-                                                                                        }
-                                                                </span>                                                
-                                                        </td >
-                                                        <td className="lg:text-md">
-                                                                {/* <span className="text-[12px] lg:text-[16px]">{dayjs(regist_date).format("YY.MM.DD")}</span> */}
-                                                                <span>{regist_date}</span>
-                                                        </td>
-                                                        <td className="">
-                                                                <span className="text-[12px] lg:text-[16px]">{regist_userid}</span>
-                                                        </td>
-                                                </tr>
+                                    return (
+                                            <tr className="border-b border-1 border-slate-200 hover:bg-gray-50" key={i} onClick={()=> {}}>
+                                                    <td className="p-1.5 lg:p-3">
+                                                            {offset + i + 1 }
+                                                    </td>
+                                                    <td className="lg:text-md hover:text-blue-500 hover:font-bold">
+                                                            <span className="relative inline-block text-left text-[15px] lg:text-[16px] p-1 w-full cursor-pointer" onClick={()=> {
+                                                                    router.push(`/board/article_idx=${article_idx}?page=${page}`,{state: {page:page}}, {article_idx: article_idx})}}>
+                                                                    {title} { comment_length == null  ? null :<b className="top-[2px] text-sm text-blue-500">({comment_length})</b> } { 
+                                                                    // dayjs(regist_date).format('YY.MM.DD') == dayjs().format('YY.MM.DD') 
+                                                                                            '' ? <span className=" bottom-[4px] lg:bottom-[-1px] left-[-25px] lg:right-[50px] bg-red-500 text-white rounded-2xl text-right font-bold text-[10px] lg:text-[12px] lg:p-0.5 p-1 lg:px-2 shadow-md" >New</span> 
+                                                                                            : null
+                                                                                    }
+                                                            </span>                                                
+                                                    </td >
+                                                    <td className="lg:text-md">
+                                                            {/* <span className="text-[12px] lg:text-[16px]">{dayjs(regist_date).format("YY.MM.DD")}</span> */}
+                                                            <span>{regist_date}</span>
+                                                    </td>
+                                                    <td className="">
+                                                            <span className="text-[12px] lg:text-[16px]">{regist_userid}</span>
+                                                    </td>
+                                            </tr>
                                 )})
                             }
                             
                         </tbody>
                     </table>
             </div>
-                <p className="mt-3 mb-10 text-center"> {page} <span>Page</span></p>
+                <p className="mt-3 text-center"> {page} <span>Page</span></p>
                  </div>
                  <Pagination
                     activePage={page}
