@@ -9,7 +9,6 @@ import { useSelector } from "react-redux";
 import Link from "next/link";
 import PageTop from '@/components/PageTop';
 
-
 export default function BoardList() {
 
     const user = useSelector(state => state.user.user)
@@ -76,33 +75,35 @@ export default function BoardList() {
                         </thead>  
                         <tbody className="text-sm lg:text-[16px]">
                             
-                            {
-                                posts?.slice(offset, offset + limit).map(({ article_idx, title, regist_date, regist_userid, comment_length}, i) => {
-                                    return (
-                                            <tr className="border-b border-1 border-slate-200 hover:bg-gray-50" key={i} onClick={()=> {}}>
-                                                    <td className="p-1.5 lg:p-3">
-                                                            {article_idx }
-                                                    </td>
-                                                    <td className="lg:text-md hover:text-blue-500 hover:font-bold">
-                                                            <span className="relative inline-block text-left text-[15px] lg:text-[16px] p-1 w-full cursor-pointer" onClick={()=> {
-                                                                    router.push(`/board/article_idx=${article_idx}?page=${page}`,{state: {page:page}}, {article_idx: article_idx})}}>
-                                                                    {title} { comment_length == null  ? null :<b className="top-[2px] text-sm text-blue-500">({comment_length})</b> } { 
-                                                                    // dayjs(regist_date).format('YY.MM.DD') == dayjs().format('YY.MM.DD') 
-                                                                                            '' ? <span className=" bottom-[4px] lg:bottom-[-1px] left-[-25px] lg:right-[50px] bg-red-500 text-white rounded-2xl text-right font-bold text-[10px] lg:text-[12px] lg:p-0.5 p-1 lg:px-2 shadow-md" >New</span> 
-                                                                                            : null
-                                                                                    }
-                                                            </span>                                                
-                                                    </td >
-                                                    <td className="lg:text-md">
-                                                            {/* <span className="text-[12px] lg:text-[16px]">{dayjs(regist_date).format("YY.MM.DD")}</span> */}
-                                                            <span>{regist_date}</span>
-                                                    </td>
-                                                    <td className="">
-                                                            <span className="text-[12px] lg:text-[16px]">{regist_userid}</span>
-                                                    </td>
-                                            </tr>
-                                )})
-                            }
+													{
+														posts?.slice(offset, offset + limit).map(({ article_idx, title, regist_date, regist_userid, comment_length}, i) => {
+															
+															return (
+																<tr className="border-b border-1 border-slate-200 hover:bg-gray-50" key={i} onClick={()=> {}}>
+																		<td className="p-1.5 lg:p-3">
+																						{article_idx }
+																		</td>
+																		<td className="lg:text-md">
+																			<span className="relative inline-block text-left text-[15px] lg:text-[16px] p-1 w-full cursor-pointer" onClick={()=> {
+																					router.push(`/board/article_idx=${article_idx}?page=${page}`,{state: {page:page}}, {article_idx: article_idx})}}>
+																					{title} { comment_length == null  ? null :<b className="top-[2px] text-sm text-blue-500">({comment_length})</b> }
+																					{dayjs(regist_date.substring(0, 10)).format('YY.MM.DD') == dayjs().format('YY.MM.DD')
+																						? <span className="inline-block bottom-[4px] lg:bottom-[-2px] left-[-25px] lg:right-[50px] bg-red-500 text-white rounded-xl text-right text-[10px] lg:text-[12px] lg:p-0.5 px-3 lg:px-3 shadow-md">
+																							New</span> 
+																						: null
+																					}
+																			</span>                                                
+																		</td>
+																		<td className="lg:text-md">
+																						{/* <span className="text-[12px] lg:text-[16px]">{dayjs(regist_date).format("YY.MM.DD")}</span> */}
+																						<span>{regist_date}</span>
+																		</td>
+																		<td className="">
+																						<span className="text-[12px] lg:text-[16px]">{regist_userid}</span>
+																		</td>
+																</tr>
+														)})
+													}
                             
                         </tbody>
                     </table>

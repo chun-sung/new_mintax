@@ -157,14 +157,50 @@ export default function Detail() {
                             <th width="20%">No.{id}</th>
                             <th width="40%"></th>
                             {/* <th width="20%">{dayjs(article[0]?.regist_date).format("YY.MM.DD")}</th> */}
-                            <th width="30%" className="">{article[0]?.regist_userid}</th>
+                            <th width="30%" className="">작성자: {article[0]?.regist_userid}</th>
                         </tr>
                     </thead>
                 </table>
-                <div className="border-b lg:border border-1 border-slate-200 p-1 w-full lg:w-[900px] m-auto bg-zinc-100">
+                <div className="border-b lg:border border-1 border-slate-200 p-1 pb-10 w-full lg:w-[900px] m-auto bg-zinc-100 text-center">
                     <span  colSpan='4' className="p-1.5 lg:p-3 h-96 text-lg">
                         <br/>{article[0]?.content}<br/><br/>
-                    </span>          
+                        
+                        { isLoading == true ? <div className="text-center mb-[800px] p-2 bg-red-400 text-white w-36 rounded-lg m-auto">Loading...</div> : null }
+
+                    </span>
+                    <div>
+                        {/* 댓글 출력창  */}
+                      { article[0]?.comment_idx !==  null 
+                        
+                        ? article?.map((item, i) => {                     
+                            return <div className="mb-2 text-sm w-full lg:w-[900px] m-auto stop-dragging text-right lg:pr-[30px]" key={i}>
+                                      <span className="inline-block bg-zinc-200 p-0.5 lg:p-1 px-3 lg:px-4 rounded-xl">{item.comment}</span>
+                                      <span className="text-[12px] lg:text-[12px] ml-2 mr-2 rounded-full bg-indigo-400 text-white py-[5px] px-3 pb-0.5 leading-[10%]">{item.nickname_comment}</span>
+                                      {/* <span className="text-[12px] lg:text-[12px]">{dayjs(item.regist_date_comment).format('YY.MM.DD')}</span> */}
+                                      { user.user_id == item.regist_userid_comment
+                                      ? <span className="hover:bg-red-500 ml-2 w-[15px] h-[15px] inline-block text-[12px] text-white lg:text-[12px] leading-[40%] bg-red-300 rounded-full p-1 cursor-pointer" onClick={()=>{
+            
+                                        confirm(`"${item.comment}" \n댓글을 삭제하시려구요?`) 
+                                        ? fetch('/api/board/comments/delete',{
+                                          method: 'POST',
+                                          body: JSON.stringify({ comment_idx: item.comment_idx })
+                                        })
+                                        .then(res => res.json())
+                                        .then(res => { 
+                                          refetch();
+                                          // if(res.msg == 'success') return console.log('댓글 1건 삭제 되었습니다.')                       
+                                        }).catch(err => console.log(err))
+                                        
+                                        : null
+                                        }}>x</span>
+                                        : <span className="hover:bg-red-500 ml-2 w-[15px] h-[15px] inline-block text-[12px] lg:text-[12px] leading-[100%] text-black hover:text-white bg-white border-[1px] border-blue-200 rounded-full p-0 cursor-pointer text-center" 
+                                            onClick={()=> alert('내가 쓴 댓글만 삭제할 수 있어요!')}>x</span>
+                                      }
+                                  </div>
+                          })                  
+                        : <span className="block w-[100px] lg:w-[200px] text-center text-gray-400 bg-gray-200 m-auto rounded-full p-1 mt-3 lg:mt-10 mb-[0px] lg:mb-[0px] text-[10px] lg:text-[16px]">댓글이 없습니다</span>
+                      }
+                    </div>          
                 </div>      
                 
               {/* 댓글 입력 버튼 */}
@@ -226,41 +262,11 @@ export default function Detail() {
 
             {/* isLoading */}
             
-            {
+            {/* {
               isLoading == true ? <div className="text-center mb-[800px] p-2 bg-red-400 text-white w-36 rounded-lg m-auto">Loading...</div> : null
-            }
+            } */}
 
-            {/* 댓글 출력창  */}
 
-            { article[0]?.comment_idx !==  null 
-              
-              ? article?.map((item, i) => {                     
-                  return <div className="text-center mb-2 text-sm bg-orange-000 w-full lg:w-[900px] m-auto stop-dragging" key={i}>
-                            <span className="inline-block bg-zinc-300 p-0.5 lg:p-1 px-3 lg:px-4 rounded-xl">{item.comment}</span>
-                            <span className="text-[12px] lg:text-[12px] ml-2 mr-2 rounded-full bg-indigo-400 text-white py-[1px] px-2 pb-0.5 leading-[10%]">{item.nickname_comment}</span>
-                            {/* <span className="text-[12px] lg:text-[12px]">{dayjs(item.regist_date_comment).format('YY.MM.DD')}</span> */}
-                            { user.user_id == item.regist_userid_comment
-                             ? <span className="hover:bg-red-500 ml-2 w-[15px] h-[15px] inline-block text-[12px] text-white lg:text-[12px] leading-[40%] bg-red-300 rounded-full p-1 cursor-pointer" onClick={()=>{
-  
-                              confirm(`"${item.comment}" \n댓글을 삭제하시려구요?`) 
-                              ? fetch('/api/board/comments/delete',{
-                                method: 'POST',
-                                body: JSON.stringify({ comment_idx: item.comment_idx })
-                              })
-                              .then(res => res.json())
-                              .then(res => { 
-                                refetch();
-                                // if(res.msg == 'success') return console.log('댓글 1건 삭제 되었습니다.')                       
-                              }).catch(err => console.log(err))
-                              
-                              : null
-                              }}>x</span>
-                              : <span className="hover:bg-red-500 ml-2 w-[15px] h-[15px] inline-block text-[12px] lg:text-[12px] leading-[90%] text-black hover:text-white bg-white border-[1px] border-blue-200 rounded-full p-0 cursor-pointer" onClick={()=> alert('내가 쓴 댓글만 삭제할 수 있어요!')}>x</span>
-                            }
-                        </div>
-                })                  
-              : <span className="block w-60 text-center text-gray-400 bg-gray-200 m-auto rounded-full p-1 mt-3 mb-[150px] lg:mb-[300px]">댓글이 없습니다</span>
-            }
             
       </div>
 

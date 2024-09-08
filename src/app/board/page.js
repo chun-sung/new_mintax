@@ -1,4 +1,3 @@
-'use client'
 import BoardList from "./BoardList";
 import Seo from "@/components/Seo";
 import PageTop from "@/components/PageTop";
