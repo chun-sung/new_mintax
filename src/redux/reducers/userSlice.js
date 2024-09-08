@@ -4,7 +4,7 @@ const userSlice = createSlice({
     name: 'user',
     initialState: {
         user: { user_id: null,
-            nickName: null,
+            nickname: null,
             login: false,
             member_panel: false,
             member_consul: false,
@@ -14,7 +14,7 @@ const userSlice = createSlice({
     reducers: {
         SET_LOGIN(state, action) {
             state.user.user_id = action.payload.user_id
-            state.user.nickName = action.payload.nickName
+            state.user.nickname = action.payload.nickname
             state.user.login = false
         },
         SET_LOGIN_WINDOW(state, action) {
@@ -22,7 +22,7 @@ const userSlice = createSlice({
         },
         SET_LOGOUT(state, action) {
             state.user.user_id = action.payload;
-            state.user.nickName = action.payload;
+            state.user.nickname = action.payload;
             state.user.login = false
         },
         SET_MEMBER_PANEL(state, action) {

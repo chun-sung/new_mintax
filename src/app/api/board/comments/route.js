@@ -23,17 +23,17 @@ export async function GET(req) {      // 여기 코드는 사용않함
 export async function POST(req) {
 
    let body = await req.json()
-  //  console.log('POST',body)
+   console.log('POST',body)
 
    try{
        await db`
-           INSERT INTO comments(article_idx_comment, regist_userid_comment, nickName_comment, comment, regist_date_comment)
+           INSERT INTO comments(article_idx, regist_userid_comment, nickName_comment, comment, regist_date)
            Values(
-           ${body.article_idx_comment},
+           ${body.article_idx},
            ${body.regist_userid_comment},
-           ${body.nickName_comment}, 
+           ${body.nickname_comment}, 
            ${body.comment},
-           ${body.regist_date_comment}
+           ${body.regist_date}
            )`;         
       console.log('댓글 1건이 등록되었습니다.')
        return new Response(JSON.stringify({msg: 'success'}))

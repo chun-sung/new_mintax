@@ -6,8 +6,8 @@ export default async function handler(req, res) {
    const article_number = parseInt(number[0], 10);
    // const article_number = number;
 
-   console.log('쿼리', number[0])
-   console.log('숫자추출', article_number)
+   // console.log('쿼리', number[0])
+   // console.log('숫자추출', article_number)
    try{
       const rows = await db`
       SELECT p.*, c.*
@@ -16,7 +16,7 @@ export default async function handler(req, res) {
       WHERE p.article_idx = ${article_number}`;
       
       let result = Object.values(JSON.parse(JSON.stringify(rows)));        //  RowDataPacket 을 data (배열에 담긴 객체)로 최종 처리 
-      console.log(result)
+      console.log('결과과',result)
       res.json(result[2])
       return;
 

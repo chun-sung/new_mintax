@@ -81,7 +81,7 @@ export default function BoardList() {
                                     return (
                                             <tr className="border-b border-1 border-slate-200 hover:bg-gray-50" key={i} onClick={()=> {}}>
                                                     <td className="p-1.5 lg:p-3">
-                                                            {offset + i + 1 }
+                                                            {article_idx }
                                                     </td>
                                                     <td className="lg:text-md hover:text-blue-500 hover:font-bold">
                                                             <span className="relative inline-block text-left text-[15px] lg:text-[16px] p-1 w-full cursor-pointer" onClick={()=> {

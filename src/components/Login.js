@@ -25,7 +25,7 @@ export default function Login({mode}) {
 		}
 		let userInfo = {user_id, password} 
 
-		fetch('https://www.n-mintax.store/api/login', {
+		fetch('http://localhost:3005/api/login', {
 			method: 'POST',
 			body: JSON.stringify(userInfo)
 		})
@@ -33,11 +33,11 @@ export default function Login({mode}) {
 		return res.json();
 		})
 		.then(data => {
-			// console.log('데이터',data)            
+			console.log('데이터',data)            
 			if(data.msg == 'success') {
 
-				const { user_id, nickName } = data;
-				dispatch(SET_LOGIN({user_id, nickName}))
+				const { user_id, nickname } = data;
+				dispatch(SET_LOGIN({user_id, nickname}))
 				dispatch(SET_LOGIN_WINDOW(false))				
 				// router.push('/');          // mypage 이동이 불편할 수도...				
 				

@@ -9,7 +9,7 @@ export async function POST(req) {
 
       console.log('결과',rows)
 
-      if(rows.affectedRows == 1) {
+      if(rows.rowCount == 1) {
         console.log('댓글 1건 삭제 완료')
         return new Response(JSON.stringify({msg: 'success'}))
       }
