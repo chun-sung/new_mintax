@@ -46,7 +46,7 @@ export default function BoardList() {
     })
   
     // useQuery 데이터 로딩중
-    if(isLoading) return <div className="text-center mt-[100px] lg:mt-[150px] mb-[800px] p-2 bg-red-400 text-white w-36 rounded-lg m-auto">Loading...</div>
+    if(isLoading) return <div className="text-center mt-[100px] lg:mt-[150px] mb-[0px] p-2 bg-red-300 text-white w-36 rounded-full m-auto">loading...</div>
 
         // useQuery 에러처리
     if(error) return <pre>{JSON.stringify(postQuery?.error)}</pre>
