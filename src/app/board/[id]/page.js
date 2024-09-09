@@ -161,7 +161,7 @@ export default function Detail() {
                         </tr>
                     </thead>
                 </table>
-                <div className="border-b lg:border border-1 border-slate-200 p-1 pb-10 w-full lg:w-[900px] m-auto bg-zinc-100 text-center">
+                <div className="border-b lg:border border-1 border-slate-200 p-1 pb-6 w-full lg:w-[900px] m-auto bg-zinc-100 text-center">
                     <span  colSpan='4' className="p-1.5 lg:p-3 h-96 text-lg">
                         <br/>{article[0]?.content}<br/><br/>
                         
@@ -173,13 +173,17 @@ export default function Detail() {
                       { article[0]?.comment_idx !==  null 
                         
                         ? article?.map((item, i) => {                     
-                            return <div className="mb-2 text-sm w-full lg:w-[900px] m-auto stop-dragging text-right lg:pr-[30px]" key={i}>
-                                  <span className="inline-block bg-zinc-200 p-0.5 lg:p-1 px-3 lg:px-4 rounded-xl">{item.comment}
+                            return <div className="mb-1 text-sm w-full lg:w-[900px] m-auto stop-dragging text-right lg:pr-[30px]" key={i}>
+                                  <span className="inline-block bg-zinc-200 text-gray-500 text-[12px] p-0.5 lg:p-1 px-2 lg:px-4 rounded-md">{item.comment}
 
-                                  <span className="inline-block h-[20px] text-[12px] lg:text-[12px] ml-2 pt-2 rounded-full bg-indigo-400 text-white py-[5px] px-3 pb-0.5 leading-[40%]">{item.nickname_comment}</span>
+                                  <span className="inline-block h-[20px] text-[12px] lg:text-[12px] ml-2 pt-2 bg-indigo-00 text-black font-bold py-[5px] px-1 pb-0.5 leading-[40%]">
+                                    {item.nickname_comment}
+                                  </span>
+
                                   {/* <span className="text-[12px] lg:text-[12px]">{dayjs(item.regist_date_comment).format('YY.MM.DD')}</span> */}
+
                                   { user.user_id == item.regist_userid_comment
-                                    ? <span className="hover:bg-red-500 w-[15px] h-[15px] inline-block text-[12px] text-white lg:text-[12px] leading-[40%] bg-red-300 rounded-full p-1 cursor-pointer" onClick={()=>{
+                                    ? <span className="hover:bg-red-500 w-[15px] h-[15px] inline-block text-[12px] text-white lg:text-[12px] leading-[50%] bg-red-300 rounded-full p-1 cursor-pointer" onClick={()=>{
           
                                       confirm(`"${item.comment}" \n댓글을 삭제하시려구요?`) 
                                       ? fetch('/api/board/comments/delete',{
@@ -192,9 +196,13 @@ export default function Detail() {
                                         if(res.msg == 'success') return console.log('댓글을 삭제했습니다')                       
                                       }).catch(err => console.log(err))                                        
                                       : null
-                                      }}>x</span>
-                                      : <span className="hover:bg-red-500 ml-2 w-[15px] h-[15px] inline-block text-[12px] lg:text-[12px] leading-[100%] text-black hover:text-white bg-white border-[1px] border-blue-200 rounded-full p-0 cursor-pointer text-center" 
-                                          onClick={()=> alert('내가 쓴 댓글만 삭제할 수 있어요!')}>x</span>
+                                      }}>
+                                        x
+                                      </span>
+                                      : <span className="hover:bg-red-500 ml-2 w-[15px] h-[15px] inline-block text-[12px] lg:text-[12px] leading-[110%] text-black hover:text-white bg-white border-[1px] border-blue-200 rounded-full p-0 cursor-pointer text-center" 
+                                          onClick={()=> alert('내가 쓴 댓글만 삭제할 수 있어요!')}>
+                                          x
+                                         </span>
                                       }
                                   </span>
                                   </div>
@@ -220,7 +228,7 @@ export default function Detail() {
 
                   { commentBtn == true ?
                     <div className="absolute lg:absolute top-[-48px] lg:top-[-48px] lg:left-[40px] z-20 bg-gray-300 border-[1px] border-gray-300 p-1 shadow-md rounded-md w-full lg:w-[800px] m-auto">
-                      <input className="w-full pl-1 h-[35px] lg:h-[40px] leading-[3em] lg:leading-[3em] rounded border border-indigo-400 outline-indigo-400 bg-gray-100 text-[16px] lg:text-[18px]" onChange={(e) => setComment(e.target.value)} type="text" />
+                      <input className="w-full pl-1 h-[35] lg:h-[40px] leading-[3em] lg:leading-[3em] rounded border border-indigo-400 outline-indigo-400 bg-gray-100 text-[16px] lg:text-[18px]" onChange={(e) => setComment(e.target.value)} type="text" />
                       <div className="text-right">
                         <button className="shadow-md inline-block p-1 px-3 bg-blue-400 hover:bg-blue-600 text-white text-right rounded mt-2 mb-0 text-sm mr-2" onClick={()=> {
 

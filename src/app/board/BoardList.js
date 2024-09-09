@@ -88,7 +88,7 @@ export default function BoardList() {
 																					router.push(`/board/article_idx=${article_idx}?page=${page}`,{state: {page:page}}, {article_idx: article_idx})}}>
 																					{title} { comment_length == null  ? null :<b className="top-[2px] text-sm text-blue-500">({comment_length})</b> }
 																					{dayjs(regist_date.substring(0, 10)).format('YY.MM.DD') == dayjs().format('YY.MM.DD')
-																						? <span className="inline-block bottom-[4px] lg:bottom-[-2px] left-[-25px] lg:right-[50px] bg-red-500 text-white rounded-xl text-right text-[10px] lg:text-[12px] lg:p-0.5 px-3 lg:px-3 shadow-md">
+																						? <span className="inline-block bottom-[4px] ml-3 lg:bottom-[-2px] left-[-25px] lg:right-[50px] bg-red-500 text-white rounded-xl text-right text-[10px] lg:text-[12px] lg:p-0.5 px-3 lg:px-3 shadow-md">
 																							New</span> 
 																						: null
 																					}
