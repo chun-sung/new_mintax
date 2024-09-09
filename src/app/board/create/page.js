@@ -1,10 +1,10 @@
 'use client'
-import PageTopPure from "@/components/PageTopPure";
 import Seo from "@/components/Seo";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import dayjs from "dayjs"  
+import PageTop from "@/components/PageTop";
 
 
 export default function Create() {
