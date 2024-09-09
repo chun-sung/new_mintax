@@ -62,7 +62,7 @@ export default function Create() {
                                         {/* <th width="50%">수정일: {dayjs(Date.now()).format('YY.MM.DD')}</th> */}
                                         {/* <th width="10%"></th>
                                         <th width="10%"></th> */}
-                                        <th width="50%" className="font-normal">수정: {user.user_id}</th>
+                                        <th width="50%" className="font-normal text-base">수정: {user.user_id}</th>
                                     </tr>
                                 </thead>
                                 <tbody className="text-sm lg:text-md">                            

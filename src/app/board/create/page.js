@@ -29,7 +29,7 @@ export default function Create() {
                                         {/* <th width="50%">작성일: {dayjs(Date.now()).format('YY.MM.DD')}</th> */}
                                         {/* <th width="10%"></th>
                                         <th width="10%"></th> */}
-                                        <th width="50%" className="font-thin">작성자: {user?.nickName}</th>
+                                        <th width="50%" className="font-normal text-base">작성자: {user?.nickName}</th>
                                     </tr>
                                 </thead>
                                 <tbody className="text-sm lg:text-md">                            
@@ -43,7 +43,7 @@ export default function Create() {
                                             </div>                                        
                                             <div className="relative">
                                                 {/* <label htmlFor="message" className="leading-7 text-sm text-gray-600">내용</label> */}
-                                                <textarea placeholder="내용" id="message" name="content" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-60 text-sm outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" onChange={(e)=>{
+                                                <textarea placeholder="내용" id="message" name="content" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-60 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" onChange={(e)=>{
                                                   setContent(e.target.value)
                                                 }}></textarea>
                                             </div>                                          
