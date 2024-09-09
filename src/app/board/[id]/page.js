@@ -174,18 +174,18 @@ export default function Detail() {
                         
                         ? article?.map((item, i) => {                     
                             return <div className="mb-1 text-sm w-full lg:w-[900px] m-auto stop-dragging text-right lg:pr-[30px]" key={i}>
-                                  <span className="inline-block bg-zinc-200 text-gray-500 text-[12px] p-0.5 lg:p-1 px-2 lg:px-4 rounded-md">{item.comment}
+                                  <span className="inline-block bg-zinc-200 text-gray-500 text-[14px] p-0.5 lg:p-1 px-2 lg:px-4 rounded-md">{item.comment}
 
-                                  <span className="inline-block h-[20px] text-[12px] lg:text-[12px] ml-2 pt-2 bg-indigo-00 text-black font-bold py-[5px] px-1 pb-0.5 leading-[40%]">
+                                  <span className="inline-block h-[20px] text-[14px] lg:text-[14px] ml-2 pt-2 bg-indigo-00 text-black font-bold py-[5px] px-1 pb-0.5 leading-[40%]">
                                     {item.nickname_comment}
                                   </span>
 
                                   {/* <span className="text-[12px] lg:text-[12px]">{dayjs(item.regist_date_comment).format('YY.MM.DD')}</span> */}
 
                                   { user.user_id == item.regist_userid_comment
-                                    ? <span className="hover:bg-red-500 w-[15px] h-[15px] inline-block text-[12px] text-white lg:text-[12px] leading-[50%] bg-red-300 rounded-full p-1 cursor-pointer" onClick={()=>{
+                                    ? <span className="hover:bg-red-500 ml-2 w-[15px] h-[15px] inline-block text-[12px] text-white lg:text-[12px] leading-[50%] bg-red-300 rounded-full p-1 cursor-pointer" onClick={()=>{
           
-                                      confirm(`"${item.comment}" \n댓글을 삭제하시려구요?`) 
+                                      confirm(`"${item.comment}" \n댓글을 삭제할까요?`) 
                                       ? fetch('/api/board/comments/delete',{
                                         method: 'POST',
                                         body: JSON.stringify({ comment_idx: item.comment_idx })
@@ -199,7 +199,7 @@ export default function Detail() {
                                       }}>
                                         x
                                       </span>
-                                      : <span className="hover:bg-red-500 ml-2 w-[15px] h-[15px] inline-block text-[12px] lg:text-[12px] leading-[110%] text-black hover:text-white bg-white border-[1px] border-blue-200 rounded-full p-0 cursor-pointer text-center" 
+                                      : <span className="hover:bg-red-500 ml-2 w-[15px] h-[15px] inline-block text-[12px] lg:text-[12px] leading-[85%] text-black hover:text-white bg-white border-[1px] border-blue-200 rounded-full p-0.5 cursor-pointer text-center" 
                                           onClick={()=> alert('내가 쓴 댓글만 삭제할 수 있어요!')}>
                                           x
                                          </span>
@@ -211,7 +211,7 @@ export default function Detail() {
                       }
                     </div>          
                 </div>      
-                
+               
               {/* 댓글 입력 버튼 */}
 
                   <div className="text-right mb-1 w-full lg:w-[900px] m-auto stop-dragging">
@@ -268,6 +268,7 @@ export default function Detail() {
                   }
                 </div>
             </div>            
-      </div>        
+      </div>     
+      <div className="h-[20vh] lg:h-[40vh]"></div>   
     </>
 }

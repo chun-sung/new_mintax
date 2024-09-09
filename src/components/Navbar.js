@@ -49,7 +49,8 @@ export default function Navbar({mode, setMode}) {
                   />
             }
             </Link>            
-            <span className="absolute lg:hidden bottom-[-4px] left-[150px] lg:left-[430px] text-blue-300 text-sm">{user.user_id}</span>
+            <span className="absolute lg:hidden bottom-[-4px] left-[130px] lg:left-[430px] text-blue-300 
+                border-[1px] border-blue-00 px-2 rounded-md text-sm">{user.user_id}</span>
         </div>
     </div> 
     <nav className={user.menu !== true  ? `hidden lg:block  lg:bg-slate-900 lg:text-white start lg:opacity-100` : 
