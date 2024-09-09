@@ -1,11 +1,11 @@
 'use client'
-import PageTopPure from "@/components/PageTopPure";
 import Seo from "@/components/Seo";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import dayjs from "dayjs"             // 날짜 포맷 
 import { useSelector } from "react-redux";
 import { useQuery } from "@tanstack/react-query";
+import PageTop from "@/components/PageTop";
  
 export default function Detail() {
 
@@ -165,7 +165,7 @@ export default function Detail() {
                     <span  colSpan='4' className="p-1.5 lg:p-3 h-96 text-lg">
                         <br/>{article[0]?.content}<br/><br/>
                         
-                        { isLoading == true ? <div className="text-center mb-[0px] p-2 bg-red-300 text-white w-36 rounded-full m-auto">loading...</div> : null }
+                        { isLoading == true ? <div className="text-center mb-[50px] p-2 bg-red-300 text-white w-36 rounded-full m-auto">loading...</div> : null }
 
                     </span>
                     <div>

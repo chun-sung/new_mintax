@@ -2,6 +2,7 @@
 import { useSelector } from "react-redux";
 import PageTop from "@/components/PageTop";
 import Seo from "@/components/Seo";
+import SuccessLogin from "@/components/SuccessLogin";
 // import SuccessLogin from "../components/SuccessLogin";
 
 export default function Mypage() {
@@ -12,9 +13,10 @@ export default function Mypage() {
     return <>
         {/* <SuccessLogin /> */}
         <Seo title='MyPage | MTAX'/>      
+        <SuccessLogin />
         <PageTop />  
         <h1 className="text-center pt-[120px] lg:pt-[180px] text-2xl font-extrabold stop-dragging border-1 border-red-300">My Page</h1>
-        <h2 className="text-center mt-10 text-2xl font-semibold"><span className="text-blue-500 stop-dragging">{user.user_id}</span> <span className="text-gray-400">Welcome!</span></h2> 
+        <h2 className="text-center mt-10 text-2xl font-semibold"><span className="text-blue-500 stop-dragging">{user.nickname}</span> <span className="text-gray-400">Welcome!</span></h2> 
         
         <div className="w-[100%] lg:w-[800px]  m-auto"><hr className="block mt-5 w-[80%] lg:w-[100%] m-auto"></hr></div>
 
