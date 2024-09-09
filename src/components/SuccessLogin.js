@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { SET_LOGIN, SET_LOGIN_WINDOW } from "../redux/reducers/userSlice";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 // 새로고침 및 접속시에  
 // token 이 유효하면  token 정보로 로그인을 유지시키고 ( 새로 고침시 )
@@ -19,25 +19,31 @@ export default function SuccessLogin() {
     
     let dispatch = useDispatch();
     let router = useRouter();
-
+    let path = usePathname();
     useEffect(()=> {           
             axios({
                 url: "https://www.n-mintax.store/api/login/success",
                 method: "GET",
-                withCredentials: true,
+                withCredentials: true,  // 자격증명포함 (쿠키의 토큰을 가지고 간다.)
             })
             .then((result) => {  
-                console.log('토큰 결과', result)              
+                // console.log('토큰 결과', result)              
                 if(result.data.msg == 'success') {
                     const {user_id, nickname} = result.data;
                     dispatch(SET_LOGIN({user_id, nickname}))
-                } else {
+                } 
+                else if (path == '/mypage') {
                     router.push('/notaccess')
-                    dispatch(SET_LOGIN_WINDOW(true))
+                    dispatch(SET_LOGIN_WINDOW(true));
                 }                
+                else if(result.data.msg == 'jwt_expired'){
+                    alert('로그인 상태가 만료 되었습니다 \n 재 로그인 하시기 바랍니다');
+                    router.push('/');
+                    dispatch(SET_LOGIN_WINDOW(true));
+                } 
             }).catch( err => {                
-                router.push('/notaccess')
-                dispatch(SET_LOGIN_WINDOW(true)) 
+                router.push('/notaccess');
+                dispatch(SET_LOGIN_WINDOW(true)) ;
                 console.log(err)
             })
                

@@ -18,7 +18,7 @@ export async function POST(req) {
     try {
         const user = await db`SELECT * FROM members WHERE user_id=${body.user_id}`;   
         const { rows } = user
-        console.log('로그인',rows)
+        // console.log('로그인',rows)
         let result = Object.values(JSON.parse(JSON.stringify(rows))); //  RowDataPacket 을 data (배열에 담긴 객체)로 최종 처리   
 
         // 존재하지 않는 ID 확인
@@ -35,12 +35,12 @@ export async function POST(req) {
         const userJsonData = { nickname: result[0].nickname, user_id: result[0].user_id }	
 
         const token = jwt.sign(userJsonData, JWT_ACCESS_SECRET, {
-            expiresIn: '5h',                  // 2400h(100일) 60m, 10s, 24h
+            expiresIn: '3h',                  // 2400h(100일) 60m, 10s, 24h
             issuer: 'springStar',
         });
         
         const refreshToken = jwt.sign(userJsonData, JWT_RFRESH_SECRET, {
-            expiresIn: '12h',                 // 2400h(100일) 60m, 10s, 24h
+            expiresIn: '6h',                 // 2400h(100일) 60m, 10s, 24h
             issuer: 'springStar',
         });            
 

@@ -58,11 +58,11 @@ export default function Create() {
                 </div>
                 <table className="w-full mt-9 lg:w-[900px] border-l-[1px] border-r-[1px] m-auto">
                                 <thead className="">
-                                    <tr className=" text-[13px] lg:text-md lg:border-b border-2 bg-slate-300 h-10">
+                                    <tr className=" text-[14px] lg:text-md lg:border-b border-2 bg-slate-300 h-10">
                                         {/* <th width="50%">수정일: {dayjs(Date.now()).format('YY.MM.DD')}</th> */}
                                         {/* <th width="10%"></th>
                                         <th width="10%"></th> */}
-                                        <th width="50%" className="">수정: {user.user_id}</th>
+                                        <th width="50%" className="font-normal">수정: {user.user_id}</th>
                                     </tr>
                                 </thead>
                                 <tbody className="text-sm lg:text-md">                            
@@ -77,7 +77,7 @@ export default function Create() {
                                             </div>                                        
                                             <div className="relative">
                                                 {/* <label htmlFor="message" className="leading-7 text-sm text-gray-600">내용</label> */}
-                                                <textarea placeholder="내용" id="message" name="content" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-60 text-sm outline-none 
+                                                <textarea placeholder="내용" id="message" name="content" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-60 text-base outline-none 
                                                 text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" defaultValue={contents} onChange={(e)=>{
                                                   setContents(e.target.value)
                                                 }}></textarea>

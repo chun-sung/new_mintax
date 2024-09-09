@@ -39,7 +39,7 @@ export default function Login({mode}) {
 				const { user_id, nickname } = data;
 				dispatch(SET_LOGIN({user_id, nickname}))
 				dispatch(SET_LOGIN_WINDOW(false))				
-				// router.push('/');          // mypage 이동이 불편할 수도...				
+				router.push('/');          // mypage 이동이 불편할 수도...				
 				
 			} else if(data.msg == 'pw_fail') {
 				

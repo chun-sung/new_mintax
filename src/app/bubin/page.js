@@ -5,7 +5,7 @@ export default function Bubin() {
   return <>
    <Seo title='컨설팅-MinTAX'/>
    <PageTop />        
-   <h1 className="text-center pt-[130px] text-2xl stop-dragging">법인 컨설팅</h1>
+   <h1 className="text-center pt-[100px] lg:pt-[200px] text-2xl stop-dragging">법인 컨설팅</h1>
    <section className="text-gray-600 body-font">
     <div className="container px-5 py-24 mx-auto">
       <div className="flex flex-wrap -m-4">

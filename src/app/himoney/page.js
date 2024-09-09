@@ -6,7 +6,7 @@ export default function Himoney() {
   <Seo title='고소득-MinTAX'/>
   {/* <PageTopPure />         */}
   <PageTop />
-  <h1 className="text-center pt-[130px] text-2xl stop-dragging">고소득자 텍스플랜</h1>
+  <h1 className="text-center pt-[100px] lg:pt-[200px] text-2xl stop-dragging">고소득자 텍스플랜</h1>
   <section className="text-gray-600 body-font">
     <div className="container px-5 py-24 mx-auto">
       <div className="text-center mb-20">

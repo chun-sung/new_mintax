@@ -80,7 +80,7 @@ export default function Detail() {
       queryFn: () =>  fetch(`/api/comments?article_idx=${id}`)
       .then(res => res.json()).then( res => { 
         // const obj = res[0]
-        console.log('Board[id]', res)
+        // console.log('Board[id]', res)
         setArticle(res)        
         return res
       }),
@@ -153,11 +153,11 @@ export default function Detail() {
               {/* 게시글 정보 */}
                 <table className="w-full lg:w-[900px] border-l-[1px] border-r-[1px] m-auto">
                     <thead className="">
-                        <tr className=" text-[13px] lg:text-md lg:border-b border-2 bg-slate-300 h-10">
-                            <th width="20%">No.{id}</th>
+                        <tr className=" text-[14px] lg:text-md lg:border-b border-2 bg-slate-300 h-10">
+                            <th width="20%" className="font-thin">번호.<span className="font-light">{id}</span></th>
                             <th width="40%"></th>
                             {/* <th width="20%">{dayjs(article[0]?.regist_date).format("YY.MM.DD")}</th> */}
-                            <th width="30%" className="">작성자: {article[0]?.regist_userid}</th>
+                            <th width="50%" className="font-thin text-black">작성자:<span className="font-light"> {article[0]?.regist_userid}</span></th>
                         </tr>
                     </thead>
                 </table>
@@ -165,7 +165,16 @@ export default function Detail() {
                     <span  colSpan='4' className="p-1.5 lg:p-3 h-96 text-lg">
                         <br/>{article[0]?.content}<br/><br/>
                         
-                        { isLoading == true ? <div className="text-center mb-[50px] p-2 bg-red-300 text-white w-36 rounded-full m-auto">loading...</div> : null }
+                        {/* { isLoading == true ? <div className="text-center mb-[500px] p-2 bg-red-300 text-white w-36 rounded-full m-auto">loading...</div> : null } */}
+                        { isLoading == true ? <div className="text-center mb-[500px] p-2 bg-red-00 text-white w-36 rounded-full m-auto">
+                                                <button type="button" class="bg-indigo-00 ..." disabled>
+                                                  <svg width="100" className="animate-spin h-[50px]" 
+                                                      height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                      <circle cx="50" cy="50" r="44.5" stroke="#A4A3A3" stroke-width="11"/>
+                                                  <path d="M19 10.5L13 17L9.5 21.5L19 26L23 21.5L27 18L32.5 15L39 12.5L45.5 10.5H49.5H55L58.5 1H53.5H49.5H41.5L32.5 3L26.5 6L19 10.5Z" fill="#141313" stroke="black"/>
+                                                  </svg>                              
+                                              </button>
+                        </div> : null }
 
                     </span>
                     <div>
@@ -199,7 +208,7 @@ export default function Detail() {
                                       }}>
                                         x
                                       </span>
-                                      : <span className="hover:bg-red-500 ml-2 w-[15px] h-[15px] inline-block text-[12px] lg:text-[12px] leading-[85%] text-black hover:text-white bg-white border-[1px] border-blue-200 rounded-full p-0.5 cursor-pointer text-center" 
+                                      : <span className="hover:bg-red-500 ml-2 w-[15px] h-[15px] inline-block text-[12px] lg:text-[12px] leading-[70%] text-black hover:text-white bg-white border-[1px] border-blue-200 rounded-full p-0.5 cursor-pointer text-center" 
                                           onClick={()=> alert('내가 쓴 댓글만 삭제할 수 있어요!')}>
                                           x
                                          </span>
@@ -207,7 +216,8 @@ export default function Detail() {
                                   </span>
                                   </div>
                           })                  
-                        : <span className="block w-[100px] lg:w-[200px] text-center text-gray-400 bg-gray-200 m-auto rounded-full p-1 mt-3 lg:mt-10 mb-[0px] lg:mb-[0px] text-[10px] lg:text-[16px]">댓글이 없습니다</span>
+                        : ''
+                        // <span className="block w-[100px] lg:w-[200px] text-center text-gray-400 bg-gray-200 m-auto rounded-full p-1 mt-3 lg:mt-10 mb-[0px] lg:mb-[0px] text-[10px] lg:text-[16px]">댓글이 없습니다</span>
                       }
                     </div>          
                 </div>      
