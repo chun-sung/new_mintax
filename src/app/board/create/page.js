@@ -16,7 +16,7 @@ export default function Create() {
     const { user } = useSelector( state => state.user)
     return <>
         <Seo title='글작성 | MinTAX'/>
-        {/* <PageTop /> */}
+        <PageTop />
         <h1 className="text-center pt-[100px] lg:pt-[200px] text-2xl stop-dragging">글작성</h1>
 
         <div className="article__section mt-0 bg-neutral-00 p-1 lg:p-10 w-full lg:w-[1200px] m-auto">

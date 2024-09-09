@@ -95,7 +95,7 @@ export default function Detail() {
 
     return <>
         <Seo title='MinTax 게시판 | MinTAX'/>
-        {/* <PageTop /> */}
+        <PageTop />
         <div className="text-center pt-[100px] lg:pt-[200px] pb-[50px] h-[32px] text-2xl stop-dragging">
           <h1 className="">{article[0]?.title}</h1>
         </div>

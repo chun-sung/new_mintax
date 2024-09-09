@@ -12,7 +12,7 @@ export default function Mypage() {
     return <>
         {/* <SuccessLogin /> */}
         <Seo title='MyPage | MTAX'/>      
-        {/* <PageTop />   */}
+        <PageTop />  
         <h1 className="text-center pt-[120px] lg:pt-[180px] text-2xl font-extrabold stop-dragging border-1 border-red-300">My Page</h1>
         <h2 className="text-center mt-10 text-2xl font-semibold"><span className="text-blue-500 stop-dragging">{user.user_id}</span> <span className="text-gray-400">Welcome!</span></h2> 
         
