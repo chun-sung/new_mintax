@@ -52,17 +52,17 @@ export default function Navbar({mode, setMode}) {
             }
             </Link>
             { user.user_id !== null ?
-              <span className="absolute lg:hidden bottom-[-4px] left-[140px] lg:left-[430px] text-blue-500 
+              <span className="absolute lg:hidden bottom-[-1px] left-[130px] lg:left-[430px] text-blue-500 
                   border-[1px] px-2 rounded-md text-sm">{user.user_id}</span>
                 :
-              <span className="absolute lg:hidden bottom-[-4px] left-[140px] lg:left-[430px] text-gray-300 
+              <span className="absolute lg:hidden bottom-[-1px] left-[130px] lg:left-[430px] text-gray-400 
                   px-2 rounded-md text-sm">Guest</span>
             }            
         </div>
     </div> 
     <nav className={user.menu !== true  ? `hidden lg:block  lg:bg-slate-900 lg:text-white start lg:opacity-100` : 
       `${mode !== 'darkMode' ? 'bg-slate-100 lg:h-[50px] border lg:border-0 rounded lg:bg-slate-900 lg:text-white lg:block start end' :'bg-gray-800 text-white lg:h-[50px] border lg:border-0 rounded lg:bg-slate-900 lg:text-white lg:block start end' }`}>
-    <div className="mt-3 lg:mt-0 lg:w-[1000px] text-center m-auto leading-[45px]">
+    <div className="mt-3 lg:mt-0 lg:w-[1000px] text-center m-auto leading-[48px]">
         <Link onClick={()=>{
           if(typeof window != undefined ) {
             if(mode == 'lightMode') {                                    
@@ -124,8 +124,8 @@ export default function Navbar({mode, setMode}) {
             //     <span className="text-blue-400 px-1 text-[12px]">{user.user_id}</span>
             // </p>
             <p onClick={()=>{ router.push('/mypage')}} 
-              className={`h-10 w-[10px] ml-[-45px] lg:ml-[5px] text-sm text-red-500 lg:hover:bg-slate-700 inline border-gray-400 lg:border-gray-600 border-[1px] rounded-l-xl p-1`}>
-                <span className="text-blue-400 px-1 text-[12px]">{user.user_id}</span>
+              className={`h-10 w-[12px] ml-[-45px] lg:ml-[5px] text-sm text-red-500 lg:hover:bg-slate-700 inline border-gray-400 lg:border-gray-600 border-[1px] rounded-l-xl p-1`}>
+                <span className="text-blue-400 px-1 text-[14px]">{user.user_id}</span>
             </p>
             :
           <p className={`h-10 w-[10px] ml-[115px] lg:hidden`}>Guest</p>
@@ -149,17 +149,17 @@ export default function Navbar({mode, setMode}) {
                 }).catch(err => console.log(err))
               }}}
             // className="mt-[10px] lg:mt-0 ml-[0px] mr-[0px] border-[1px] border-1 bg-slate-000 hover:bg-white text-black lg:font-light lg:text-white lg:hover:text-red-300 w-[70px] h-[0px] text-[12px] text-center rounded-2xl"
-            className="border-[1px] border-slate-700 shadow-md  lg:border-1px mt-5 lg:mt-0 text-[12px] rounded-r-xl
+            className="border-[1px] border-slate-700 shadow-md  lg:border-1px mt-5 lg:mt-0 text-[14px] rounded-r-xl
                      bg-slate-600 lg:bg-slate-900 text-white h-[27px] px-4 p-0 leading-[27px] lg:hover:bg-slate-700"
             >logout
             </button>
           :<>
             <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(true));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(false));}}
-              className="mt-0 lg:mt-0 ml-[-50px] lg:ml-[-5px] mr-[0px] lg:hover:bg-slate-700 text-blue-400 lg:text-blue-400  w-[65px] h-[27px] text-[12px] text-center rounded-l-xl
+              className="mt-0 lg:mt-0 ml-[-50px] lg:ml-[-5px] mr-[0px] lg:hover:bg-slate-700 text-blue-400 lg:text-blue-400  w-[65px] h-[27px] text-[14px] text-center rounded-l-xl
                         border-[1px] border-gray-400 lg:border-gray-700 leading-[25px] shadow-md"
               >login</button>        
             <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(false));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(true));}}
-              className="mt-0 lg:mt-0 lg:bg-slate-000 text-black lg:text-white w-[65px] h-[27px] text-[12px] text-center rounded-r-xl
+              className="mt-0 lg:mt-0 lg:bg-slate-000 text-gray-400 lg:text-white w-[65px] h-[27px] text-[14px] text-center rounded-r-xl
                          border-[1px] border-gray-400 lg:border-gray-700 lg:hover:bg-slate-700 leading-[25px] shadow-md"
               >Sign up</button>
           </>
@@ -187,7 +187,9 @@ export default function Navbar({mode, setMode}) {
             }
           }  
         }}
-          className="ml-[70px] w-[80px] mr-0 lg:mr-5 mt-5 text-sm block lg:hidden" href="#">mode: { mode == 'darkMode' ? '🌙' : '🌞' }
+          className="ml-[20px] w-[180px] mr-0 lg:mr-5 mt-5 text-sm block lg:hidden" href="#">mode: <span
+          className={ mode !== 'darkMode' ? `ml-1 border-[1px] border-gray-400 bg-gray-300 px-3 py-[3px] rounded-2xl` 
+          : `ml-1 border-[1px] border-gray-400 bg-black px-3 py-[3px] rounded-2xl` }>{ mode == 'darkMode' ? '🌙' : '🌞' }</span>
         </Link>  
       </div>        
     </nav>   
