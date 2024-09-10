@@ -24,7 +24,7 @@ export default function Consulting() {
     {/*상담 신청 & 회원 가입 */}
     <div className="flex mt-20 w-full lg:w-[980px] m-auto lg:m-auto justify-center lg:justify-start mb-10">
             <p className="shadow-lg bg-blue-600 p-2 lg:p-4 w-[104px] lg:w-[120px] mr-0 lg:mr-0 text-neutral-100 text-md cursor-pointer hover:bg-red-400" onClick={()=>{
-           user?.user_id !== null ? dispatch(SET_CONSULTING_PANEL(true)) : alert('로그인 하시기 바랍니다.')
+           user?.user_id !== null ? dispatch(SET_CONSULTING_PANEL(true)) : alert('로그인해야 합니다')
         }}>상담신청</p>
         { user?.user_id == null ?
             <p className="shadow-lg bg-gray-400 p-2 lg:p-4 w-[104px] lg:w-[120px] text-white text-md cursor-pointer hover:bg-red-400" onClick={() => {

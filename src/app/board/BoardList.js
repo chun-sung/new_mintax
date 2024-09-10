@@ -47,10 +47,10 @@ export default function BoardList() {
     // if(isLoading) return <div className="text-center mt-[100px] lg:mt-[150px] mb-[800px] p-2 bg-red-300 text-white w-36 rounded-full m-auto">loading...</div>
 
     if(isLoading) return <div className="text-center mt-[100px] lg:mt-[150px] mb-[800px] p-2 bg-red-00 text-white w-36 rounded-full m-auto">
-                        <button type="button" class="bg-indigo-00 ..." disabled>
+                        <button type="button" className="bg-indigo-00 ..." disabled>
                             <svg width="100" className="animate-spin h-[50px]" 
                                 height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="50" cy="50" r="44.5" stroke="#A4A3A3" stroke-width="11"/>
+                                <circle cx="50" cy="50" r="44.5" stroke="#A4A3A3" strokeWidth="11"/>
                             <path d="M19 10.5L13 17L9.5 21.5L19 26L23 21.5L27 18L32.5 15L39 12.5L45.5 10.5H49.5H55L58.5 1H53.5H49.5H41.5L32.5 3L26.5 6L19 10.5Z" fill="#141313" stroke="black"/>
                             </svg>                              
                         </button>
@@ -60,22 +60,22 @@ export default function BoardList() {
     
 
     return <>
-        <div className="boardList__section mt-0 p-1 lg:p-10 w-full lg:w-[1200px] m-auto stop-dragging">
+        <div className="boardList__section mt-3 p-1 lg:p-10 w-full lg:w-[1200px] m-auto stop-dragging">
             <div className="boardList__wrapper min-h-[500px] lg:h-[600px]">
                 <div className="text-right mb-1 lg:w-[900px] m-auto">
                     <button className="shadow-md inline-block p-1 px-3 bg-blue-400 hover:bg-blue-600 text-white rounded mr-1 mb-1 text-sm stop-dragging"onClick={()=>{
 
-                        user?.user_id == null ? alert('로그인 부탁드립니다') : router.push('/board/create')
+                        user?.user_id == null ? alert('로그인해야 합니다') : router.push('/board/create')
 
-                    }}>작성</button>
+                    }}>글작성</button>
                 </div>
                 <div className="text-center m-auto w-full lg:w-[900px">
                     <table className="w-full h-full lg:w-[900px] border-l-[1px] border-r-[1px] lg:border-0 m-auto">
                         <thead className="">
                             <tr className="text-sm lg:text-[16px] lg:border-b border-2 bg-slate-300 h-10">
-                                <th width="10%" className="font-normal text-base">번호</th>
+                                <th width="15%" className="font-normal text-base">번호</th>
                                 <th width="60%" className="font-normal text-base">제목</th>
-                                <th width="15%" className="font-normal text-base">날짜</th>
+                                <th width="10%" className="font-normal text-base">날짜</th>
                                 <th width="15%" className="font-normal text-base">이름</th>
                             </tr>
                         </thead>  

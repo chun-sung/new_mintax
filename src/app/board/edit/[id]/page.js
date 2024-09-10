@@ -50,7 +50,7 @@ export default function Create() {
     return <>
         <Seo title='글작성 | MinTAX'/>
         {/* <PageTop /> */}
-        <h1 className="text-center pt-[100px] lg:pt-[200px] text-2xl stop-dragging">글수정</h1>
+        <h1 className="text-center pt-[120px] lg:pt-[200px] text-2xl stop-dragging">글수정</h1>
 
         <div className="article__section mt-[0px] bg-neutral-00 p-1 lg:p-10 w-full lg:w-[1200px] m-auto">
             <div className="article__wrapper w-full lg:w-[1000px] h-[600px] lg:h-[600px] m-auto">

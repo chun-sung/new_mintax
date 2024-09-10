@@ -25,7 +25,7 @@ export default function MemPanel({mode}) {
 							{/* <span>전화번호 입력 후 확인을 눌러주세요</span><br /> */}
 							<span className={ mode == 'lightMode' ?	"text-md ml-[0px] lg:ml-[0px] text-black stop-dragging"
 								: "text-md ml-[0px] lg:ml-[0px] text-gray-400 stop-dragging"
-							}>Welcome to Register</span>
+							}>회원 가입</span>
 					</div>
 					<div className="lg:ml-[20px] lg:w-96 mb-3">   
 							<form>
@@ -91,7 +91,7 @@ export default function MemPanel({mode}) {
 											password, 
 											email
 									}
-									fetch('https://www.n-mintax.store/api/member', {
+									fetch('https://www-n-mintax.store/api/member', {
 											method: 'POST',
 											body: JSON.stringify(user)
 									})

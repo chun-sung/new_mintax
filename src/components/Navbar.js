@@ -19,10 +19,10 @@ export default function Navbar({mode, setMode}) {
 
   return (<>
     <SuccessLogin />
-    <div className={mode !== 'darkMode' ? "relative h-[60px] w-full m-auto bg-white border-b border-gray" :
-        "h-[60px] w-full m-auto bg-black border-b-0 lg:border-b-0 border-gray" 
+    <div className={mode !== 'darkMode' ? "relative h-[60px] lg:h-[75px] w-full m-auto bg-white border-b border-gray" :
+        "relative h-[60px] lg:h-[75px] w-full m-auto bg-black border-b-0 lg:border-b-0 border-gray" 
       }> 
-        <div className="relative m-auto w-[80px] pt-2.5">
+        <div className="relative m-auto w-[80px] pt-2.5 lg:pt-5">
             <Link href="/">
             {
                 mode == 'darkMode' ?
@@ -52,7 +52,7 @@ export default function Navbar({mode, setMode}) {
             }
             </Link>
             { user.user_id !== null ?
-              <span className="absolute lg:hidden bottom-[-4px] left-[140px] lg:left-[430px] text-blue-300 
+              <span className="absolute lg:hidden bottom-[-4px] left-[140px] lg:left-[430px] text-blue-500 
                   border-[1px] px-2 rounded-md text-sm">{user.user_id}</span>
                 :
               <span className="absolute lg:hidden bottom-[-4px] left-[140px] lg:left-[430px] text-gray-300 
@@ -62,7 +62,7 @@ export default function Navbar({mode, setMode}) {
     </div> 
     <nav className={user.menu !== true  ? `hidden lg:block  lg:bg-slate-900 lg:text-white start lg:opacity-100` : 
       `${mode !== 'darkMode' ? 'bg-slate-100 lg:h-[50px] border lg:border-0 rounded lg:bg-slate-900 lg:text-white lg:block start end' :'bg-gray-800 text-white lg:h-[50px] border lg:border-0 rounded lg:bg-slate-900 lg:text-white lg:block start end' }`}>
-    <div className="mt-3 lg:mt-0 lg:w-[1000px] text-center m-auto leading-[50px]">
+    <div className="mt-3 lg:mt-0 lg:w-[1000px] text-center m-auto leading-[45px]">
         <Link onClick={()=>{
           if(typeof window != undefined ) {
             if(mode == 'lightMode') {                                    
@@ -88,12 +88,12 @@ export default function Navbar({mode, setMode}) {
         <Link href={'/smart'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
           className={clsx("border-b lg:border-0 ml-4 lg:ml-0 block text-left lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/smart'
-          })}>SMART서비스
+          })}>스마트서비스
         </Link>
         <Link href={'/himoney'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
           className={clsx("border-b lg:border-0 ml-4 lg:ml-0 text-left block lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/himoney'
-          })}>고소득자 플랜</Link>
+          })}>고소득자플랜</Link>
         <Link  href={'/bubin'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
           className={clsx("border-b lg:border-0 ml-4 lg:ml-0 text-left block lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/bubin'
@@ -112,16 +112,20 @@ export default function Navbar({mode, setMode}) {
           })}>고객게시판</Link>
         { user.user_id !== null ? 
           <Link href={'/mypage'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
-            className={clsx("font-bold  lg:hidden border-b lg:border-0 lg:border-0v ml-4 lg:ml-0 text-left block lg:inline mr-5 lg:mr-[50px] text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
+            className={clsx("font-bold  lg:hidden border-b lg:border-0 lg:border-0v ml-4 lg:ml-0 text-left block mr-5 lg:mr-[50px] text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
               'lg:bg-white bg-red-200 lg:hover:bg-white text-black': pathname === '/mypage'
           })}>My Page</Link> : null
         }
           
         {
           user.user_id !== null ? 
+            // <p onClick={()=>{ router.push('/mypage')}} 
+            //   className={`h-10 w-[10px] ml-[-45px] lg:ml-[5px] text-sm text-red-500 lg:hover:bg-slate-700 inline border-gray-600 border-[1px]  rounded-l-xl p-1`}>
+            //     <span className="text-blue-400 px-1 text-[12px]">{user.user_id}</span>
+            // </p>
             <p onClick={()=>{ router.push('/mypage')}} 
-              className={`h-10 w-[10px] ml-[-20px] text-red-500 lg:hover:bg-white inline lg:border-[1px] lg:border-white lg:bg-red-400 lg:rounded-xl p-1`}>
-                <span className="text-blue-400">{user.user_id}</span>
+              className={`h-10 w-[10px] ml-[-45px] lg:ml-[5px] text-sm text-red-500 lg:hover:bg-slate-700 inline border-gray-400 lg:border-gray-600 border-[1px] rounded-l-xl p-1`}>
+                <span className="text-blue-400 px-1 text-[12px]">{user.user_id}</span>
             </p>
             :
           <p className={`h-10 w-[10px] ml-[115px] lg:hidden`}>Guest</p>
@@ -129,30 +133,34 @@ export default function Navbar({mode, setMode}) {
         {
           user.user_id !== null ? 
           <button onClick={()=>{
-            if(confirm('로그아웃 하시겠습니까?')) {
-              axios({
-                  url:"https://www.n-mintax.store/api/logout",
-                  method: "POST",
-                  withCredentials: true,
-              }).then((res) => {
-                  if(res.data.msg == 'success') {
-                      dispatch(SET_LOGOUT(null));
-                      dispatch(SET_CONSULTING_PANEL(false));
-                      dispatch(SET_MENU_BTN(false));
-                      console.log('로그아웃 성공')
-                      router.push('/')
-                  }
-              }).catch(err => console.log(err))
-          }
-          }}
-            className="mt-[30px] lg:mt-0 ml-[20px] mr-[10px] border-[0.5px] bg-slate-700 hover:lg:bg-white text-white lg:text-white lg:hover:text-black w-[70px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
-            >Logout</button>
+              if(confirm('로그아웃 하시겠습니까?')) {
+                axios({
+                    url:"https://www-n-mintax.store/api/logout",
+                    method: "POST",
+                    withCredentials: true,
+                }).then((res) => {
+                    if(res.data.msg == 'success') {
+                        dispatch(SET_LOGOUT(null));
+                        dispatch(SET_CONSULTING_PANEL(false));
+                        dispatch(SET_MENU_BTN(false));
+                        console.log('로그아웃 성공')
+                        router.push('/')
+                    }
+                }).catch(err => console.log(err))
+              }}}
+            // className="mt-[10px] lg:mt-0 ml-[0px] mr-[0px] border-[1px] border-1 bg-slate-000 hover:bg-white text-black lg:font-light lg:text-white lg:hover:text-red-300 w-[70px] h-[0px] text-[12px] text-center rounded-2xl"
+            className="border-[1px] border-slate-700 shadow-md  lg:border-1px mt-5 lg:mt-0 text-[12px] rounded-r-xl
+                     bg-slate-600 lg:bg-slate-900 text-white h-[27px] px-4 p-0 leading-[27px] lg:hover:bg-slate-700"
+            >logout
+            </button>
           :<>
             <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(true));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(false));}}
-              className="mt-0 lg:mt-0 ml-[-30px] mr-[10px] border-[0.5px] bg-slate-700 hover:lg:bg-white text-white lg:text-white lg:hover:text-black w-[70px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
-              >Login</button>        
+              className="mt-0 lg:mt-0 ml-[-50px] lg:ml-[-5px] mr-[0px] lg:hover:bg-slate-700 text-blue-400 lg:text-blue-400  w-[65px] h-[27px] text-[12px] text-center rounded-l-xl
+                        border-[1px] border-gray-400 lg:border-gray-700 leading-[25px] shadow-md"
+              >login</button>        
             <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(false));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(true));}}
-              className="mt-0 lg:mt-0 border-[0.5px] bg-blue-500 text-white lg:text-black hover:text-white w-[80px] h-[30px] text-sm text-center rounded-2xl p-1 px-3"
+              className="mt-0 lg:mt-0 lg:bg-slate-000 text-black lg:text-white w-[65px] h-[27px] text-[12px] text-center rounded-r-xl
+                         border-[1px] border-gray-400 lg:border-gray-700 lg:hover:bg-slate-700 leading-[25px] shadow-md"
               >Sign up</button>
           </>
         }
@@ -163,8 +171,8 @@ export default function Navbar({mode, setMode}) {
                     setMode('darkMode')
                     // console.log(mode)
                     setTimeout(()=> {
-                      document.querySelector('.any')?.classList.add('none') // 커버 삭제 display: 'none'
-                      document.querySelector('body')?.classList.add('darkMode') // 다크모드 클래스 추가
+                      document.querySelector('.any')?.classList.add('none')      // 커버 삭제 display: 'none'
+                      document.querySelector('body')?.classList.add('darkMode')  // 다크모드 클래스 추가
                       router.refresh();                  
                     }, 100)                                
             } else {
@@ -179,7 +187,7 @@ export default function Navbar({mode, setMode}) {
             }
           }  
         }}
-          className="ml-[75px] w-[80px] mr-0 lg:mr-5 mt-5 text-sm block lg:hidden" href="#">Mode: { mode == 'darkMode' ? '🌙' : '🌞' }
+          className="ml-[70px] w-[80px] mr-0 lg:mr-5 mt-5 text-sm block lg:hidden" href="#">mode: { mode == 'darkMode' ? '🌙' : '🌞' }
         </Link>  
       </div>        
     </nav>   

@@ -12,15 +12,15 @@ export default function Mypage() {
         {/* <SuccessLogin /> */}
         <Seo title='MyPage | MTAX'/>      
         <PageTop />  
-        <h1 className="text-center pt-[100px] lg:pt-[200px] text-2xl font-extrabold stop-dragging border-1 border-red-300">My Page</h1>
-        <h2 className="text-center mt-10 text-2xl font-semibold"><span className="text-blue-500 stop-dragging">{user.nickname}</span> <span className="text-gray-400">Welcome!</span></h2> 
+        <h1 className="text-center pt-[120px] lg:pt-[200px] text-2xl font-extrabold stop-dragging border-1 border-red-300">my page</h1>
+        <h2 className="text-center mt-10 text-xl font-semibold"><span className="text-red-400 stop-dragging">{user.nickname}</span> <span className="text-gray-400 font-base font-normal">님 환영합니다!</span></h2> 
         
         <div className="w-[100%] lg:w-[800px]  m-auto"><hr className="block mt-5 w-[80%] lg:w-[100%] m-auto"></hr></div>
 
         <section className="text-gray-600 body-font">
             <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-col text-center w-full mb-20">
-                <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Master Cleanse Reliac Heirloom</h1>
+                <h1 className="sm:text-2xl text-xl font-medium title-font mb-4 text-gray-900">고객 서비스 지원</h1>
                 <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom.</p>
                 </div>
                 <div className="flex flex-wrap -m-4">

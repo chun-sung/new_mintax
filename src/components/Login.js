@@ -25,7 +25,7 @@ export default function Login({mode}) {
 		}
 		let userInfo = {user_id, password} 
 
-		fetch('https://www.n-mintax.store/api/login', {
+		fetch('https://www-n-mintax.store/api/login', {
 			method: 'POST',
 			body: JSON.stringify(userInfo)
 		})
@@ -59,7 +59,7 @@ export default function Login({mode}) {
 			<div className="text-center mb-2">                   
 					<span className={ mode == 'lightMode' ? "text-md text-black"
 						: "text-md text-gray-400"
-					}>Welcome to MinTax</span>
+					}>로그인</span>
 			</div>
 			<div className="lg:ml-[-28px] lg:w-96 mb-3 text-center">   
 					<form>

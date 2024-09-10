@@ -96,7 +96,7 @@ export default function Detail() {
     return <>
         <Seo title='MinTax 게시판 | MinTAX'/>
         <PageTop />
-        <div className="text-center pt-[100px] lg:pt-[200px] pb-[50px] h-[32px] text-2xl stop-dragging">
+        <div className="text-center pt-[120px] lg:pt-[200px] pb-[50px] h-[32px] text-2xl stop-dragging">
           <h1 className="">{article[0]?.title}</h1>
         </div>
 
@@ -167,10 +167,10 @@ export default function Detail() {
                         
                         {/* { isLoading == true ? <div className="text-center mb-[500px] p-2 bg-red-300 text-white w-36 rounded-full m-auto">loading...</div> : null } */}
                         { isLoading == true ? <div className="text-center mb-[500px] p-2 bg-red-00 text-white w-36 rounded-full m-auto">
-                                                <button type="button" class="bg-indigo-00 ..." disabled>
+                                                <button type="button" className="bg-indigo-00 ..." disabled>
                                                   <svg width="100" className="animate-spin h-[50px]" 
                                                       height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                      <circle cx="50" cy="50" r="44.5" stroke="#A4A3A3" stroke-width="11"/>
+                                                      <circle cx="50" cy="50" r="44.5" stroke="#A4A3A3" strokeWidth="11"/>
                                                   <path d="M19 10.5L13 17L9.5 21.5L19 26L23 21.5L27 18L32.5 15L39 12.5L45.5 10.5H49.5H55L58.5 1H53.5H49.5H41.5L32.5 3L26.5 6L19 10.5Z" fill="#141313" stroke="black"/>
                                                   </svg>                              
                                               </button>
@@ -226,7 +226,7 @@ export default function Detail() {
 
                   <div className="text-right mb-1 w-full lg:w-[900px] m-auto stop-dragging">
                     <button className="shadow-md inline-block p-1 px-3 bg-blue-400 hover:bg-blue-600 text-white text-right rounded mt-2 mb-3 text-sm" onClick={()=>{
-                      user.user_id == null ? alert('로그인하기 바랍니다') 
+                      user.user_id == null ? alert('로그인해야 합니다') 
                       : setCommentBtn(true)
                     }}>댓글</button>
                   </div>
