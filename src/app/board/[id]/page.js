@@ -110,7 +110,7 @@ export default function Detail() {
                      <> 
                        <button className="shadow-md inline-block p-1 px-3 bg-blue-400 hover:bg-blue-600 text-white rounded mr-1 mb-0 text-sm" onClick={()=> { 
                         if(user?.user_id !== article[0]?.regist_userid){
-                          alert('본인의 게시글만 수정할 수 있습니다.')
+                          alert('본인 게시글만 수정할 수 있습니다.')
                           return
                         }                        
                         user?.user_id == null ? alert('로그인 부탁드립니다') : router.push(`/board/edit/article_idx=${id}?page=${pageNumber}`)
@@ -123,7 +123,7 @@ export default function Detail() {
                            return;
                         } 
                         if(user.user_id !== article[0]?.regist_userid) {
-                           alert('본인의 게시물만 삭제할 수 있습니다.')
+                           alert('본인 게시물만 삭제할 수 있습니다.')
                            return;
                         } 
                         if(user.user_id == article[0]?.regist_userid) {
@@ -135,7 +135,7 @@ export default function Detail() {
                              .then(res => { return res.json()})                     
                              .then(res => {
                                 if(res.msg == 'success') {
-                                  alert('1건의 게시물이 삭제되었습니다')
+                                  alert('게시글이 삭제되었습니다')
                                    router.push(`/board?page=${pageNumber}`)
                                 }
                              }).catch(err => console.log(err))

@@ -23,7 +23,7 @@ export default function Create() {
     // const id = parseInt(number[0], 10);
     const id = number[0];
     
-    console.log('edit[id] 의 id', id)
+    // console.log('edit[id] 의 id', id)
 
     // console.log(window.location)
     const urlStr = window.location.href
