@@ -156,11 +156,11 @@ export default function Navbar({mode, setMode}) {
           :<>
             <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(true));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(false));}}
               className="mt-0 lg:mt-0 min-w-[70px] ml-[-50px] lg:ml-[-5px] mr-[0px] lg:hover:bg-slate-700 text-blue-400 lg:text-blue-400  w-[65px] h-[27px] text-[16px] text-center rounded-l-xl
-                       border-[3px] lg:border-[1px] border-blue-400 lg:border-gray-400 lg:border-gray-700 leading-[20px] shadow-md"
+                       border-[1px] border-gray-400 lg:border-gray-400 lg:border-gray-700 leading-[20px] shadow-md"
               >login</button>        
             <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(false));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(true));}}
               className="mt-0 lg:mt-0 lg:bg-slate-000 text-red-400 lg:text-white w-[70px] h-[27px] text-[16px] text-center rounded-r-xl
-                         border-[3px] lg:border-[1px] border-red-400 lg:border-gray-400 lg:border-gray-700 lg:hover:bg-slate-700 leading-[20px] shadow-md"
+                       border-[1px] border-gray-400 lg:border-gray-400 lg:border-gray-700 lg:hover:bg-slate-700 leading-[20px] shadow-md"
               >sign up</button>
           </>
         }
