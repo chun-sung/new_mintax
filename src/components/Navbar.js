@@ -149,7 +149,7 @@ export default function Navbar({mode, setMode}) {
                 }).catch(err => console.log(err))
               }}}
             // className="mt-[10px] lg:mt-0 ml-[0px] mr-[0px] border-[1px] border-1 bg-slate-000 hover:bg-white text-black lg:font-light lg:text-white lg:hover:text-red-300 w-[70px] h-[0px] text-[12px] text-center rounded-2xl"
-            className="border-[1px] border-slate-700 shadow-md  lg:border-1px mt-5 lg:mt-0 text-[16px] lg:text-[14px] rounded-r-xl
+            className="border-[1px] border-slate-700 shadow-md border-black border-[1px] lg:border-[1px] mt-5 lg:mt-0 text-[16px] lg:text-[14px] rounded-r-xl
                      bg-slate-600 lg:bg-slate-900 text-white h-[27px] px-4 p-0 leading-[25px] lg:hover:bg-slate-700"
             >logout
             </button>
