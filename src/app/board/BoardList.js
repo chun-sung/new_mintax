@@ -102,10 +102,10 @@ export default function BoardList() {
                                                 </td>
                                                 <td className="lg:text-md">
                                                                 {/* <span className="text-[12px] lg:text-[16px]">{dayjs(regist_date).format("YY.MM.DD")}</span> */}
-                                                                <span>{regist_date}</span>
+                                                                <span className="text-[14]">{regist_date}</span>
                                                 </td>
                                                 <td className="">
-                                                                <span className="text-[12px] lg:text-[16px]">{regist_userid}</span>
+                                                                <span className="text-[14px] lg:text-[16px]">{regist_userid}</span>
                                                 </td>
                                         </tr>
                                 )})
@@ -114,7 +114,7 @@ export default function BoardList() {
                         </tbody>
                     </table>
             </div>
-                <p className="mt-3 text-center"> {page} <span>Page</span></p>
+                <p className="mt-3 text-center"> <span className="text-[12px]">{page}</span> <span className="text-[12px]">Page</span></p>
                  </div>
                  <Pagination
                     activePage={page}

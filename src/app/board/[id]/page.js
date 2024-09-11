@@ -192,7 +192,7 @@ export default function Detail() {
                                   {/* <span className="text-[12px] lg:text-[12px]">{dayjs(item.regist_date_comment).format('YY.MM.DD')}</span> */}
 
                                   { user.user_id == item.regist_userid_comment
-                                    ? <span className="hover:bg-red-500 ml-2 w-[15px] h-[15px] inline-block text-[12px] text-white lg:text-[12px] leading-[50%] bg-red-300 rounded-full p-1 cursor-pointer" onClick={()=>{
+                                    ? <span className="hover:bg-red-500 ml-2 w-[15px] h-[15px] inline-block text-[12px] text-white lg:text-[12px] leading-[50%] bg-red-400 rounded-full p-1 cursor-pointer" onClick={()=>{
           
                                       confirm(`"${item.comment}" \n댓글을 삭제할까요?`) 
                                       ? fetch('/api/board/comments/delete',{

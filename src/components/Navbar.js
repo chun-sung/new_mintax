@@ -52,7 +52,7 @@ export default function Navbar({mode, setMode}) {
             }
             </Link>
             { user.user_id !== null ?
-              <span className="absolute lg:hidden bottom-[-1px] left-[130px] lg:left-[430px] text-blue-500 
+              <span className="absolute lg:hidden bottom-[0px] left-[135px] lg:left-[430px] text-blue-500 
                   border-[1px] px-2 rounded-md text-sm">{user.user_id}</span>
                 :
               <span className="absolute lg:hidden bottom-[-1px] left-[130px] lg:left-[430px] text-gray-400 
@@ -112,8 +112,8 @@ export default function Navbar({mode, setMode}) {
           })}>고객게시판</Link>
         { user.user_id !== null ? 
           <Link href={'/mypage'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
-            className={clsx("font-bold  lg:hidden border-b lg:border-0 lg:border-0v ml-4 lg:ml-0 text-left block mr-5 lg:mr-[50px] text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
-              'lg:bg-white bg-red-200 lg:hover:bg-white text-black': pathname === '/mypage'
+            className={clsx("font-bold  text-red-400 lg:hidden border-b lg:border-0 lg:border-0v ml-4 lg:ml-0 text-left block mr-5 lg:mr-[50px] text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
+              'lg:bg-white bg-gray-200 lg:hover:bg-white text-red-400': pathname === '/mypage'
           })}>My Page</Link> : null
         }
           
@@ -125,7 +125,7 @@ export default function Navbar({mode, setMode}) {
             // </p>
             <p onClick={()=>{ router.push('/mypage')}} 
               className={`h-10 w-[12px] ml-[-45px] lg:ml-[5px] text-sm text-red-500 lg:hover:bg-slate-700 inline border-gray-400 lg:border-gray-600 border-[1px] rounded-l-xl p-1`}>
-                <span className="text-blue-400 px-1 text-[14px]">{user.user_id}</span>
+                <span className="text-blue-400 px-1 text-[16px]">{user.user_id}</span>
             </p>
             :
           <p className={`h-10 w-[10px] ml-[115px] lg:hidden`}>Guest</p>
@@ -149,19 +149,19 @@ export default function Navbar({mode, setMode}) {
                 }).catch(err => console.log(err))
               }}}
             // className="mt-[10px] lg:mt-0 ml-[0px] mr-[0px] border-[1px] border-1 bg-slate-000 hover:bg-white text-black lg:font-light lg:text-white lg:hover:text-red-300 w-[70px] h-[0px] text-[12px] text-center rounded-2xl"
-            className="border-[1px] border-slate-700 shadow-md  lg:border-1px mt-5 lg:mt-0 text-[14px] rounded-r-xl
-                     bg-slate-600 lg:bg-slate-900 text-white h-[27px] px-4 p-0 leading-[27px] lg:hover:bg-slate-700"
+            className="border-[1px] border-slate-700 shadow-md  lg:border-1px mt-5 lg:mt-0 text-[16px] lg:text-[14px] rounded-r-xl
+                     bg-slate-600 lg:bg-slate-900 text-white h-[28px] px-4 p-0 leading-[27px] lg:hover:bg-slate-700"
             >logout
             </button>
           :<>
             <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(true));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(false));}}
-              className="mt-0 lg:mt-0 ml-[-50px] lg:ml-[-5px] mr-[0px] lg:hover:bg-slate-700 text-blue-400 lg:text-blue-400  w-[65px] h-[27px] text-[14px] text-center rounded-l-xl
+              className="mt-0 lg:mt-0 ml-[-50px] lg:ml-[-5px] mr-[0px] lg:hover:bg-slate-700 text-blue-400 lg:text-blue-400  w-[65px] h-[27px] text-[16px] text-center rounded-l-xl
                         border-[1px] border-gray-400 lg:border-gray-700 leading-[25px] shadow-md"
               >login</button>        
             <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(false));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(true));}}
-              className="mt-0 lg:mt-0 lg:bg-slate-000 text-gray-400 lg:text-white w-[65px] h-[27px] text-[14px] text-center rounded-r-xl
+              className="mt-0 lg:mt-0 lg:bg-slate-000 text-gray-400 lg:text-white w-[65px] h-[27px] text-[16px] text-center rounded-r-xl
                          border-[1px] border-gray-400 lg:border-gray-700 lg:hover:bg-slate-700 leading-[25px] shadow-md"
-              >Sign up</button>
+              >sign up</button>
           </>
         }
         <Link onClick={()=>{
