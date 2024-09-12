@@ -153,11 +153,11 @@ export default function Detail() {
               {/* 게시글 정보 */}
                 <table className="w-full lg:w-[900px] border-l-[1px] border-r-[1px] m-auto">
                     <thead className="">
-                        <tr className=" text-[14px] lg:text-md lg:border-b border-2 bg-slate-300 h-10">
-                            <th width="20%" className="font-normal text-base">번호. {id}</th>
+                        <tr className="text-[14px] lg:text-md lg:border-b border-2 bg-slate-300 h-7 lg:h-10">
+                            <th width="20%" className="font-normal">번호. {id}</th>
                             <th width="40%"></th>
                             {/* <th width="20%">{dayjs(article[0]?.regist_date).format("YY.MM.DD")}</th> */}
-                            <th width="50%" className="font-normal text-base text-black">작성자: {article[0]?.regist_userid}</th>
+                            <th width="50%" className="font-normal text-black">작성자: {article[0]?.regist_userid}</th>
                         </tr>
                     </thead>
                 </table>

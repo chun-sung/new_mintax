@@ -72,11 +72,11 @@ export default function BoardList() {
                 <div className="text-center m-auto w-full lg:w-[900px">
                     <table className="w-full h-full lg:w-[900px] border-l-[1px] border-r-[1px] lg:border-0 m-auto">
                         <thead className="">
-                            <tr className="text-sm lg:text-[16px] lg:border-b border-2 bg-slate-300 h-10">
-                                <th width="15%" className="font-normal text-base">번호</th>
-                                <th width="60%" className="font-normal text-base">제목</th>
-                                <th width="10%" className="font-normal text-base">날짜</th>
-                                <th width="15%" className="font-normal text-base">이름</th>
+                            <tr className="text-[14px] lg:text-[16px] lg:border-b border-2 bg-slate-300 h-7 lg:h-10">
+                                <th width="15%" className="font-normal ">번호</th>
+                                <th width="60%" className="font-normal ">제목</th>
+                                <th width="10%" className="font-normal ">날짜</th>
+                                <th width="15%" className="font-normal ">이름</th>
                             </tr>
                         </thead>  
                         <tbody className="text-sm lg:text-[16px]">

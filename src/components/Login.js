@@ -54,7 +54,7 @@ export default function Login({mode}) {
 
   return (
 		<div className={ user.login !== true ? 'hidden' : mode == 'lightMode' ? "absolute border-stone-400 border-[1px] bg-white  w-[320px] lg:w-[380px] lg:mt-10 top-[140px] lg:top-[200px] p-5 h-58 lg:h-58 shadow-2xl z-10 rounded left-[50%] translate-x-[-50%]"
-			: "absolute border-stone-600 border-[1px] bg-gray-700 w-[320px] lg:w-[380px] lg:mt-10 top-[140px] lg:top-[200px] p-5 h-58 lg:h-58 shadow-2xl z-10 rounded left-[50%] translate-x-[-50%]"
+			: "absolute border-stone-600 border-[1px] bg-gray-300 w-[320px] lg:w-[380px] lg:mt-10 top-[140px] lg:top-[200px] p-5 h-58 lg:h-58 shadow-2xl z-10 rounded left-[50%] translate-x-[-50%]"
 		}>
 			<div className="text-center mb-2">                   
 					<span className={ mode == 'lightMode' ? "text-md text-black"
