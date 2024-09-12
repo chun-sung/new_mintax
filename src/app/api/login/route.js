@@ -32,8 +32,8 @@ export async function POST(req) {
         let JWT_ACCESS_SECRET='springstar74'
         let JWT_RFRESH_SECRET='coonjin74'
 
-        const userJsonData = { nickname: result[0].nickname, user_id: result[0].user_id }	
-
+        const userJsonData = { nickname: result[0].nickname, user_id: result[0].user_id , id: result[0].id }	
+        console.log(userJsonData)
         const token = jwt.sign(userJsonData, JWT_ACCESS_SECRET, {
             expiresIn: '3h',                  // 2400h(100일) 60m, 10s, 24h
             issuer: 'springStar',
@@ -48,7 +48,8 @@ export async function POST(req) {
             msg: 'success', 
             jwttoken: token, 
             nickname: result[0].nickname, 
-            user_id: result[0].user_id,                 
+            user_id: result[0].user_id,
+            id: result[0].id
         }
         cookies().set('accessToken', token, {
             secure: false,

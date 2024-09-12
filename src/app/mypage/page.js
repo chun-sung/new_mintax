@@ -2,20 +2,45 @@
 import { useSelector } from "react-redux";
 import PageTop from "@/components/PageTop";
 import Seo from "@/components/Seo";
+import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 export default function Mypage() {
 
-    
+    const [inquiry, setInquiry] = useState([])
     const { user }= useSelector(state => state.user);    
 
+    const { isLoading, error, data, postQuery } = useQuery({
+      queryKey: ['inquiry'],        
+      queryFn: () =>  fetch(`/api/inquiry_data?id=${user.id}`).then(res => res.json()).then( res => { 
+          console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+          console.log(res);
+          setInquiry(res);
+          return res.result
+      }),        
+  })
     return <>
         {/* <SuccessLogin /> */}
         <Seo title='MyPage | MTAX'/>      
         <PageTop />  
         <h1 className="text-center pt-[120px] lg:pt-[200px] text-2xl font-extrabold stop-dragging border-1 border-red-300">my page</h1>
-        <h2 className="text-center mt-10 text-xl font-semibold"><span className="text-red-400 stop-dragging">{user.nickname}</span> <span className="text-gray-400 font-base font-normal">님 환영합니다!</span></h2> 
+        <h2 className="text-center mt-10 text-xl font-semibold"><span className="text-red-400 stop-dragging">{user?.nickname}</span> <span className="text-gray-400 font-base font-normal">님 환영합니다!</span></h2> 
+
+
         
-        <div className="w-[100%] lg:w-[800px]  m-auto"><hr className="block mt-5 w-[80%] lg:w-[100%] m-auto"></hr></div>
+        {
+          inquiry?.length == 0 ? <div  className="text-center mt-10 mb-10 font-bold text-gray-500"> <span>상담 내역이 없습니다.</span></div> : 
+          <>
+            <div className="border-[1px] border-black m-auto w-[300px] bg-gray-100 p-2 mt-2 mb-5">
+              <span>상담 요청 건수 : </span><span> {inquiry[0]?.total}건</span><br/>
+              <span>상담 완료 건수 : </span><span>{inquiry[0]?.total_complete} 건</span> <br/>
+              <span>답변 미완료 : </span><span>{inquiry[0]?.mis_complete} 건</span>
+            </div>
+            <div className="w-[300px] m-auto">{ `최초 상담 - 제목 : ${inquiry[0]?.title} | 타이틀 : ${inquiry[0]?.content}`}</div>
+          </>
+        }
+        <div className="w-[100%] lg:w-[800px] m-auto mt-3"><hr className="block mt-5 w-[80%] lg:w-[100%] m-auto"></hr></div>
+
 
         <section className="text-gray-600 body-font">
             <div className="container px-5 py-24 mx-auto">

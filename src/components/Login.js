@@ -36,8 +36,8 @@ export default function Login({mode}) {
 			console.log('데이터',data)            
 			if(data.msg == 'success') {
 
-				const { user_id, nickname } = data;
-				dispatch(SET_LOGIN({user_id, nickname}))
+				const { user_id, nickname, id } = data;
+				dispatch(SET_LOGIN({user_id, nickname, id}))
 				dispatch(SET_LOGIN_WINDOW(false))				
 				router.push('/');          // mypage 이동이 불편할 수도...				
 				

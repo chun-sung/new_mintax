@@ -21,37 +21,37 @@ export default function SuccessLogin() {
     let router = useRouter();
     let path = usePathname();
     useEffect(()=> {           
-            axios({
-                url: "https://www.n-mintax.store/api/login/success",
-                method: "GET",
-                withCredentials: true,  // 자격증명포함 (쿠키의 토큰을 가지고 간다.)
-            })
-            .then((result) => {  
-                // console.log('토큰 결과', result)              
-                if(result.data.msg == 'success') {
-                    const {user_id, nickname} = result.data;
-                    dispatch(SET_LOGIN({user_id, nickname}))                    
-                } 
-                else if (path == '/mypage') {
-                    router.push('/notaccess')
-                    dispatch(SET_LOGIN_WINDOW(true));
-                }                
-                else if (path !== '/mypage') {  // 토큰 만료시 /mypage 가 아닐시에 프로그램 종료 
-                                                // 로그인 한후 토큰 만료되어 불량 토큰이되면 아래 else if 문에 계속 걸리게 된다. 그것을 회피하기 위함!
-                    return
-                }                
-                else if(result.data.msg == 'jwt_expired'){
-                    alert('로그인 상태가 만료 되었습니다 \n 로그인 하시기 바랍니다');
-                    router.push('/');
-                    dispatch(SET_LOGIN_WINDOW(true));
-                } 
-            }).catch( err => {                
-                router.push('/notaccess');
-                dispatch(SET_LOGIN_WINDOW(true)) ;
-                console.log(err)
-            })
-               
-        },[])
+				axios({
+						url: "https://www.n-mintax.store/api/login/success",
+						method: "GET",
+						withCredentials: true,            // 자격증명포함 (쿠키의 토큰을 가지고 간다.)
+				})
+				.then((result) => {  
+						// console.log('토큰 결과', result)              
+						if(result.data.msg == 'success') {
+								const {id ,user_id, nickname} = result.data;
+								dispatch(SET_LOGIN({ id, user_id, nickname }))                    
+						} 
+						else if (path == '/mypage') {
+								router.push('/notaccess')
+								dispatch(SET_LOGIN_WINDOW(true));
+						}                
+						else if (path !== '/mypage') {          // 토큰 만료시 /mypage 가 아닐시에 프로그램 종료 
+																										// 로그인 한후 토큰 만료되어 불량 토큰이되면 아래 else if 문에 계속 걸리게 된다. 그것을 회피하기 위함!
+								return
+						}                
+						else if(result.data.msg == 'jwt_expired'){
+								alert('로그인 상태가 만료 되었습니다 \n 로그인 하시기 바랍니다');
+								router.push('/');
+								dispatch(SET_LOGIN_WINDOW(true));
+						} 
+				}).catch( err => {                
+						router.push('/notaccess');
+						dispatch(SET_LOGIN_WINDOW(true)) ;
+						console.log(err)
+				})
+						
+		},[])
         
     return (        
         <></>

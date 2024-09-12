@@ -10,8 +10,8 @@ import Mobile_btn from "./Mobile_btn";
 
 export default function Header() {
     
-    const [mode, setMode] = useState('')   
-    const router = useRouter();
+  const [mode, setMode] = useState('')   
+  const router = useRouter();
 
 // 쿠키에 최초 라이트 모드 값을 셋팅 한다.
   useEffect(()=> {
@@ -29,16 +29,16 @@ export default function Header() {
     }
   },[])
 
-    return (<>
-    <Modal />
-    <header className="fixed w-full stop stop-dragging z-50">         
-        <Mobile_btn />
-        <Navbar mode={mode} setMode={setMode} />
-        <Login mode={mode} />             
-        <MemPanel mode={mode} />
-        <Rsidebar />    
-    </header>
-    </>);
+  return (<>
+  <Modal />
+  <header className="fixed w-full stop stop-dragging z-50">         
+      <Mobile_btn />
+      <Navbar mode={mode} setMode={setMode} />
+      <Login mode={mode} />             
+      <MemPanel mode={mode} />
+      <Rsidebar />    
+  </header>
+  </>);
       
 }
  

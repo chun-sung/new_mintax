@@ -3,7 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const userSlice = createSlice({
     name: 'user',
     initialState: {
-        user: { user_id: null,
+        user: { 
+            id: null,
+            user_id: null,
             nickname: null,
             login: false,
             member_panel: false,
@@ -15,6 +17,7 @@ const userSlice = createSlice({
         SET_LOGIN(state, action) {
             state.user.user_id = action.payload.user_id
             state.user.nickname = action.payload.nickname
+            state.user.id = action.payload.id
             state.user.login = false
         },
         SET_LOGIN_WINDOW(state, action) {
