@@ -124,7 +124,7 @@ export default function Navbar({mode, setMode}) {
             //     <span className="text-blue-400 px-1 text-[12px]">{user.user_id}</span>
             // </p>
             <button onClick={()=>{ router.push('/mypage')}} 
-              className={`inline-block h-10 w-[px] h-[27px] ml-[-45px] lg:ml-[5px] text-sm text-red-500 lg:hover:bg-slate-700 inline border-gray-400 lg:border-gray-600 border-[1px] rounded-l-xl p-1`}>
+              className={`inline-block h-10 w-[px] h-[27px] ml-[-45px] lg:ml-[5px] text-sm text-red-500 lg:hover:bg-slate-700 inline border-gray-400 lg:border-gray-600 border-[0px] lg:border-[1px] rounded-l-xl p-1`}>
                 <span className="text-blue-400 px-1 text-[16px] leading-[15px]">{user.user_id}</span>
             </button>
             :
@@ -149,17 +149,17 @@ export default function Navbar({mode, setMode}) {
                 }).catch(err => console.log(err))
               }}}
             // className="mt-[10px] lg:mt-0 ml-[0px] mr-[0px] border-[1px] border-1 bg-slate-000 hover:bg-white text-black lg:font-light lg:text-white lg:hover:text-red-300 w-[70px] h-[0px] text-[12px] text-center rounded-2xl"
-            className="border-[1px] border-slate-700 shadow-md border-black border-[1px] lg:border-[1px] mt-5 lg:mt-0 text-[16px] lg:text-[14px] rounded-r-xl
+            className="border-[1px] border-slate-600 shadow-md border-black border-[1px] lg:border-[1px] mt-5 lg:mt-0 text-[16px] lg:text-[14px] rounded-r-xl
                      bg-slate-600 lg:bg-slate-900 text-white h-[27px] px-2 p-0 leading-[23px] lg:leading-[28px] lg:hover:bg-slate-700"
             >logout
             </button>
           :<>
             <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(true));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(false));}}
-              className="mt-0 lg:mt-0 min-w-[70px] ml-[-50px] lg:ml-[-5px] mr-[0px] lg:hover:bg-slate-700 text-blue-400 lg:text-blue-400  w-[65px] h-[27px] text-[16px] text-center rounded-l-xl
+              className="mt-0 lg:mt-0 min-w-[70px] ml-[-49px] lg:ml-[-5px] mr-[0px] lg:hover:bg-slate-700 text-blue-400 lg:text-blue-400  w-[65px] h-[27px] text-[16px] text-center rounded-l-xl
                        border-[1px] border-gray-400 lg:border-gray-400 lg:border-gray-700 leading-[20px] shadow-md"
               >login</button>        
             <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(false));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(true));}}
-              className="mt-0 lg:mt-0 lg:bg-slate-000 text-red-400 lg:text-white w-[70px] h-[27px] text-[16px] text-center rounded-r-xl
+              className="ml-[-1px] lg:ml-[0px] mt-0 lg:mt-0 lg:bg-slate-000 text-red-400 lg:text-white w-[70px] h-[27px] text-[16px] text-center rounded-r-xl
                        border-[1px] border-gray-400 lg:border-gray-400 lg:border-gray-700 lg:hover:bg-slate-700 leading-[20px] shadow-md"
               >sign up</button>
           </>
