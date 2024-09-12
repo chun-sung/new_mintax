@@ -76,7 +76,7 @@ export default function BoardList() {
                                 <th width="15%" className="font-normal ">번호</th>
                                 <th width="60%" className="font-normal ">제목</th>
                                 <th width="10%" className="font-normal ">날짜</th>
-                                <th width="15%" className="font-normal ">이름</th>
+                                <th width="15%" className="font-normal ">작성자</th>
                             </tr>
                         </thead>  
                         <tbody className="text-sm lg:text-[16px]">
