@@ -1,5 +1,4 @@
 'use client'
-import PageTopPure from "@/components/PageTopPure";
 import Seo from "@/components/Seo";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
