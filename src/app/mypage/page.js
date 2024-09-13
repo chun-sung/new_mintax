@@ -7,18 +7,21 @@ import { useQuery } from "@tanstack/react-query";
 
 export default function Mypage() {
 
-    const [inquiry, setInquiry] = useState([])
+    const [inquiry, setInquiry] = useState()
     const { user }= useSelector(state => state.user);    
 
-    const { isLoading, error, data, postQuery } = useQuery({
+    const { isLoading, error, data, postQuery, refetch } = useQuery({
       queryKey: ['inquiry'],        
       queryFn: () =>  fetch(`/api/inquiry_data?id=${user.id}`).then(res => res.json()).then( res => { 
-          console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+          // console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
           // console.log(res);
           setInquiry(res);
-          return res.result
+          console.log(res);          
+          return res
       }),        
-  })
+    })
+
+
     return <>
         {/* <SuccessLogin /> */}
         <Seo title='MyPage | MTAX'/>      
@@ -28,7 +31,7 @@ export default function Mypage() {
 
 
         {isLoading == true ? 
-          <div className="text-center mt-[0px] lg:mt-[50px] mb-[800px] p-2 bg-red-00 text-white w-36 rounded-full m-auto">
+          <div className="text-center mt-[50px] lg:mt-[50px] mb-[800px] p-2 bg-red-00 text-white w-36 rounded-full m-auto">
             <button type="button" className="bg-indigo-00 ..." disabled>
                 <svg width="100" className="animate-spin h-[50px]" 
                     height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,8 +43,7 @@ export default function Mypage() {
           : null
         }
         {
-          inquiry?.length == 0 ? <div  className="text-center mt-10 mb-10 font-bold text-gray-500"> <span>상담 내역이 없습니다.</span></div> : 
-          <>
+          inquiry !== undefined ? <>
             <div className="flex bg-gray-200 m-auto w-[320px] lg:w-[400px] bg-gray-100 p-2 mt-2 mb-5">
               <div className="text-right mr-2 px-2 py-3">
                 <span>상담 요청 : </span><br/>
@@ -65,9 +67,9 @@ export default function Mypage() {
                   <hr className="" />
                   <p className="px-3 py-2 mt-5 mb-5">답변 : (대기중) </p>
                </div>
-            </div>
-            
-          </>
+            </div>            
+          </> : null
+                // <div  className="text-center mt-10 mb-10 font-bold text-gray-500"> <span>상담 내역이 없습니다.</span></div> 
         }
         <div className="w-[100%] lg:w-[800px] m-auto mt-3"><hr className="block mt-5 w-[80%] lg:w-[100%] m-auto"></hr></div>
 
