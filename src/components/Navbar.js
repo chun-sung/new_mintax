@@ -193,8 +193,8 @@ export default function Navbar({mode, setMode}) {
         </Link>  
       </div>
       <div>
-        <p className="mt-[40px] ml-[-40px] text-center text-sm lg:hidden">Test Account</p> 
-        <p className="ml-[-40px] text-center text-[14px] lg:hidden">test / 1234</p>
+        <p className="mt-[41px] ml-[-41px] text-center text-sm lg:hidden">Test Account </p> 
+        <p className="ml-[-41px] text-center text-[14px] lg:hidden">test / 1234</p>
       </div> 
     </nav>   
     <Mobile_btn mode={mode}/>

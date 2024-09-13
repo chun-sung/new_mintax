@@ -46,7 +46,7 @@ export default function BoardList() {
     // useQuery 데이터 로딩중
     // if(isLoading) return <div className="text-center mt-[100px] lg:mt-[150px] mb-[800px] p-2 bg-red-300 text-white w-36 rounded-full m-auto">loading...</div>
 
-    if(isLoading) return <div className="text-center mt-[50px] lg:mt-[50px] mb-[800px] p-2 bg-red-00 text-white w-36 rounded-full m-auto">
+    if(isLoading) return <div className="text-center mt-[51px] lg:mt-[51px] mb-[800px] p-2 bg-red-00 text-white w-36 rounded-full m-auto">
                         <button type="button" className="bg-indigo-00 ..." disabled>
                             <svg width="100" className="animate-spin h-[50px]" 
                                 height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
