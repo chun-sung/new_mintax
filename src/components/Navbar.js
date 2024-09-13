@@ -135,7 +135,7 @@ export default function Navbar({mode, setMode}) {
           <button onClick={()=>{
               if(confirm('로그아웃 하시겠습니까?')) {
                 axios({
-                    url:"https://www.n-mintax.store/api/logout",
+                    url:"http://localhost:3005/api/logout",
                     method: "POST",
                     withCredentials: true,
                 }).then((res) => {
@@ -191,7 +191,11 @@ export default function Navbar({mode, setMode}) {
           className={ mode !== 'darkMode' ? `ml-1 border-[1px] border-gray-400 bg-gray-300 px-3 py-[3px] rounded-2xl` 
           : `ml-1 border-[1px] border-gray-400 bg-black px-3 py-[3px] rounded-2xl` }>{ mode == 'darkMode' ? '🌙' : '🌞' }</span>
         </Link>  
-      </div>        
+      </div>
+      <div>
+        <p className="mt-[40px] ml-[-40px] text-center text-sm">Test Account :</p> 
+        <p className="ml-[-50px] text-center text-[14px]">test / 1234</p>
+      </div> 
     </nav>   
     <Mobile_btn mode={mode}/>
   </>);
