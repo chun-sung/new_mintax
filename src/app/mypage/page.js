@@ -67,7 +67,7 @@ export default function Mypage() {
                   {inquiry[inquiry?.length-1]?.title} 
 
               </p>
-              <p className="px-3 py-2 text-black mt-5 mb-5">내용: {inquiry[inquiry?.length-1]?.content}</p>
+              <p className="px-3 py-2 text-black mt-5 mb-5">{inquiry[inquiry?.length-1]?.content}</p>
               <hr className="" />
               <p className="px-3 py-2 mt-5 mb-5">답변 : (대기중) </p>
             </div>
@@ -77,7 +77,7 @@ export default function Mypage() {
         </div>
 
         { inquiry.map(({title, content, regist_date}, i)=> {
-          return <div className="w-[340px] lg:w-[500px] m-auto mt-0 mb-[30px] bg-red-00">
+          return <div key={i} className="w-[340px] lg:w-[500px] m-auto mt-0 mb-[30px] bg-red-00">
               <div className="w-[340px]  lg:w-[500px] min-h-[200px] m-auto border-gray-400 border-[1px] mt-2">
                   <div className="flex ">                
                     <p className="basis-3/4 h-[30px] leading-[100%] border-b-[1px] border-gray-400 bg-gray-300 text-black text-center py-2">
