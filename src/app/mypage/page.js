@@ -14,7 +14,7 @@ export default function Mypage() {
       queryKey: ['inquiry'],        
       queryFn: () =>  fetch(`/api/inquiry_data?id=${user.id}`).then(res => res.json()).then( res => { 
           console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
-          console.log(res);
+          // console.log(res);
           setInquiry(res);
           return res.result
       }),        
@@ -27,7 +27,18 @@ export default function Mypage() {
         <h2 className="text-center mt-10 text-xl font-semibold"><span className="text-red-400 stop-dragging">{user?.nickname}</span> <span className="text-gray-400 font-base font-normal">님 환영합니다!</span></h2> 
 
 
-        
+        {isLoading == true ? 
+          <div className="text-center mt-[0px] lg:mt-[50px] mb-[800px] p-2 bg-red-00 text-white w-36 rounded-full m-auto">
+            <button type="button" className="bg-indigo-00 ..." disabled>
+                <svg width="100" className="animate-spin h-[50px]" 
+                    height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="44.5" stroke="#A4A3A3" strokeWidth="11"/>
+                <path d="M19 10.5L13 17L9.5 21.5L19 26L23 21.5L27 18L32.5 15L39 12.5L45.5 10.5H49.5H55L58.5 1H53.5H49.5H41.5L32.5 3L26.5 6L19 10.5Z" fill="#141313" stroke="black"/>
+                </svg>                              
+            </button>
+          </div>
+          : null
+        }
         {
           inquiry?.length == 0 ? <div  className="text-center mt-10 mb-10 font-bold text-gray-500"> <span>상담 내역이 없습니다.</span></div> : 
           <>
