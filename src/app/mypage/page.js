@@ -7,7 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 
 export default function Mypage() {
 
-    const [inquiry, setInquiry] = useState()
+    const [inquiry, setInquiry] = useState([])
     const { user }= useSelector(state => state.user);    
 
     const { isLoading, error, data, postQuery, refetch } = useQuery({
@@ -44,11 +44,11 @@ export default function Mypage() {
         }
         {
           inquiry !== undefined ? <>
-            <div className="flex bg-gray-200 m-auto w-[320px] lg:w-[400px] bg-gray-100 p-2 mt-2 mb-5">
+            <div className="flex bg-gray-200 m-auto w-[340px] lg:w-[500px] bg-gray-100 p-2 mt-2 mb-5">
               <div className="text-right mr-2 px-2 py-3">
                 <span>상담 요청 : </span><br/>
                 <span>     완료 : </span> <br/>
-                <span>   미완료 : </span>
+                <span>   대기중 : </span>
               </div>
               <div className="font-semibold py-3">
                 <span> {inquiry[0]?.total}</span><br/>
@@ -56,20 +56,46 @@ export default function Mypage() {
                 <span>{inquiry[0]?.mis_complete}</span>
               </div>
             </div>
-            <div className="w-[320px] lg:w-[400px] m-auto mt-10 mb-[80px]">
-              <p className="font-bold text-left text-gray-500">마지막 상담 내역</p>
-              <div className="w-[320px] lg:w-[500px] min-h-[200px] m-auto border-gray-400 border-[1px] mt-2">
-                  <p className="border-b-[1px] border-gray-400 bg-gray-300 text-black text-center py-2">
-                     {inquiry[inquiry.length-1]?.title} 
+          </> : null
+                // <div  className="text-center mt-10 mb-10 font-bold text-gray-500"> <span>상담 내역이 없습니다.</span></div> 
+        }
+        
+        <div className="w-[340px] lg:w-[500px] m-auto mt-10 mb-[80px] bg-red-00">
+          <p className="font-bold text-left text-gray-500">마지막 상담</p>
+          <div className="w-[340px]  lg:w-[500px] min-h-[200px] m-auto border-gray-400 border-[1px] mt-2">
+              <p className="border-b-[1px] border-gray-400 bg-gray-300 text-black text-center py-2">
+                  {inquiry[inquiry?.length-1]?.title} 
 
-                  </p>
-                  <p className="px-3 py-2 text-black mt-5 mb-5">내용: {inquiry[inquiry.length-1]?.content}</p>
+              </p>
+              <p className="px-3 py-2 text-black mt-5 mb-5">내용: {inquiry[inquiry?.length-1]?.content}</p>
+              <hr className="" />
+              <p className="px-3 py-2 mt-5 mb-5">답변 : (대기중) </p>
+            </div>
+        </div>    
+        <div className="w-[340px] lg:w-[500px] m-auto mt-10 mb-[0px] bg-red-00">
+          <p className="font-bold ml-2 text-left text-gray-500">상담 내역</p>
+        </div>
+
+        { inquiry.map(({title, content, regist_date}, i)=> {
+          return <div className="w-[340px] lg:w-[500px] m-auto mt-0 mb-[30px] bg-red-00">
+              <div className="w-[340px]  lg:w-[500px] min-h-[200px] m-auto border-gray-400 border-[1px] mt-2">
+                  <div className="flex ">                
+                    <p className="basis-3/4 border-b-[1px] border-gray-400 bg-gray-300 text-black text-center py-2">
+                        제목: {title} 
+                    </p>
+                    <p className="basis-1/4 border-b-[1px] border-gray-400 bg-gray-300 text-black text-center py-2 text-sm">
+                       등록일자: {regist_date}
+                    </p>
+                  </div>
+                  
+                  <p key={i} className="px-3 py-2 text-black mt-5 mb-5">내용: {content}</p>
                   <hr className="" />
                   <p className="px-3 py-2 mt-5 mb-5">답변 : (대기중) </p>
                </div>
             </div>            
-          </> : null
-                // <div  className="text-center mt-10 mb-10 font-bold text-gray-500"> <span>상담 내역이 없습니다.</span></div> 
+
+          })
+
         }
         <div className="w-[100%] lg:w-[800px] m-auto mt-3"><hr className="block mt-5 w-[80%] lg:w-[100%] m-auto"></hr></div>
 
