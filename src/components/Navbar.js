@@ -135,7 +135,7 @@ export default function Navbar({mode, setMode}) {
           <button onClick={()=>{
               if(confirm('로그아웃 하시겠습니까?')) {
                 axios({
-                    url:"http://localhost:30005/api/logout",
+                    url:"https://www.n-mintax.store/api/logout",
                     method: "POST",
                     withCredentials: true,
                 }).then((res) => {
