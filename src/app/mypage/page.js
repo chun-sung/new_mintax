@@ -43,7 +43,7 @@ export default function Mypage() {
           : null
         }
         {
-          inquiry !== undefined ? <>
+          inquiry.length !== 0 ? <>
             <div className="flex bg-gray-200 m-auto w-[340px] lg:w-[500px] bg-gray-100 p-2 mt-2 mb-5">
               <div className="text-right mr-2 px-2 py-3">
                 <span>상담 요청 : </span><br/>
@@ -56,27 +56,43 @@ export default function Mypage() {
                 <span>{inquiry[0]?.mis_complete}</span>
               </div>
             </div>
-          </> : null
-                // <div  className="text-center mt-10 mb-10 font-bold text-gray-500"> <span>상담 내역이 없습니다.</span></div> 
+          </> : <><div className="flex bg-gray-200 m-auto w-[340px] lg:w-[500px] bg-gray-100 p-2 mt-2 mb-5">
+                  <div className="text-right mr-2 px-2 py-3">
+                    <span>상담 요청 : </span><br/>
+                    <span>     완료 : </span> <br/>
+                    <span>   대기중 : </span>
+                  </div>
+                  <div className="font-semibold py-3">
+                    <span>0</span><br/>
+                    <span>0</span><br/>
+                    <span>0</span>
+                  </div>
+                </div>
+                <div  className="flex-none text-center mt-10 mb-10 font-bold text-gray-500"> <span>상담 신청 내역이 없습니다.</span></div></> 
+        }
+        { inquiry.length !== 0 ?           
+          <div className="w-[340px] lg:w-[500px] m-auto mt-10 mb-[80px] bg-red-00">
+            <p className="font-bold text-left text-gray-500">NEW</p>
+            <div className="w-[340px] h-[30px] leading-[100%] lg:w-[500px] min-h-[200px] m-auto border-gray-400 border-[1px] mt-2">
+                <p className="border-b-[1px] border-gray-400 bg-red-300 text-black text-center py-2">
+                    {inquiry[inquiry?.length-1]?.title} 
+                </p>
+                <p className="px-3 py-2 text-black mt-5 mb-5">{inquiry[inquiry?.length-1]?.content}</p>
+                <hr className="" />
+                <p className="px-3 py-2 mt-5 mb-5">답변 : (대기중) </p>
+              </div>
+          </div>  : null
+        }
+        {
+          inquiry.length == 0 ? null 
+          : <div className="w-[340px] lg:w-[500px] m-auto mt-10 mb-[0px] bg-red-00">
+              <p className="font-bold ml-2 text-left text-gray-500">상담 내역</p>
+            </div>
         }
         
-        <div className="w-[340px] lg:w-[500px] m-auto mt-10 mb-[80px] bg-red-00">
-          <p className="font-bold text-left text-gray-500">NEW</p>
-          <div className="w-[340px] h-[30px] leading-[100%] lg:w-[500px] min-h-[200px] m-auto border-gray-400 border-[1px] mt-2">
-              <p className="border-b-[1px] border-gray-400 bg-red-300 text-black text-center py-2">
-                  {inquiry[inquiry?.length-1]?.title} 
-              </p>
-              <p className="px-3 py-2 text-black mt-5 mb-5">{inquiry[inquiry?.length-1]?.content}</p>
-              <hr className="" />
-              <p className="px-3 py-2 mt-5 mb-5">답변 : (대기중) </p>
-            </div>
-        </div>    
-        <div className="w-[340px] lg:w-[500px] m-auto mt-10 mb-[0px] bg-red-00">
-          <p className="font-bold ml-2 text-left text-gray-500">상담 내역</p>
-        </div>
-
         { inquiry.map(({title, content, regist_date}, i)=> {
-          return <div key={i} className="w-[340px] lg:w-[500px] m-auto mt-0 mb-[30px] bg-red-00">
+          return <>
+           <div key={i} className="w-[340px] lg:w-[500px] m-auto mt-0 mb-[30px] bg-red-00">
               <div className="w-[340px]  lg:w-[500px] min-h-[200px] m-auto border-gray-400 border-[1px] mt-2">
                   <div className="flex ">                
                     <p className="basis-3/4 h-[30px] leading-[100%] border-b-[1px] border-gray-400 bg-gray-300 text-black text-center py-2">
@@ -92,7 +108,7 @@ export default function Mypage() {
                   <p className="px-3 py-2 mt-5 mb-5">답변 : (대기중) </p>
                </div>
             </div>            
-
+            </>
           })
 
         }
