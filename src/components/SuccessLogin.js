@@ -22,7 +22,7 @@ export default function SuccessLogin() {
     let path = usePathname();
     useEffect(()=> {           
 				axios({
-						url: "http://localhost:3005/api/login/success",
+						url: "https://www.n-mintax.store/api/login/success",
 						method: "GET",
 						withCredentials: true,            // 자격증명포함 (쿠키의 토큰을 가지고 간다.)
 				})

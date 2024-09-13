@@ -62,8 +62,8 @@ export default function Mypage() {
         
         <div className="w-[340px] lg:w-[500px] m-auto mt-10 mb-[80px] bg-red-00">
           <p className="font-bold text-left text-gray-500">마지막 상담</p>
-          <div className="w-[340px]  lg:w-[500px] min-h-[200px] m-auto border-gray-400 border-[1px] mt-2">
-              <p className="border-b-[1px] border-gray-400 bg-gray-300 text-black text-center py-2">
+          <div className="w-[340px] h-[30px] leading-[100%] lg:w-[500px] min-h-[200px] m-auto border-gray-400 border-[1px] mt-2">
+              <p className="border-b-[1px] border-gray-400 bg-gray-400 text-black text-center py-2">
                   {inquiry[inquiry?.length-1]?.title} 
 
               </p>
@@ -80,15 +80,15 @@ export default function Mypage() {
           return <div className="w-[340px] lg:w-[500px] m-auto mt-0 mb-[30px] bg-red-00">
               <div className="w-[340px]  lg:w-[500px] min-h-[200px] m-auto border-gray-400 border-[1px] mt-2">
                   <div className="flex ">                
-                    <p className="basis-3/4 border-b-[1px] border-gray-400 bg-gray-300 text-black text-center py-2">
-                        제목: {title} 
+                    <p className="basis-3/4 h-[30px] leading-[100%] border-b-[1px] border-gray-400 bg-gray-300 text-black text-center py-2">
+                       {title} 
                     </p>
-                    <p className="basis-1/4 border-b-[1px] border-gray-400 bg-gray-300 text-black text-center py-2 text-sm">
+                    <p className="basis-1/4 h-[30px] leading-[100%] border-b-[1px] border-gray-400 bg-gray-300 text-black text-center py-2 text-sm">
                        등록일자: {regist_date}
                     </p>
                   </div>
                   
-                  <p key={i} className="px-3 py-2 text-black mt-5 mb-5">내용: {content}</p>
+                  <p key={i} className="px-3 py-2 text-black mt-5 mb-5">{content}</p>
                   <hr className="" />
                   <p className="px-3 py-2 mt-5 mb-5">답변 : (대기중) </p>
                </div>
