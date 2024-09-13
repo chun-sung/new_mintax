@@ -67,7 +67,7 @@ export default function Inquiry() {
                         alert('내용을 입력하세요')
                         return
                     }
-                    fetch('http://localhost:3005/api/inquiry/create', {
+                    fetch('https://www.n-mintax.store/api/inquiry/create', {
                         method: 'POST',
                         body: JSON.stringify({id , title, content})
                     })
