@@ -2,7 +2,7 @@
 import { useSelector } from "react-redux";
 import PageTop from "@/components/PageTop";
 import Seo from "@/components/Seo";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 export default function Mypage() {
@@ -19,7 +19,18 @@ export default function Mypage() {
           console.log(res);          
           return res
       }),        
-    })
+    })    
+
+    // 데이터가 로드되면 1초 후에 refetch 실행 (user.id 값이 새로고침 치 null 되고 0.5초 후 다시 값을 가져온다.)
+      React.useEffect(() => {
+        if (data) {
+          const timer = setTimeout(() => {
+            refetch();
+          }, 500); // 1초 후 refetch
+
+          return () => clearTimeout(timer);  // 컴포넌트 언마운트 시 타이머 클리어
+        }
+      }, [data, refetch]);
 
 
     return <>
@@ -73,19 +84,19 @@ export default function Mypage() {
         { inquiry.length !== 0 ?           
           <div className="w-[340px] lg:w-[500px] m-auto mt-10 mb-[80px] bg-red-00">
             <p className="font-bold text-left text-gray-500">NEW</p>
-            <div className="w-[340px] h-[30px] leading-[100%] lg:w-[500px] min-h-[200px] m-auto border-gray-400 border-[1px] mt-2">
-            <div className="flex ">  
+            <div className="w-[340px] h-[30px] leading-[100%] lg:w-[500px] min-h-[250px] m-auto border-gray-400 border-[1px] mt-2">
+            <div className="flex">  
                 <p className="basis-3/4 border-b-[1px] border-gray-400 leading-[170%] lg:leading-[170%] bg-red-300 text-black text-center py-2">
                     {inquiry[inquiry?.length-1]?.title} 
                 </p>
                 <p className="basis-1/4 leading-[100%] lg:leading-[170%] border-b-[1px] border-gray-400 bg-red-300 text-black text-center py-2 text-sm">
                   <span className="text-[12px] lg:text-[12px]">{inquiry[inquiry?.length-1]?.regist_date}</span>
                 </p>
-            </div>
+            </div>            
                 <p className="px-3 py-2 text-black mt-5 mb-5">{inquiry[inquiry?.length-1]?.content}</p>
                 <hr className="" />
                 <p className="px-3 py-2 mt-5 mb-5">답변 : (대기중) </p>
-              </div>
+            </div>
           </div>  : null
         }
         {
@@ -96,8 +107,8 @@ export default function Mypage() {
         }
         
         { inquiry.map(({title, content, regist_date}, i)=> {
-          return <>
-           <div key={i} className="w-[340px] lg:w-[500px] m-auto mt-0 mb-[30px] bg-red-00">
+          return <div key={i}>
+           <div className="w-[340px] lg:w-[500px] m-auto mt-0 mb-[30px] bg-red-00">
               <div className="w-[340px]  lg:w-[500px] min-h-[200px] m-auto border-gray-400 border-[1px] mt-2">
                   <div className="flex ">                
                     <p className="basis-3/4 min-h-[30px] leading-[170%] lg:leading-[170%] border-b-[1px] border-gray-400 bg-gray-300 text-black text-center py-2">
@@ -108,12 +119,12 @@ export default function Mypage() {
                     </p>
                   </div>
                   
-                  <p key={i} className="px-3 py-2 text-black mt-5 mb-5">{content}</p>
+                  <p className="px-3 py-2 text-black mt-5 mb-5">{content}</p>
                   <hr className="" />
                   <p className="px-3 py-2 mt-5 mb-5">답변 : (대기중) </p>
                </div>
             </div>            
-            </>
+            </div>
           })
 
         }
