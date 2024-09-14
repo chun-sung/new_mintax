@@ -74,7 +74,7 @@ export default function Inquiry() {
                             id, 
                             title,
                             content,
-                            regist_date: dayjs(Date.now()).format('YYYY.MM.DD HH:mm.ss') })
+                            regist_date: dayjs(Date.now()).format('YYYY.MM.DD HH:mm') })
                     })
                     .then((res) => {
                         return res.json();
