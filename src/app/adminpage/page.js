@@ -107,7 +107,10 @@ export default function Mypage() {
                
                <p className="px-3 py-2 text-black mt-5 mb-5">{inquiry[inquiry?.length-1]?.content}</p>
                <hr className="" />
-               <p className="px-3 py-2 mt-5 mb-5">답변 : (대기중) </p>
+               <p className="px-3 py-2 mt-5 mb-5">(대기중) 
+                  <button onClick={()=> alert('미구현 상태 입니다')}
+                    className="ml-5 text-white bg-red-400 hover:bg-blue-300  shadow-md rounded px-2">답변하기</button>
+                </p>
             </div>
          </div>  : null     
         }
@@ -134,7 +137,10 @@ export default function Mypage() {
                   
                   <p key={i} className="px-3 py-2 text-black mt-5 mb-5">{content}</p>
                   <hr className="" />
-                  <p className="px-3 py-2 mt-5 mb-5">답변 : (대기중) </p>
+                  <p className="px-3 py-2 mt-5 mb-5">(대기중)
+                    <button onClick={()=> alert('미구현 상태 입니다')}
+                      className="ml-5 text-white bg-red-400 hover:bg-blue-300  shadow-md rounded px-2">답변하기</button>
+                  </p>
                </div>
             </div>            
             </>
