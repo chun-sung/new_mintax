@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { SET_MEMBER_PANEL, SET_CONSULTING_PANEL } from "../redux/reducers/userSlice"
+import dayjs from "dayjs";
 
 export default function Inquiry() {
     
@@ -69,7 +70,11 @@ export default function Inquiry() {
                     }
                     fetch('https://www.n-mintax.store/api/inquiry/create', {
                         method: 'POST',
-                        body: JSON.stringify({id , title, content})
+                        body: JSON.stringify({
+                            id, 
+                            title,
+                            content,
+                            regist_date: dayjs(Date.now()).format('YYYY.MM.DD HH:mm.ss') })
                     })
                     .then((res) => {
                         return res.json();

@@ -8,11 +8,12 @@ export async function POST(req) {
 
   try{
       await db`
-          INSERT INTO customer_inquiry (id, title, content)
+          INSERT INTO customer_inquiry (id, title, content, regist_date)
           Values(
           ${body.id},
           ${body.title},
-          ${body.content}
+          ${body.content},
+          ${body.regist_date}
           )`;         
      console.log('상담 1건이 등록되었습니다.')
       return new Response(JSON.stringify({msg: 'success'}))
