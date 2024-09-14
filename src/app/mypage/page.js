@@ -75,11 +75,11 @@ export default function Mypage() {
             <p className="font-bold text-left text-gray-500">NEW</p>
             <div className="w-[340px] h-[30px] leading-[100%] lg:w-[500px] min-h-[200px] m-auto border-gray-400 border-[1px] mt-2">
             <div className="flex ">  
-                <p className="basis-3/4 border-b-[1px] border-gray-400 bg-red-300 text-black text-center py-2">
+                <p className="basis-3/4 border-b-[1px] border-gray-400 leading-[170%] lg:leading-[170%] bg-red-300 text-black text-center py-2">
                     {inquiry[inquiry?.length-1]?.title} 
                 </p>
-                <p className="basis-1/4 leading-[100%] border-b-[1px] border-gray-400 bg-red-300 text-black text-center py-2 text-sm">
-                  <span className="text-[10px] lg:text-[12px]">{inquiry[inquiry?.length-1]?.regist_date}</span>
+                <p className="basis-1/4 leading-[100%] lg:leading-[170%] border-b-[1px] border-gray-400 bg-red-300 text-black text-center py-2 text-sm">
+                  <span className="text-[12px] lg:text-[12px]">{inquiry[inquiry?.length-1]?.regist_date}</span>
                 </p>
             </div>
                 <p className="px-3 py-2 text-black mt-5 mb-5">{inquiry[inquiry?.length-1]?.content}</p>
@@ -100,11 +100,11 @@ export default function Mypage() {
            <div key={i} className="w-[340px] lg:w-[500px] m-auto mt-0 mb-[30px] bg-red-00">
               <div className="w-[340px]  lg:w-[500px] min-h-[200px] m-auto border-gray-400 border-[1px] mt-2">
                   <div className="flex ">                
-                    <p className="basis-3/4 min-h-[30px] leading-[100%] border-b-[1px] border-gray-400 bg-gray-300 text-black text-center py-2">
+                    <p className="basis-3/4 min-h-[30px] leading-[170%] lg:leading-[170%] border-b-[1px] border-gray-400 bg-gray-300 text-black text-center py-2">
                        {title} 
                     </p>
-                    <p className="basis-1/4 min-h-[30px] leading-[100%] border-b-[1px] border-gray-400 bg-gray-300 text-black text-center py-2 text-sm">
-                        <span className="text-[10px] lg:text-[12px]">{regist_date}</span>
+                    <p className="basis-1/4 min-h-[30px] leading-[100%] lg:leading-[170%] border-b-[1px] border-gray-400 bg-gray-300 text-black text-center py-2 text-sm">
+                        <span className="text-[12px] lg:text-[12px]">{regist_date}</span>
                     </p>
                   </div>
                   
