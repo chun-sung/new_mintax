@@ -52,7 +52,7 @@ export default function Mypage() {
                 <span>   대기중 : </span>
               </div>
               <div className="font-semibold py-3">
-                <span> {inquiry[0]?.total}</span><br/>
+                <span> {inquiry?.length}</span><br/>
                 <span>{inquiry[0]?.total_complete}</span><br/>
                 <span>{inquiry[0]?.mis_complete}</span>
               </div>

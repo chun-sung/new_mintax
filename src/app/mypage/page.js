@@ -81,10 +81,29 @@ export default function Mypage() {
                 </div>
                 <div  className="flex-none text-center mt-10 mb-10 font-bold text-gray-500"> <span>상담 신청 내역이 없습니다.</span></div></> 
         }
-        { inquiry.length !== 0 ?           
+        { inquiry.length !== 0 ?    
+            <div className="w-[340px] lg:w-[500px] m-auto mt-0 mb-[30px] bg-red-00">
+              <p className="font-bold text-left text-gray-500">최근 상담</p>
+              <div className="w-[340px]  lg:w-[500px] min-h-[200px] m-auto border-gray-400 border-[1px] mt-2">
+                  <div className="flex ">                
+                    <p className="basis-3/4 min-h-[30px] leading-[170%] lg:leading-[170%] border-b-[1px] border-gray-400 bg-gray-300 text-black text-center py-2 bg-red-200">
+                        {inquiry[inquiry?.length-1]?.title}
+                    </p>
+                    <p className="basis-1/4 min-h-[30px] leading-[100%] lg:leading-[170%] border-b-[1px] border-gray-400 bg-gray-300 text-black text-center py-2 text-sm bg-red-200">
+                        <span className="text-[12px] lg:text-[12px]">{inquiry[inquiry?.length-1]?.regist_date}</span>
+                    </p>
+                  </div>
+                  
+                  <p className="px-3 py-2 text-black mt-5 mb-5">{inquiry[inquiry?.length-1]?.content}</p>
+                  <hr className="" />
+                  <p className="px-3 py-2 mt-5 mb-5">답변 : (대기중) </p>
+               </div>
+            </div>  : null
+        }
+        {/* { inquiry.length !== 0 ?           
           <div className="w-[340px] lg:w-[500px] m-auto mt-10 mb-[80px] bg-red-00">
-            <p className="font-bold text-left text-gray-500">NEW</p>
-            <div className="w-[340px] h-[30px] leading-[100%] lg:w-[500px] min-h-[250px] m-auto border-gray-400 border-[1px] mt-2">
+            <p className="font-bold text-left text-gray-500">최근 상담</p>
+            <div className="w-[340px] h-[30px] leading-[100%] lg:w-[500px] min-h-[300px] m-auto border-gray-400 border-[1px] mt-2">
             <div className="flex">  
                 <p className="basis-3/4 border-b-[1px] border-gray-400 leading-[170%] lg:leading-[170%] bg-red-300 text-black text-center py-2">
                     {inquiry[inquiry?.length-1]?.title} 
@@ -93,16 +112,16 @@ export default function Mypage() {
                   <span className="text-[12px] lg:text-[12px]">{inquiry[inquiry?.length-1]?.regist_date}</span>
                 </p>
             </div>            
-                <p className="px-3 py-2 text-black mt-5 mb-5">{inquiry[inquiry?.length-1]?.content}</p>
+                <p className="px-3 py-2 text-black mt-5 mb-5 leading-[150%]">{inquiry[inquiry?.length-1]?.content}</p>
                 <hr className="" />
                 <p className="px-3 py-2 mt-5 mb-5">답변 : (대기중) </p>
             </div>
           </div>  : null
-        }
+        } */}
         {
           inquiry.length == 0 ? null 
           : <div className="w-[340px] lg:w-[500px] m-auto mt-10 mb-[0px] bg-red-00">
-              <p className="font-bold ml-2 text-left text-gray-500">상담 내역</p>
+              <p className="font-bold ml-2 text-left text-gray-500">기존 상담</p>
             </div>
         }
         
