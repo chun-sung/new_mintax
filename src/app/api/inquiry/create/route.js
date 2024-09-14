@@ -8,9 +8,10 @@ export async function POST(req) {
 
   try{
       await db`
-          INSERT INTO customer_inquiry (id, title, content, regist_date)
+          INSERT INTO customer_inquiry (id,user_id, title, content, regist_date)
           Values(
           ${body.id},
+          ${body.user_id},
           ${body.title},
           ${body.content},
           ${body.regist_date}

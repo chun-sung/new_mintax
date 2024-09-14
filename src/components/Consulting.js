@@ -72,9 +72,11 @@ export default function Inquiry() {
                         method: 'POST',
                         body: JSON.stringify({
                             id, 
+                            user_id: user.user_id,
                             title,
                             content,
-                            regist_date: dayjs(Date.now()).format('YYYY.MM.DD HH:mm') })
+                            // regist_date: dayjs(Date.now()).format('YYYY.MM.DD HH:mm') })
+                            regist_date: dayjs(Date.now()).format('YYYY.MM.DD') })
                     })
                     .then((res) => {
                         return res.json();
