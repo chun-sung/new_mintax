@@ -12,11 +12,12 @@ export default function Mypage() {
 
     const { isLoading, error, data, postQuery, refetch } = useQuery({
       queryKey: ['inquiry'],        
-      queryFn: () =>  fetch(`/api/inquiry_data?id=${user.id}`).then(res => res.json()).then( res => { 
+      queryFn: () =>  fetch(`/api/inquiry`).then(res => res.json()).then( res => { 
           // console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
           // console.log(res);
-          setInquiry(res);
-          console.log(res);          
+          const {result} = res;
+          setInquiry(result);
+          console.log(result);          
           return res
       }),        
     })

@@ -110,7 +110,7 @@ export default function Navbar({mode, setMode}) {
           className={clsx("border-b lg:border-0 lg:border-0v ml-4 lg:ml-0 text-left block lg:inline mr-5 lg:mr-[50px] text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/board'
           })}>고객게시판</Link>
-        { user.user_id !== null || user.user_id !== 'admin' ? 
+        { user.user_id !== null ? 
           <Link href={'/mypage'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
             className={clsx("font-bold  text-red-400 lg:hidden border-b lg:border-0 lg:border-0v ml-4 lg:ml-0 text-left block mr-5 lg:mr-[50px] text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
               'lg:bg-white bg-gray-200 lg:hover:bg-white text-red-400': pathname === '/mypage'
@@ -129,7 +129,7 @@ export default function Navbar({mode, setMode}) {
             //   className={`h-10 w-[10px] ml-[-45px] lg:ml-[5px] text-sm text-red-500 lg:hover:bg-slate-700 inline border-gray-600 border-[1px]  rounded-l-xl p-1`}>
             //     <span className="text-blue-400 px-1 text-[12px]">{user.user_id}</span>
             // </p>
-            <button onClick={()=>{ router.push('/mypage')}} 
+            <button onClick={()=>{ user.user_id !== 'admin' ? router.push('/mypage') : router.push('/adminpage') }} 
               className={`inline-block h-10 w-[px] h-[27px] ml-[-45px] lg:ml-[5px] text-sm text-red-500 lg:hover:bg-slate-700 inline border-gray-400 lg:border-gray-600 border-[0px] lg:border-[1px] rounded-l-xl p-1`}>
                 <span className="text-blue-400 px-1 text-[16px] leading-[15px]">{user.user_id}</span>
             </button>
