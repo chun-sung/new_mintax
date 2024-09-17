@@ -198,7 +198,7 @@ export default function Navbar({mode, setMode}) {
             }
           }  
         }}
-          className="ml-[-60px] w-[140px] mr-0 lg:mr-5 mt-5 text-sm lg:hidden" href="#">Mode: <span
+          className="ml-[-80px] w-[140px] mr-0 lg:mr-5 mt-5 text-sm lg:hidden" href="#">Mode: <span
           className={ mode !== 'darkMode' ? `ml-1 border-[1px] border-gray-400 bg-gray-300 px-3 py-[3px] rounded-2xl` 
           : `ml-1 border-[1px] border-gray-400 bg-black px-3 py-[3px] rounded-2xl` }>{ mode == 'darkMode' ? '🌙' : '🌞' }</span>
         </Link>   
