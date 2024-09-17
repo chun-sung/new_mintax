@@ -85,7 +85,7 @@ export default function Navbar({mode, setMode}) {
             }
           }  
         }}
-          className="mr-0 align-middle lg:mr-5 text-xl hidden lg:inline-block" href="#">{ mode == 'darkMode' ? '🌙' : '🌞' }</Link>
+          className="mr-0 align-middle lg:mr-3 text-xl hidden lg:inline-block" href="#">{ mode == 'darkMode' ? '🌙' : '🌞' }</Link>
         <Link href={'/smart'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
           className={clsx("border-b lg:border-0 ml-4 lg:ml-0 block text-left lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/smart'
@@ -108,7 +108,7 @@ export default function Navbar({mode, setMode}) {
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/susu'
           })}>수수료안내</Link>
         <Link href={'/board'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
-          className={clsx("border-b lg:border-0 lg:border-0v ml-4 lg:ml-0 text-left block lg:inline mr-5 lg:mr-[30px] text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
+          className={clsx("border-b lg:border-0 lg:border-0v ml-4 lg:ml-0 text-left block lg:inline mr-5 lg:mr-[15px] text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/board'
           })}>고객게시판</Link>
         { user.user_id !== null ? 
@@ -203,7 +203,7 @@ export default function Navbar({mode, setMode}) {
         </Link>         
       </div>
       <div>
-        <p className="mt-[41px] ml-[-41px] text-center text-sm lg:hidden">Test Account </p> 
+        <p className="mt-[61px] ml-[-41px] text-center text-sm lg:hidden">Test Account </p> 
         <p className="ml-[-41px] text-center text-[14px] lg:hidden">test / 1234</p>
       </div> 
     </nav>   
