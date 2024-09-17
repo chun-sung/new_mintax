@@ -65,15 +65,15 @@ export default function Subscribe_btn() {
     <>
       { isSubscribed !== true ? 
         <button onClick={subscribeUser} disabled={isSubscribed}>   
-        <span className='absolute left-[200px] top-[462px] lg:hidden text-sm'>:Notice </span>
           <img src='/bell_off.png' 
-            className='lg:relative bottom-[236px] lg:bottom-[-1px] right-[98px] lg:right-[0px] px-3 lg:px-1
-            lg:inline lg:mb-[2px] w-[47px] lg:w-[25px] h-[25px] lg:h-[25px] border-[1px] border-gray-400 p-1 rounded-xl ml-[25px] bg-red-100 hover:bg-blue-300' />
+            className='inline bottom-[236px] lg:bottom-[-1px] right-[98px] lg:right-[0px] px-3 lg:px-1
+            lg:inline lg:mb-[2px] w-[47px] lg:w-[25px] h-[25px] lg:h-[25px] border-[1px] border-gray-400 p-1 rounded-xl ml-[15px] bg-red-100 hover:bg-blue-300' />
+            <span className='inline ml-[8px] lg:hidden text-sm'>:Notice </span>
         </button>
         : <button onClick={()=> { unsubscribeUser(); }}>
-          <span className='left-[200px] top-[462px] lg:hidden text-sm'>:Notice </span>
+          {/* <span className='left-[200px] top-[462px] lg:hidden text-sm'>:Notice </span> */}
             <img src='/bell_on.png'
-              className='absolute lg:relative bottom-[236px] lg:bottom-[-1px] right-[98px] lg:right-[0px] px-3.5 lg:px-1
+              className='inline bottom-[236px] lg:bottom-[-1px] right-[98px] lg:right-[0px] px-3.5 lg:px-1
               lg:inline lg:mb-[2px] w-[47px] lg:w-[25px] h-[25px] lg:h-[25px] border-[1px] border-gray-400 p-1 rounded-xl ml-[25px] bg-red-100 hover:bg-blue-300' />            
           </button>
       }        
