@@ -65,9 +65,9 @@ export default function Subscribe_btn() {
     <>
       { isSubscribed !== true ? 
         <button onClick={subscribeUser} disabled={isSubscribed}>   
-        <span className='absolute left-[30px] top-[510px] lg:hidden text-sm'>Notice: </span>
+        <span className='absolute left-[130px] top-[462px] lg:hidden text-sm'>Notice: </span>
           <img src='/bell_off.png' 
-            className='absolute lg:relative bottom-[189px] lg:bottom-[1px] right-[158px] lg:right-[0px] px-3 lg:px-1
+            className='absolute lg:relative bottom-[230px] lg:bottom-[1px] right-[60px] lg:right-[0px] px-3 lg:px-1
             lg:inline lg:mb-[2px] w-[47px] lg:w-[30px] h-[26px] lg:h-[30px] border-[1px] border-gray-400 p-1 rounded-xl mr-[30px] bg-red-100 hover:bg-blue-300' />
         </button>
         : <button onClick={()=> { unsubscribeUser(); }}>
