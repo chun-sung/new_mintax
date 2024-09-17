@@ -9,6 +9,7 @@ import Mobile_btn from "./Mobile_btn";
 import Image from "next/image";
 import axios from "axios";
 import SuccessLogin from "./SuccessLogin";
+import Subscribe_btn from "./Subscribe_btn";
 
 export default function Navbar({mode, setMode}) {
 
@@ -107,7 +108,7 @@ export default function Navbar({mode, setMode}) {
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/susu'
           })}>수수료안내</Link>
         <Link href={'/board'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
-          className={clsx("border-b lg:border-0 lg:border-0v ml-4 lg:ml-0 text-left block lg:inline mr-5 lg:mr-[50px] text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
+          className={clsx("border-b lg:border-0 lg:border-0v ml-4 lg:ml-0 text-left block lg:inline mr-5 lg:mr-[30px] text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/board'
           })}>고객게시판</Link>
         { user.user_id !== null ? 
@@ -135,6 +136,9 @@ export default function Navbar({mode, setMode}) {
             </button>
             :
           <p className={`h-10 w-[10px] ml-[115px] lg:hidden`}>Guest</p>
+        }
+        {
+          <Subscribe_btn />
         }
         {
           user.user_id !== null ? 
@@ -193,10 +197,10 @@ export default function Navbar({mode, setMode}) {
             }
           }  
         }}
-          className="ml-[20px] w-[180px] mr-0 lg:mr-5 mt-5 text-sm block lg:hidden" href="#">mode: <span
+          className="ml-[10px] w-[140px] mr-0 lg:mr-5 mt-5 text-sm block lg:hidden" href="#">mode: <span
           className={ mode !== 'darkMode' ? `ml-1 border-[1px] border-gray-400 bg-gray-300 px-3 py-[3px] rounded-2xl` 
           : `ml-1 border-[1px] border-gray-400 bg-black px-3 py-[3px] rounded-2xl` }>{ mode == 'darkMode' ? '🌙' : '🌞' }</span>
-        </Link>  
+        </Link>         
       </div>
       <div>
         <p className="mt-[41px] ml-[-41px] text-center text-sm lg:hidden">Test Account </p> 
