@@ -137,9 +137,9 @@ export default function Navbar({mode, setMode}) {
             :
           <p className={`h-10 w-[10px] ml-[115px] lg:hidden`}>Guest</p>
         }
-        {
+        {/* {
           <Subscribe_btn />
-        }
+        } */}
         {
           user.user_id !== null ? 
           <button onClick={()=>{
@@ -200,7 +200,10 @@ export default function Navbar({mode, setMode}) {
           className="ml-[10px] w-[140px] mr-0 lg:mr-5 mt-5 text-sm block lg:hidden" href="#">Mode: <span
           className={ mode !== 'darkMode' ? `ml-1 border-[1px] border-gray-400 bg-gray-300 px-3 py-[3px] rounded-2xl` 
           : `ml-1 border-[1px] border-gray-400 bg-black px-3 py-[3px] rounded-2xl` }>{ mode == 'darkMode' ? '🌙' : '🌞' }</span>
-        </Link>         
+        </Link>        
+        {
+          <Subscribe_btn />
+        } 
       </div>
       <div>
         <p className="mt-[61px] ml-[-41px] text-center text-sm lg:hidden">Test Account </p> 
