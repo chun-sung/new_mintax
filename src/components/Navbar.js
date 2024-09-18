@@ -108,7 +108,7 @@ export default function Navbar({mode, setMode}) {
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/susu'
           })}>수수료안내</Link>
         <Link href={'/board'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
-          className={clsx("border-b lg:border-0 lg:border-0v ml-4 lg:ml-0 text-left block lg:inline mr-5 lg:mr-[15px] text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
+          className={clsx("border-b lg:border-0 lg:border-0 ml-4 lg:ml-0 text-left block lg:inline mr-5 lg:mr-[15px] text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/board'
           })}>고객게시판</Link>
         { user.user_id !== null ? 
@@ -156,7 +156,7 @@ export default function Navbar({mode, setMode}) {
             >logout
             </button>
             </div>
-          :<div className="lg:inline-block mt-[10px] lg:mt-0 mb-[20px] lg:mb-[0px]">
+          :<div className="lg:inline-block mt-[0px] lg:mt-0 mb-[20px] lg:mb-[0px]">
             <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(true));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(false));}}
               className="mt-0 lg:mt-0 min-w-[70px] ml-[-49px] lg:ml-[-5px] mr-[0px] lg:hover:bg-slate-700 text-blue-400 lg:text-blue-400  w-[65px] h-[27px] text-[16px] text-center rounded-l-xl
                        border-[1px] border-gray-400 lg:border-gray-400 leading-[20px] shadow-md"
@@ -198,7 +198,7 @@ export default function Navbar({mode, setMode}) {
 
       </div>
       <div>
-        <p className="mt-[20px] ml-[-41px] text-center text-sm lg:hidden">Test Account </p> 
+        <p className="mt-[15px] ml-[-41px] text-center text-sm lg:hidden">Test Account </p> 
         <p className="ml-[-41px] text-center text-[14px] lg:hidden">test / 1234</p>
       </div> 
     </nav>   
