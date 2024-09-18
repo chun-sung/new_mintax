@@ -123,25 +123,17 @@ export default function Navbar({mode, setMode}) {
               'lg:bg-white bg-gray-200 lg:hover:bg-white text-red-400': pathname === '/adminpage'
           })}>관리자 페이지 </Link> : null
         }
-        
-        {
-          user.user_id !== null ? 
-            // <p onClick={()=>{ router.push('/mypage')}} 
-            //   className={`h-10 w-[10px] ml-[-45px] lg:ml-[5px] text-sm text-red-500 lg:hover:bg-slate-700 inline border-gray-600 border-[1px]  rounded-l-xl p-1`}>
-            //     <span className="text-blue-400 px-1 text-[12px]">{user.user_id}</span>
-            // </p>
-            <button onClick={()=>{ user.user_id !== 'admin' ? router.push('/mypage') : router.push('/adminpage') }} 
-              className={`inline-block h-[27px] ml-[-45px] lg:ml-[5px] text-sm text-red-500 lg:hover:bg-slate-700 border-gray-400 lg:border-gray-600 border-[0px] lg:border-[1px] rounded-l-xl p-1`}>
-                <span className="text-blue-400 px-1 text-[16px] leading-[15px]">{user.user_id}</span>
-            </button>
-            :
-          <p className={`h-10 w-[10px] ml-[115px] lg:hidden`}>Guest</p>
+
+        { user.user_id !== null ? null
+          : <span className="ml-[-45px] lg:hidden text-gray-400 text-md">Guest</span>
         }
-        {/* {
-          <Subscribe_btn />
-        } */}
+
         {
-          user.user_id !== null ? 
+          user.user_id !== null ? <div className="lg:inline">
+          <button onClick={()=>{ user.user_id !== 'admin' ? router.push('/mypage') : router.push('/adminpage') }} 
+          className={`inline-block h-[27px] ml-[-45px] lg:ml-[5px] text-sm text-red-500 lg:hover:bg-slate-700 border-gray-400 lg:border-gray-600 border-[0px] lg:border-[1px] rounded-l-xl p-1`}>
+            <span className="text-blue-400 px-1 text-[16px] leading-[15px]">{user.user_id}</span>
+          </button>
           <button onClick={()=>{
               if(confirm('로그아웃 하시겠습니까?')) {
                 axios({
@@ -159,12 +151,12 @@ export default function Navbar({mode, setMode}) {
                 }).catch(err => console.log(err))
               }}}
             // className="mt-[10px] lg:mt-0 ml-[0px] mr-[0px] border-[1px] border-1 bg-slate-000 hover:bg-white text-black lg:font-light lg:text-white lg:hover:text-red-300 w-[70px] h-[0px] text-[12px] text-center rounded-2xl"
-            className="border-[1px] border-slate-600 shadow-md lg:border-[1px] mt-5 lg:mt-0 text-[16px] lg:text-[14px] rounded-r-xl
+            className="border-[1px] border-slate-600 shadow-md lg:border-[1px] mt-0 lg:mt-0 text-[16px] lg:text-[14px] rounded-r-xl
                      bg-slate-600 lg:bg-slate-900 text-white h-[27px] px-2 p-0 leading-[23px] lg:leading-[28px] lg:hover:bg-slate-700"
             >logout
             </button>
-            
-          :<div className="lg:inline-block">
+            </div>
+          :<div className="lg:inline-block mt-[10px] lg:mt-0 mb-[20px] lg:mb-[0px]">
             <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(true));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(false));}}
               className="mt-0 lg:mt-0 min-w-[70px] ml-[-49px] lg:ml-[-5px] mr-[0px] lg:hover:bg-slate-700 text-blue-400 lg:text-blue-400  w-[65px] h-[27px] text-[16px] text-center rounded-l-xl
                        border-[1px] border-gray-400 lg:border-gray-400 leading-[20px] shadow-md"
@@ -206,7 +198,7 @@ export default function Navbar({mode, setMode}) {
 
       </div>
       <div>
-        <p className="mt-[61px] ml-[-41px] text-center text-sm lg:hidden">Test Account </p> 
+        <p className="mt-[20px] ml-[-41px] text-center text-sm lg:hidden">Test Account </p> 
         <p className="ml-[-41px] text-center text-[14px] lg:hidden">test / 1234</p>
       </div> 
     </nav>   

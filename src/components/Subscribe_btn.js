@@ -66,14 +66,14 @@ export default function Subscribe_btn() {
       { isSubscribed !== true ? 
         <button onClick={subscribeUser} disabled={isSubscribed}>   
           <img src='/bell_off.png' 
-            className='inline bottom-[236px] lg:bottom-[-1px] right-[98px] lg:right-[0px] px-3 lg:px-1
-            lg:inline lg:mb-[2px] w-[47px] lg:w-[25px] h-[25px] lg:h-[25px] border-[1px] border-gray-400 p-1 rounded-xl ml-[10px] bg-red-100 hover:bg-blue-300' />
+            className='inline bottom-[236px] lg:bottom-[-1px] right-[98px] lg:right-[0px] px-3.5 lg:px-1
+            lg:inline lg:mb-[2px] w-[47px] lg:w-[25px] h-[25px] lg:h-[23px] border-[1px] border-gray-400 p-1 rounded-xl ml-[10px] lg:ml-[25px]] bg-red-100 hover:bg-blue-300' />
             <span className='inline ml-[8px] lg:hidden text-sm'>:Notice </span>
         </button>
         : <button onClick={()=> { unsubscribeUser(); }}>
             <img src='/bell_on.png'
               className='inline bottom-[236px] lg:bottom-[-1px] right-[98px] lg:right-[0px] px-3.5 lg:px-1
-              lg:inline lg:mb-[2px] w-[47px] lg:w-[25px] h-[25px] lg:h-[25px] border-[1px] border-gray-400 p-1 rounded-xl ml-[10px] bg-red-100 hover:bg-blue-300' />            
+              lg:inline lg:mb-[2px] w-[47px] lg:w-[23px] h-[25px] lg:h-[23px] border-[1px] border-gray-400 p-1 rounded-xl ml-[10px] lg:ml-[25px] bg-red-100 hover:bg-blue-300' />            
               <span className='ml-[8px] lg:hidden text-sm'>:Notice </span>
           </button>
       }        
