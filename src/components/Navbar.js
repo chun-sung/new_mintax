@@ -123,13 +123,10 @@ export default function Navbar({mode, setMode}) {
               'lg:bg-white bg-gray-200 lg:hover:bg-white text-red-400': pathname === '/adminpage'
           })}>관리자 페이지 </Link> : null
         }
-
-        { user.user_id !== null ? null
-          : <span className="ml-[-45px] lg:hidden text-gray-400 text-md">Guest</span>
-        }
-
+  
         {
           user.user_id !== null ? 
+
             <div className="lg:inline mt-5 mb-[15px]">
               <button onClick={()=>{ user.user_id !== 'admin' ? router.push('/mypage') : router.push('/adminpage') }} 
                 className={`inline-block h-[27px] ml-[-45px] lg:ml-[5px] text-sm text-red-500 lg:hover:bg-slate-700 border-gray-400 lg:border-gray-600 border-[0px] lg:border-[1px] rounded-l-xl p-1`}>
@@ -157,7 +154,9 @@ export default function Navbar({mode, setMode}) {
                 >logout
                 </button>
               </div>
+
           : <div className="lg:inline-block mb-[15px] lg:mb-[0px]">
+              <p className="ml-[-45px] text-gray-400 lg:hidden">Guest</p>
               <button onClick={()=> { dispatch(SET_LOGIN_WINDOW(true));dispatch(SET_MENU_BTN(false));dispatch(SET_MEMBER_PANEL(false));}}
                 className="mt-0 lg:mt-0 min-w-[70px] ml-[-49px] lg:ml-[-5px] mr-[0px] lg:hover:bg-slate-700 text-blue-400 lg:text-blue-400 w-[65px] h-[27px] text-[14px] text-center rounded-l-xl
                         border-[1px] border-gray-400 lg:border-gray-400 leading-[20px] shadow-md"
@@ -192,7 +191,7 @@ export default function Navbar({mode, setMode}) {
           }  
         }}
           className="ml-[-40px] w-[140px] mr-0 lg:mr-5 mt-5 text-sm lg:hidden" href="#">Mode: <span
-          className={ mode !== 'darkMode' ? `ml-1 border-[1px] border-gray-400 bg-white px-3 py-[3px] rounded-2xl` 
+          className={ mode !== 'darkMode' ? `ml-1 border-[1px] border-gray-400 bg-white px-3.5 py-[3px] rounded-2xl` 
           : `ml-1 border-[1px] border-gray-400 bg-black px-3 py-[3px] rounded-2xl` }>{ mode == 'darkMode' ? '🌙' : '🌞' }</span>
         </Link>   
         <Subscribe_btn />
