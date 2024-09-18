@@ -80,7 +80,7 @@ export default function Mypage() {
                     <span>0</span>
                   </div>
                 </div>
-                <div  className="flex-none text-center mt-10 mb-10 font-bold text-gray-500"> <span>상담 신청 내역이 없습니다.</span></div></> 
+                <div  className="flex-none text-center mt-10 mb-[250px] lg:mb-[350px] font-bold text-gray-500"> <span>상담 신청 내역이 없습니다.</span></div></> 
         }
 
         { inquiry.length !== 0 ?    
