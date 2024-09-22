@@ -63,7 +63,7 @@ export default function Navbar({mode}) {
     </div> 
     <nav className={user.menu !== true  ? `hidden lg:block  lg:bg-slate-900 lg:text-white start lg:opacity-100` : 
       `${mode?.value !== 'darkMode' ? 'bg-slate-100 lg:h-[50px] border lg:border-0 rounded lg:bg-slate-900 lg:text-white lg:block start end' :'bg-gray-800 text-white lg:h-[50px] border lg:border-0 rounded lg:bg-slate-900 lg:text-white lg:block start end' }`}>
-    <div className="mt-3 lg:mt-0 lg:w-[1000px] text-center m-auto leading-[48px]">
+    <div className="mt-3 lg:mt-0 lg:w-[1000px] text-center m-auto leading-[48px] stop-dragging">
         <span onClick={()=>{
           if(typeof window != undefined ) {
             if(mode?.value == 'lightMode') {                                    
