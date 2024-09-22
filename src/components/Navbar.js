@@ -85,7 +85,7 @@ export default function Navbar({mode}) {
             }
           }  
         }}
-          className="mr-0 align-middle lg:mr-3 text-xl hidden lg:inline-block" href="#">
+          className="mr-0 align-middle lg:mr-3 text-xl hidden lg:inline-block mb-1" href="#">
             { mode?.value == 'darkMode' ? '🌙' : '🌞' }
         </span>
         <Link href={'/smart'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
