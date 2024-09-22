@@ -4,11 +4,11 @@ export default function Footer() {
 
   return (<div className="bg-gray-300 w-[100%]">
 
-    <div className="">
-      <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <div className="stop-dragging">
+      <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col stop-dragging">
           <Link href="/" className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">              
             <img className="w-12" src="/logo.svg"/>                            
-            <span className="ml-3 text-xl">민텍스</span>
+            <span className="ml-3 text-xl stop-dragging">민텍스</span>
           </Link>
           <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2023 MinTAX _
             <a className="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">All rights reserved.</a>
