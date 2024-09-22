@@ -9,7 +9,7 @@ export default function Rsidebar() {
     const dispatch = useDispatch();
     const user = useSelector( state => state.user);
     return <>
-			<div className={`fixed bottom-[0px] ml-2 lg:right-10 mb-3 z-20 start2 stop-dragging`}>
+			<div className={`hidden lg:block fixed bottom-[0px] ml-2 lg:right-10 mb-3 z-20 stop-dragging`}>
 				<img className="hover:bg-red-200 scale-[0.8] hover:scale-[0.85] cursor-pointer w-9 lg:w-14 bg-blue-200 border-1 rounded-full p-1 lg:p-2 mb-1 lg:mb-0" 
 				    src='/Home.png' 
 					  onClick={()=>{
