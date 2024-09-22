@@ -24,7 +24,7 @@ export default async function Home() {
 
         <div className=" leading-[160%] lg:leading-[140%] tracking-[-2px] lg:tracking-[-3px] lg:h-[360px]">  
           <Consulting />
-          <div className="w-full lg:max-w-[870px] m-auto mt-0 relrative lg:pt-[92px] ">
+          <div className="w-full lg:max-w-[870px] m-auto mt-0 relrative lg:pt-[92px]">
             <p className="text-xl lg:text-4xl w-[340px] lg:w-full mt-0 lg:ml-[10px] m-auto tracking-[-2px] lg:tracking-[-2px] pt-10">매달 인출되는 기장료, 제대로 된 서비스를 받고 계신가요?</p>              
             <p className="mt-10 lg:mt-0 text-xl lg:text-4xl  mb-10 w-[280px] lg:w-full m-auto lg:mb-10"><span className="text-md lg:min-w-[800px]"><span className="text-blue-600 font-bold">실시간 사업현황 관리</span>가 가능한 MinTAX <span className="text-blue-600 font-bold">스마트 기장 서비스</span></span></p>
             
@@ -34,7 +34,7 @@ export default async function Home() {
           </div> 
         </div>
 
-        <hr className="text-center w-[300px] lg:w-[900px] m-auto my-20 bg-gray-300 h-[2px]" />
+        <hr className="text-center w-[300px] lg:w-[900px] m-auto my-[100px] lg:my-[200px] bg-gray-300 h-[1px]" />
 
         <div className="m-auto lg:flex lg:justify-between items-center lg:w-[1200px] px-14 lg:h-[360px]">
           <div className="">            
@@ -46,7 +46,7 @@ export default async function Home() {
           </div>
         </div> 
         
-        <hr className="text-center w-[300px] lg:w-[900px] m-auto my-20 bg-gray-300 h-[2px]" />
+        <hr className="text-center w-[300px] lg:w-[900px] m-auto my-20 bg-gray-300 h-[1px]" />
 
         {/* 중심점 확인 */}
         {/* <div className="border-2 border-black w-5 ml-[630px] absolute m-auto" ></div> */}
@@ -63,7 +63,7 @@ export default async function Home() {
           </div>
 
         </div>
-        <hr className="text-center w-[300px] lg:w-[900px] m-auto my-20 bg-gray-300 h-[2px]" />        
+        <hr className="text-center w-[300px] lg:w-[900px] m-auto my-20 bg-gray-300 h-[1px]" />        
 
       </div> 
 
