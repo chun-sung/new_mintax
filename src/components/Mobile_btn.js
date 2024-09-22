@@ -15,7 +15,7 @@ export default function Mobile_btn({mode}) {
 						dispatch(SET_MENU_BTN(!user.menu));
 						dispatch(SET_LOGIN_WINDOW(false));
 						dispatch(SET_MEMBER_PANEL(false));
-				}}
+				}}						
 						src="/hamburger_white.svg"
 						width={40}
 						height={40}

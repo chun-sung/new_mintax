@@ -18,8 +18,7 @@ export default function Navbar({mode}) {
   const pathname = usePathname();
   const router = useRouter();
 
-  return (<>
-    <SuccessLogin />
+  return (<>  
     <div className={mode?.value !== 'darkMode' ? "relative h-[60px] lg:h-[75px] w-full m-auto bg-white border-b border-gray" :
         "relative h-[60px] lg:h-[75px] w-full m-auto bg-black border-b-0 lg:border-b-0 border-gray" 
       }> 

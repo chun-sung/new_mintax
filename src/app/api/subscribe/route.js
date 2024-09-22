@@ -23,33 +23,39 @@ webpush.setVapidDetails(
 
 
 export async function POST(req) {
-  try {
-    const subscription = await req.json();
 
+  const subscription = await req.json();
 
+    if(subscription.user_id){ 
+      console.log(subscription.user_id)      
+      return new Response(JSON.stringify({ user_id: true }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      });
 
-    // 푸시 메시지 페이로드 생성
-    const payload = JSON.stringify({
-      title: '구독 완료',
-      body: '구독이 완료되었습니다!',
-    });
+    } else if(subscription.user_id == undefined) {  
 
+      try {
+        // 푸시 메시지 페이로드 생성
+        const payload = JSON.stringify({
+          title: '구독 완료',
+          body: '구독이 완료되었습니다!',
+        });
 
+        // 즉시 푸시 알림 전송
+        await webpush.sendNotification(subscription, payload);
+    
+        return new Response(JSON.stringify({ success: true }), {
+          status: 200,
+          headers: { 'Content-Type': 'application/json' },
+        });
+      } catch (error) {
+        console.error('Error sending notification:', error);
+        return new Response(JSON.stringify({ error: 'Error sending notification' }), {
+          status: 500,
+          headers: { 'Content-Type': 'application/json' },
+        });
+      }    
 
-    // 즉시 푸시 알림 전송
-    await webpush.sendNotification(subscription, payload);
-
-
-
-    return new Response(JSON.stringify({ success: true }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
-    });
-  } catch (error) {
-    console.error('Error sending notification:', error);
-    return new Response(JSON.stringify({ error: 'Error sending notification' }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-    });
-  }
+    } 
 }

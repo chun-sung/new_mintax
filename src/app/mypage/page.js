@@ -4,6 +4,7 @@ import PageTop from "@/components/PageTop";
 import Seo from "@/components/Seo";
 import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import SuccessLogin from "@/components/SuccessLogin";
 
 export default function Mypage() {
 
@@ -34,7 +35,7 @@ export default function Mypage() {
 
 
     return <>
-        {/* <SuccessLogin /> */}
+        <SuccessLogin />
         <Seo title='MyPage | MTAX'/>      
         <PageTop />  
         <h1 className="text-center pt-[120px] lg:pt-[200px] text-2xl font-extrabold stop-dragging border-1 border-red-300">my page</h1>
