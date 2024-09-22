@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content={`${ mode?.value == undefined || mode?.value == 'lightMode' ? '#ffffff' : '#000000' }`} />
       </head>
-      <body className={`relative ${inter.className} ${ mode?.value == undefined || mode?.value == 'lightMode' ? 'lightMode' : 'darkMode' }`}>        
+      <body className={`relative ${ mode?.value == undefined || mode?.value == 'lightMode' ? 'lightMode' : 'darkMode' }`}>        
           
         <Providers>
         <ReactQueryProvider>

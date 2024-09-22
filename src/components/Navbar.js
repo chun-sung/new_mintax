@@ -20,8 +20,8 @@ export default function Navbar({mode, setMode}) {
 
   return (<>
     <SuccessLogin />
-    <div className={mode !== 'darkMode' ? "relative h-[60px] lg:h-[75px] w-full m-auto bg-white border-b border-gray" :
-        "relative h-[60px] lg:h-[75px] w-full m-auto bg-black border-b-0 lg:border-b-0 border-gray" 
+    <div className={mode !== 'darkMode' ? "relative h-[60px] lg:h-[75px] w-full m-auto border-b border-gray" :
+        "relative h-[60px] lg:h-[75px] w-full m-auto border-b-0 lg:border-b-0 border-gray" 
       }> 
         <div className="relative m-auto w-[80px] pt-2.5 lg:pt-5">
             <Link href="/">
@@ -64,7 +64,7 @@ export default function Navbar({mode, setMode}) {
     <nav className={user.menu !== true  ? `hidden lg:block  lg:bg-slate-900 lg:text-white start lg:opacity-100` : 
       `${mode !== 'darkMode' ? 'bg-slate-100 lg:h-[50px] border lg:border-0 rounded lg:bg-slate-900 lg:text-white lg:block start end' :'bg-gray-800 text-white lg:h-[50px] border lg:border-0 rounded lg:bg-slate-900 lg:text-white lg:block start end' }`}>
     <div className="mt-3 lg:mt-0 lg:w-[1000px] text-center m-auto leading-[48px]">
-        <Link onClick={()=>{
+        <span onClick={()=>{
           if(typeof window != undefined ) {
             if(mode == 'lightMode') {                                    
                     document.cookie = 'mode=darkMode; max-age=' + (3600 * 24 * 400)
@@ -85,7 +85,9 @@ export default function Navbar({mode, setMode}) {
             }
           }  
         }}
-          className="mr-0 align-middle lg:mr-3 text-xl hidden lg:inline-block" href="#">{ mode == 'darkMode' ? '🌙' : '🌞' }</Link>
+          className="mr-0 align-middle lg:mr-3 text-xl hidden lg:inline-block" href="#">
+            { mode == 'darkMode' ? '🌙' : '🌞' }
+        </span>
         <Link href={'/smart'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
           className={clsx("border-b lg:border-0 ml-4 lg:ml-0 block text-left lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/smart'
@@ -167,7 +169,7 @@ export default function Navbar({mode, setMode}) {
                 >sign up</button>
             </div>
         }
-        <Link onClick={()=>{
+        <span onClick={()=>{
           if(typeof window != undefined ) {
             if(mode == 'lightMode') {                                    
                     document.cookie = 'mode=darkMode; max-age=' + (3600 * 24 * 400)
@@ -193,7 +195,7 @@ export default function Navbar({mode, setMode}) {
           className="ml-[-40px] w-[140px] mr-0 lg:mr-5 mt-5 text-sm lg:hidden" href="#">Mode: <span
           className={ mode !== 'darkMode' ? `ml-1 border-[1px] border-gray-400 bg-white px-3.5 py-[3px] rounded-2xl` 
           : `ml-1 border-[1px] border-gray-400 bg-black px-3 py-[3px] rounded-2xl` }>{ mode == 'darkMode' ? '🌙' : '🌞' }</span>
-        </Link>   
+        </span>   
         <Subscribe_btn />
 
       </div>
