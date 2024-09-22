@@ -151,7 +151,7 @@ export default function Detail() {
                 </div>
 
               {/* 게시글 정보 */}
-                <table className="w-full lg:w-[900px] border-l-[1px] border-r-[1px] m-auto">
+                <table className="w-full lg:w-[900px] border-l-[1px] border-r-[1px] m-auto stop-dragging">
                     <thead className="">
                         <tr className="text-[14px] lg:text-md lg:border-b border-2 bg-slate-300 h-7 lg:h-10">
                             <th width="20%" className="font-normal">번호. {id}</th>
@@ -161,7 +161,7 @@ export default function Detail() {
                         </tr>
                     </thead>
                 </table>
-                <div className="border-b lg:border border-1 border-slate-200 p-1 pb-6 w-full lg:w-[900px] m-auto bg-zinc-100 text-center">
+                <div className="border-b lg:border border-1 border-slate-200 p-1 pb-6 w-full lg:w-[900px] m-auto bg-zinc-100 text-center stop-dragging">
                     <span  colSpan='4' className="p-1.5 lg:p-3 h-96 text-lg">
                         <br/>{article[0]?.content}<br/><br/>
                         
