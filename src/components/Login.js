@@ -53,11 +53,11 @@ export default function Login({mode}) {
 	}
 
   return (
-		<div className={ user.login !== true ? 'hidden' : mode == 'lightMode' ? "absolute border-stone-400 border-[1px] bg-white  w-[320px] lg:w-[380px] lg:mt-10 top-[140px] lg:top-[200px] p-5 h-58 lg:h-58 shadow-2xl z-10 rounded left-[50%] translate-x-[-50%]"
+		<div className={ user.login !== true ? 'hidden' : mode?.value == 'lightMode' ? "absolute border-stone-400 border-[1px] bg-white  w-[320px] lg:w-[380px] lg:mt-10 top-[140px] lg:top-[200px] p-5 h-58 lg:h-58 shadow-2xl z-10 rounded left-[50%] translate-x-[-50%]"
 			: "absolute border-stone-600 border-[1px] bg-gray-300 w-[320px] lg:w-[380px] lg:mt-10 top-[140px] lg:top-[200px] p-5 h-58 lg:h-58 shadow-2xl z-10 rounded left-[50%] translate-x-[-50%]"
 		}>
 			<div className="text-center mb-2">                   
-					<span className={ mode == 'lightMode' ? "text-md text-black"
+					<span className={ mode?.value == 'lightMode' ? "text-md text-black"
 						: "text-md text-gray-400"
 					}>로그인</span>
 			</div>
@@ -67,7 +67,7 @@ export default function Login({mode}) {
 									<label htmlFor="full-name" className="leading-7 text-[12px] text-gray-400 mr-2">ID </label>
 									<input type="text" id="full-name" name="user_id" 
 										className={clsx("w-52 h-9 bg-gray-200 bg-opacity-50 rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-md outline-none text-gray-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out",
-											{ "text-white" : mode === 'darkMode' })}
+											{ "text-white" : mode?.value === 'darkMode' })}
 										onChange={(e) => setUserId(e.target.value)}
 										defaultValue={user_id}
 									/>
@@ -76,7 +76,7 @@ export default function Login({mode}) {
 									<label htmlFor="name" className="leading-7 text-[12px] text-gray-400 mr-2">PW </label>
 									<input type="password" id="name" name="password" 
 										className={clsx("w-52 h-9 bg-gray-200 bg-opacity-50 ml-[0.5px] rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-base outline-none text-gray-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" ,
-											 {"text-white" : mode === 'darkMode'})}
+											 {"text-white" : mode?.value === 'darkMode'})}
 										onKeyUp={()=>{ window.event.keyCode === 13 ? loginEnter() : null }}
 										onChange={(e) => setPassword(e.target.value)}
 										defaultValue={password}

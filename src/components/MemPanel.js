@@ -18,12 +18,12 @@ export default function MemPanel({mode}) {
     {/* 회원 가입 패널 */}
     { user?.member_panel == true ? 
 			<div className="relative m-auto w-[320px] lg:w-[420px]">
-			<div className={ mode == 'lightMode' ? "absolute border-stone-400 border-[1px] bg-white w-[320px] lg:w-[380px] pt-4 pb-6 lg:mt-7 lg:left-[20px] top-[70px] lg:top-[90px] lg:p-5 h-180 shadow-2xl z-50 rounded"
+			<div className={ mode?.value == 'lightMode' ? "absolute border-stone-400 border-[1px] bg-white w-[320px] lg:w-[380px] pt-4 pb-6 lg:mt-7 lg:left-[20px] top-[70px] lg:top-[90px] lg:p-5 h-180 shadow-2xl z-50 rounded"
 					: "absolute border-stone-600 border-[1px] bg-gray-300 w-[320px] lg:w-[380px] pt-4 pb-6 lg:mt-7 lg:left-[20px] top-[70px] lg:top-[90px] lg:p-5 h-180 shadow-2xl z-50 rounded"
 			}>
 					<div className="text-center mb-2">
 							{/* <span>전화번호 입력 후 확인을 눌러주세요</span><br /> */}
-							<span className={ mode == 'lightMode' ?	"text-md ml-[0px] lg:ml-[0px] text-black stop-dragging"
+							<span className={ mode?.value == 'lightMode' ?	"text-md ml-[0px] lg:ml-[0px] text-black stop-dragging"
 								: "text-md ml-[0px] lg:ml-[0px] text-gray-400 stop-dragging"
 							}>회원 가입</span>
 					</div>
@@ -57,7 +57,7 @@ export default function MemPanel({mode}) {
 											<label htmlFor="pw" className="leading-7 text-[12px] text-gray-400 mr-2">비밀번호</label>
 											<input autoComplete="off" type="password" id="pw" name="password" 
 												className={clsx("w-52 h-9 bg-gray-200 bg-opacity-40 rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-base outline-none text-gray-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out",
-													{'text-white' : mode === 'darkMode'})}
+													{'text-white' : mode?.value === 'darkMode'})}
 													onChange={(e) => setPassword(e.target.value)}
 											/>
 									</div>
@@ -65,7 +65,7 @@ export default function MemPanel({mode}) {
 											<label htmlFor="name2" className="leading-7 text-[12px] text-gray-400 mr-2">비번확인</label>
 											<input autoComplete="off" type="password" id="name2" name="password2" 
 												className={clsx("w-52 h-9 bg-gray-200 bg-opacity-40 rounded border border-gray-400 focus:border-indigo-100 focus:ring-2 focus:ring-indigo-400 focus:bg-transparent text-base outline-none text-gray-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out",
-													{'text-white' : mode === 'darkMode'}) }
+													{'text-white' : mode?.value === 'darkMode'}) }
 													onChange={(e) => setPwCheck(e.target.value)}
 											/>
 									</div>
