@@ -194,7 +194,7 @@ export default function Navbar({mode}) {
         }}
           className="ml-[-40px] w-[140px] mr-0 lg:mr-5 mt-5 text-sm lg:hidden" href="#">Mode: <span
           className={ mode?.value !== 'darkMode' ? `ml-1 border-[1px] border-gray-400 bg-white px-3.5 py-[3px] rounded-2xl` 
-          : `ml-1 border-[1px] border-gray-400 bg-black px-3 py-[3px] rounded-2xl` }>{ mode?.value == 'darkMode' ? '🌙' : '🌞' }</span>
+          : `ml-1 border-[1px] border-gray-400 bg-black px-3.5 py-[3px] rounded-2xl` }>{ mode?.value == 'darkMode' ? '🌙' : '🌞' }</span>
         </span>   
         <Subscribe_btn />
 
