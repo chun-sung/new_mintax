@@ -8,8 +8,8 @@ import { useRouter } from "next/navigation";
 import Mobile_btn from "./Mobile_btn";
 import Image from "next/image";
 import axios from "axios";
-import SuccessLogin from "./SuccessLogin";
 import Subscribe_btn from "./Subscribe_btn";
+import SuccessLogin_normal from "./SuccessLogin_normal";
 
 export default function Navbar({mode}) {
 
@@ -18,7 +18,8 @@ export default function Navbar({mode}) {
   const pathname = usePathname();
   const router = useRouter();
 
-  return (<>  
+  return (<>
+    <SuccessLogin_normal />
     <div className={mode?.value !== 'darkMode' ? "relative h-[60px] lg:h-[75px] w-full m-auto bg-white border-b border-gray" :
         "relative h-[60px] lg:h-[75px] w-full m-auto bg-black border-b-0 lg:border-b-0 border-gray" 
       }> 
