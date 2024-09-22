@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
           
         <Providers>
         <ReactQueryProvider>
-            <Header />          
+            <Header mode={mode} />          
               {children}          
             <Footer />
           </ReactQueryProvider>

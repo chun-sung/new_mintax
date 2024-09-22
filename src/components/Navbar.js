@@ -11,7 +11,7 @@ import axios from "axios";
 import SuccessLogin from "./SuccessLogin";
 import Subscribe_btn from "./Subscribe_btn";
 
-export default function Navbar({mode, setMode}) {
+export default function Navbar({mode}) {
 
   const { user } = useSelector(state => state.user);
   const dispatch = useDispatch()
@@ -20,13 +20,13 @@ export default function Navbar({mode, setMode}) {
 
   return (<>
     <SuccessLogin />
-    <div className={mode !== 'darkMode' ? "relative h-[60px] lg:h-[75px] w-full m-auto border-b border-gray" :
-        "relative h-[60px] lg:h-[75px] w-full m-auto border-b-0 lg:border-b-0 border-gray" 
+    <div className={mode?.value !== 'darkMode' ? "relative h-[60px] lg:h-[75px] w-full m-auto bg-white border-b border-gray" :
+        "relative h-[60px] lg:h-[75px] w-full m-auto bg-black border-b-0 lg:border-b-0 border-gray" 
       }> 
         <div className="relative m-auto w-[80px] pt-2.5 lg:pt-5">
             <Link href="/">
             {
-                mode == 'darkMode' ?
+                mode?.value == 'darkMode' ?
                 <Image onClick={()=>{
                   dispatch(SET_LOGIN_WINDOW(false))
                   dispatch(SET_MEMBER_PANEL(false))
@@ -62,13 +62,13 @@ export default function Navbar({mode, setMode}) {
         </div>
     </div> 
     <nav className={user.menu !== true  ? `hidden lg:block  lg:bg-slate-900 lg:text-white start lg:opacity-100` : 
-      `${mode !== 'darkMode' ? 'bg-slate-100 lg:h-[50px] border lg:border-0 rounded lg:bg-slate-900 lg:text-white lg:block start end' :'bg-gray-800 text-white lg:h-[50px] border lg:border-0 rounded lg:bg-slate-900 lg:text-white lg:block start end' }`}>
+      `${mode?.value !== 'darkMode' ? 'bg-slate-100 lg:h-[50px] border lg:border-0 rounded lg:bg-slate-900 lg:text-white lg:block start end' :'bg-gray-800 text-white lg:h-[50px] border lg:border-0 rounded lg:bg-slate-900 lg:text-white lg:block start end' }`}>
     <div className="mt-3 lg:mt-0 lg:w-[1000px] text-center m-auto leading-[48px]">
         <span onClick={()=>{
           if(typeof window != undefined ) {
-            if(mode == 'lightMode') {                                    
+            if(mode?.value == 'lightMode') {                                    
                     document.cookie = 'mode=darkMode; max-age=' + (3600 * 24 * 400)
-                    setMode('darkMode')
+                    // setMode('darkMode')
                     // console.log(mode)
                     setTimeout(()=> {
                       document.querySelector('.any')?.classList.add('none') // 커버 삭제 display: 'none'
@@ -76,7 +76,7 @@ export default function Navbar({mode, setMode}) {
                     }, 100)                                
             } else {
                 document.cookie = 'mode=lightMode; max-age=' + (3600 * 24 * 400)
-                setMode('lightMode')
+                // setMode('lightMode')
                 // console.log(mode)
                 setTimeout(()=> {
                   document.querySelector('.any')?.classList.add('none') // 커버 삭제 display: 'none'
@@ -86,7 +86,7 @@ export default function Navbar({mode, setMode}) {
           }  
         }}
           className="mr-0 align-middle lg:mr-3 text-xl hidden lg:inline-block" href="#">
-            { mode == 'darkMode' ? '🌙' : '🌞' }
+            { mode?.value == 'darkMode' ? '🌙' : '🌞' }
         </span>
         <Link href={'/smart'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
           className={clsx("border-b lg:border-0 ml-4 lg:ml-0 block text-left lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
@@ -171,9 +171,9 @@ export default function Navbar({mode, setMode}) {
         }
         <span onClick={()=>{
           if(typeof window != undefined ) {
-            if(mode == 'lightMode') {                                    
+            if(mode?.value == 'lightMode') {                                    
                     document.cookie = 'mode=darkMode; max-age=' + (3600 * 24 * 400)
-                    setMode('darkMode')
+                    // setMode('darkMode')
                     // console.log(mode)
                     setTimeout(()=> {
                       document.querySelector('.any')?.classList.add('none')      // 커버 삭제 display: 'none'
@@ -182,7 +182,7 @@ export default function Navbar({mode, setMode}) {
                     }, 100)                                
             } else {
                 document.cookie = 'mode=lightMode; max-age=' + (3600 * 24 * 400)
-                setMode('lightMode')
+                // setMode('lightMode')
                 // console.log(mode)
                 setTimeout(()=> {
                   document.querySelector('.any')?.classList.add('none') // 커버 삭제 display: 'none'
@@ -193,8 +193,8 @@ export default function Navbar({mode, setMode}) {
           }  
         }}
           className="ml-[-40px] w-[140px] mr-0 lg:mr-5 mt-5 text-sm lg:hidden" href="#">Mode: <span
-          className={ mode !== 'darkMode' ? `ml-1 border-[1px] border-gray-400 bg-white px-3.5 py-[3px] rounded-2xl` 
-          : `ml-1 border-[1px] border-gray-400 bg-black px-3 py-[3px] rounded-2xl` }>{ mode == 'darkMode' ? '🌙' : '🌞' }</span>
+          className={ mode?.value !== 'darkMode' ? `ml-1 border-[1px] border-gray-400 bg-white px-3.5 py-[3px] rounded-2xl` 
+          : `ml-1 border-[1px] border-gray-400 bg-black px-3 py-[3px] rounded-2xl` }>{ mode?.value == 'darkMode' ? '🌙' : '🌞' }</span>
         </span>   
         <Subscribe_btn />
 
