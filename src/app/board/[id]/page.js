@@ -101,7 +101,7 @@ export default function Detail() {
         </div>
 
       {/* 게시글 출력창 */}
-        <div className="article__section mt-[0px] bg-neutral-000 p-1 lg:p-10 w-full lg:w-[1200px] m-auto">
+        <div className="article__section mt-[0px] bg-neutral-000 p-1 lg:p-10 w-full lg:w-[1200px] m-auto stop-dragging">
             <div className="article__wrapper w-full lg:w-[1000px] h-full lg:h-full m-auto">
                 <div className="text-right mb-2 w-full lg:w-[900px] m-auto stop-dragging">
                     {/* <button className="shadow-md inline-block p-1 px-3 bg-gray-400 hover:bg-gray-600 text-white rounded mr-1 mb-0 text-sm" onClick={() => router.back()}>뒤로</button> */}
