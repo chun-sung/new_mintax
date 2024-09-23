@@ -1,9 +1,11 @@
 import { db } from '@vercel/postgres'
 import { cookies } from 'next/dist/client/components/headers';
 
-const token = cookies()?.get('accessToken');
 
 export async function GET(req) {
+  
+  const token = cookies()?.get('accessToken');
+
   if(token?.value == '' || token?.value == undefined) {     // 엑세스 토큰 값 체크
 
     return new Response(JSON.stringify({msg : 'jwt_fail'}))
