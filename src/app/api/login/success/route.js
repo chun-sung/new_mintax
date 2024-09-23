@@ -35,6 +35,8 @@ export async function GET(req) {
     } catch (err) {
         console.log(err)    // 여기 에러코드를 보면 만료 인지 알 수 있다. ex> TokenExpiredError: jwt expired
                             // 에러가 난다는 것은 유효하지 않은 토큰이기 때문이다. (토큰 만료 또는 해킹)
+        cookies().set('accessToken', '', { secure: false, httpOnly:false })
+        cookies().set('refreshToken', '', {secure: false, httpOnly:false })
         return new Response(JSON.stringify({msg: 'jwt_expired'}))
     } 
 }
