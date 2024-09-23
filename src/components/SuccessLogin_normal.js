@@ -28,7 +28,10 @@ export default function SuccessLogin_normal() {
 				})
 				.then((result) => {  
 						// console.log('토큰 결과', result)              
-						if(result.data.msg == 'success') {
+						if(result.data.msg == 'jwt_userId_fail'){
+							console.log('미로그인 상태')
+						}
+						else if(result.data.msg == 'success') {
 								const {id ,user_id, nickname} = result.data;
 								dispatch(SET_LOGIN({ id, user_id, nickname }))                    
 						} 	              
@@ -42,8 +45,8 @@ export default function SuccessLogin_normal() {
 								dispatch(SET_LOGIN_WINDOW(true));
 						} 
 				}).catch( err => {                
-						router.push('/notaccess');
-						dispatch(SET_LOGIN_WINDOW(true)) ;
+						// router.push('/notaccess');   // 로그인 안된상태면 에러가 발생해서 /notaccess 로 이동 되는데.. 주석처리!!
+						// dispatch(SET_LOGIN_WINDOW(true)) ;
 						console.log(err)
 				})
 						

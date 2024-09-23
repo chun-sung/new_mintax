@@ -57,7 +57,7 @@ export default function Mypage() {
 
         {
           inquiry.length !== 0 ? <>
-            <div className="flex bg-gray-200 m-auto w-[340px] lg:w-[500px] bg-gray-100 p-2 mt-2 mb-5">
+            <div className="flex bg-gray-200 m-auto w-[340px] lg:w-[500px] p-2 mt-2 mb-5">
               <div className="text-right mr-2 px-2 py-3">
                 <span>상담 요청 : </span><br/>
                 <span>     완료 : </span> <br/>
@@ -69,7 +69,7 @@ export default function Mypage() {
                 <span>{inquiry[0]?.mis_complete}</span>
               </div>
             </div>
-          </> : <><div className="flex bg-gray-200 m-auto w-[340px] lg:w-[500px] bg-gray-100 p-2 mt-2 mb-5">
+          </> : <><div className="flex bg-gray-200 m-auto w-[340px] lg:w-[500px] p-2 mt-2 mb-5">
                   <div className="text-right mr-2 px-2 py-3">
                     <span>상담 요청 : </span><br/>
                     <span>     완료 : </span> <br/>
@@ -89,10 +89,10 @@ export default function Mypage() {
               <p className="font-bold text-left text-gray-500">최근 상담</p>
               <div className="w-[340px]  lg:w-[500px] min-h-[200px] m-auto border-gray-400 border-[1px] mt-2">
                   <div className="flex ">                
-                    <p className="basis-3/4 min-h-[30px] leading-[170%] lg:leading-[170%] border-b-[1px] border-gray-400 bg-gray-300 text-black text-center py-2 bg-red-200">
+                    <p className="basis-3/4 min-h-[30px] leading-[170%] lg:leading-[170%] border-b-[1px] border-gray-400 text-black text-center py-2 bg-red-200">
                         {inquiry[inquiry?.length-1]?.title}
                     </p>
-                    <p className="basis-1/4 min-h-[30px] leading-[100%] lg:leading-[170%] border-b-[1px] border-gray-400 bg-gray-300 text-black text-center py-2 text-sm bg-red-200">
+                    <p className="basis-1/4 min-h-[30px] leading-[100%] lg:leading-[170%] border-b-[1px] border-gray-400 text-black text-center py-2 text-sm bg-red-200">
                         <span className="text-[12px] lg:text-[12px]">{inquiry[inquiry?.length-1]?.regist_date}</span>
                     </p>
                   </div>
