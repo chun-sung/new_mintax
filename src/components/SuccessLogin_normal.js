@@ -40,9 +40,9 @@ export default function SuccessLogin_normal() {
 						// 		return
 						// }                
 						else if(result.data.msg == 'jwt_expired'){
-								alert('로그인 상태가 만료 되었습니다 \n 로그인 하시기 바랍니다');
+								alert('로그인 상태가 만료 되었습니다.');
 								router.push('/');
-								dispatch(SET_LOGIN_WINDOW(true));
+								// dispatch(SET_LOGIN_WINDOW(true));
 						} 
 				}).catch( err => {                
 						// router.push('/notaccess');   // 로그인 안된상태면 에러가 발생해서 /notaccess 로 이동 되는데.. 주석처리!!
