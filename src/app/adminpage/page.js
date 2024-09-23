@@ -47,7 +47,7 @@ export default function Mypage() {
           : null
         }
         {
-          inquiry.length !== 0 ? <>
+          inquiry?.length !== 0 ? <>
             <div className="flex bg-gray-200 m-auto w-[340px] lg:w-[500px] p-2 mt-2 mb-5">
               <div className="text-right mr-2 px-2 py-3">
                 <span>상담 요청 : </span><br/>
@@ -75,7 +75,7 @@ export default function Mypage() {
                 <div  className="flex-none text-center mt-10 mb-10 font-bold text-gray-500"> <span>상담 신청 내역이 없습니다.</span></div></> 
         }
  
-        { inquiry.length !== 0 ? 
+        { inquiry?.length !== 0 ? 
            <div className="w-[340px] lg:w-[500px] m-auto mt-0 mb-[30px] bg-red-00">
              <p className="font-bold text-left text-gray-500">NEW</p>
            <div className="w-[340px]  lg:w-[500px] min-h-[200px] m-auto border-gray-400 border-[1px] mt-2">
@@ -99,7 +99,7 @@ export default function Mypage() {
          </div>  : null     
         }
         {
-          inquiry.length == 0 ? null 
+          inquiry?.length == 0 ? null 
           : <div className="w-[340px] lg:w-[500px] m-auto mt-10 mb-[0px] bg-red-00">
               <p className="font-bold ml-2 text-left text-gray-500">상담 내역</p>
             </div>
