@@ -32,8 +32,7 @@ export default function SuccessLogin() {
 								const {id ,user_id, nickname} = result.data;
 								dispatch(SET_LOGIN({ id, user_id, nickname }))                    
 						} 
-						else if (path == '/mypage' || path == '/adminpage') {
-							console.log('help1')
+						else if (path == '/mypage' || path == '/adminpage') {					
 								router.push('/notaccess')
 								dispatch(SET_LOGIN_WINDOW(true));
 						}                
