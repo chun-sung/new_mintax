@@ -5,7 +5,7 @@ import Seo from "@/components/Seo";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import SuccessLogin from "@/components/SuccessLogin";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function Mypage() {
 
