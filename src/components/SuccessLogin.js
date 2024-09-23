@@ -32,11 +32,11 @@ export default function SuccessLogin() {
 								const {id ,user_id, nickname} = result.data;
 								dispatch(SET_LOGIN({ id, user_id, nickname }))                    
 						} 
-						else if (path == '/mypage') {
+						else if (path == '/mypage' || path == '/adminpage') {
 								router.push('/notaccess')
 								dispatch(SET_LOGIN_WINDOW(true));
 						}                
-						else if (path !== '/mypage') {          // 토큰 만료시 /mypage 가 아닐시에 프로그램 종료 
+						else if (path !== '/mypage' || path !== '/adminpage') {          // 토큰 만료시 /mypage 가 아닐시에 프로그램 종료 
 																										// 로그인 한후 토큰 만료되어 불량 토큰이되면 아래 else if 문에 계속 걸리게 된다. 그것을 회피하기 위함!
 								return
 						}                
