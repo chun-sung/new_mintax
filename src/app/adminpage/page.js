@@ -16,11 +16,14 @@ export default function Mypage() {
       queryFn: () =>  fetch(`/api/inquiry`).then(res => res.json()).then( res => { 
           // console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
           // console.log(res);
-          
-          const {result} = res;
-          setInquiry(result);
-          console.log(result);          
-          return res
+          if(res.msg == 'jwt_fail'){
+            return 
+          } else {
+            const {result} = res;
+            setInquiry(result);
+            console.log(result);          
+            return res
+          }
                               
       }),        
     })
