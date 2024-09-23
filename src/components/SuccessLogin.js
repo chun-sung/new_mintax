@@ -43,7 +43,7 @@ export default function SuccessLogin() {
 						else if(result.data.msg == 'jwt_expired'){
 								alert('로그인 상태가 만료 되었습니다 \n 로그인 하시기 바랍니다');
 								router.push('/');
-								dispatch(SET_LOGIN_WINDOW(true));
+								// dispatch(SET_LOGIN_WINDOW(true));   // 로그인 창 뜨면 귀차니즈!!
 						} 
 				}).catch( err => {                
 						router.push('/notaccess');
