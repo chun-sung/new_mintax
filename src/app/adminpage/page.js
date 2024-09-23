@@ -13,26 +13,26 @@ export default function Mypage() {
     const { user }= useSelector(state => state.user);    
     const router = useRouter();
 
-    if( usre.user_id == 'admin' ) {
-      router.push("/notaccess")        
-    } else {
-      const { isLoading, error, data, postQuery, refetch } = useQuery({
-        queryKey: ['inquiry'],        
-        queryFn: () =>  fetch(`/api/inquiry`).then(res => res.json()).then( res => { 
-            // console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
-            // console.log(res);
-            if(res.msg == 'jwt_fail'){
-              console.log('어드민페이지 msg: jwt_fail')
-              return 
-            } else {
-              const {result} = res;
-              setInquiry(result);
-              console.log(result);          
-              return res
-            }                                
-        }),        
-      })
-    }
+    if( usre?.user_id !== 'admin' ) {      
+      router.push("/notaccess")      
+    } 
+  
+    const { isLoading, error, data, postQuery, refetch } = useQuery({
+      queryKey: ['inquiry'],        
+      queryFn: () =>  fetch(`/api/inquiry`).then(res => res.json()).then( res => { 
+          // console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+          // console.log(res);
+          if(res.msg == 'jwt_fail'){
+            console.log('어드민페이지 msg: jwt_fail')
+            return 
+          } else {
+            const {result} = res;
+            setInquiry(result);
+            console.log(result);          
+            return res
+          }                                
+      }),        
+    })
 
     return <>
         <SuccessLogin />
