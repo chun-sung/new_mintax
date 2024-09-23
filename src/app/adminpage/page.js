@@ -13,7 +13,7 @@ export default function Mypage() {
     const { user }= useSelector(state => state.user);    
     const router = useRouter();
 
-    if( user?.user_id !== 'admin'|| user?.user_id == null) {  
+    if( user?.user_id !== 'admin') {  
       console.log('help2')    
       router.push("/notaccess")      
     } 
