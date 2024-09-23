@@ -17,6 +17,7 @@ export default function Mypage() {
           // console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
           // console.log(res);
           if(res.msg == 'jwt_fail'){
+            console.log('어드민페이지 msg: jwt_fail')
             return 
           } else {
             const {result} = res;
