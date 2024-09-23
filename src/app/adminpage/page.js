@@ -5,30 +5,34 @@ import Seo from "@/components/Seo";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import SuccessLogin from "@/components/SuccessLogin";
+import { useRouter } from "next/router";
 
 export default function Mypage() {
 
     const [inquiry, setInquiry] = useState([])
     const { user }= useSelector(state => state.user);    
+    const router = useRouter();
 
-    const { isLoading, error, data, postQuery, refetch } = useQuery({
-      queryKey: ['inquiry'],        
-      queryFn: () =>  fetch(`/api/inquiry`).then(res => res.json()).then( res => { 
-          // console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
-          // console.log(res);
-          if(res.msg == 'jwt_fail'){
-            console.log('어드민페이지 msg: jwt_fail')
-            return 
-          } else {
-            const {result} = res;
-            setInquiry(result);
-            console.log(result);          
-            return res
-          }
-                              
-      }),        
-    })
-
+    if( usre.user_id == 'admin' ) {
+      router.push("/notaccess")        
+    } else {
+      const { isLoading, error, data, postQuery, refetch } = useQuery({
+        queryKey: ['inquiry'],        
+        queryFn: () =>  fetch(`/api/inquiry`).then(res => res.json()).then( res => { 
+            // console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+            // console.log(res);
+            if(res.msg == 'jwt_fail'){
+              console.log('어드민페이지 msg: jwt_fail')
+              return 
+            } else {
+              const {result} = res;
+              setInquiry(result);
+              console.log(result);          
+              return res
+            }                                
+        }),        
+      })
+    }
 
     return <>
         <SuccessLogin />

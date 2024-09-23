@@ -3,11 +3,11 @@ import { cookies } from 'next/dist/client/components/headers';
 
 
 export async function GET(req) {
-  
+
   const token = cookies()?.get('accessToken');
 
   if(token?.value == '' || token?.value == undefined) {     // 엑세스 토큰 값 체크
-
+    console.log
     return new Response(JSON.stringify({msg : 'jwt_fail'}))
 
   } else {
