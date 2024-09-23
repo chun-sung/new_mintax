@@ -1,7 +1,7 @@
 import { db } from '@vercel/postgres'
 import { cookies } from 'next/dist/client/components/headers';
 
-const token = cookies().get('accessToken');
+const token = cookies()?.get('accessToken');
 
 export async function GET(req) {
   if(token?.value == '' || token?.value == undefined) {     // 엑세스 토큰 값 체크
