@@ -39,9 +39,6 @@ export default function Mypage() {
         <SuccessLogin />
         <Seo title='MyPage | MTAX'/>      
         <PageTop />  
-        <h1 className="text-center pt-[120px] lg:pt-[200px] text-2xl font-extrabold stop-dragging border-1 border-red-300">관리자 페이지</h1>
-        <h2 className="text-center mt-10 text-xl font-semibold"><span className="text-red-400 stop-dragging">{user?.nickname}</span> <span className="text-gray-400 font-base font-normal">님 환영합니다!</span></h2> 
-
 
         {isLoading == true ? 
           <div className="text-center mt-[50px] lg:mt-[50px] mb-[800px] p-2 bg-red-00 text-white w-36 rounded-full m-auto">
@@ -55,6 +52,10 @@ export default function Mypage() {
           </div>
           : null
         }
+
+        <h1 className="text-center pt-[120px] lg:pt-[200px] text-2xl font-extrabold stop-dragging border-1 border-red-300">관리자 페이지</h1>
+        <h2 className="text-center mt-10 text-xl font-semibold"><span className="text-red-400 stop-dragging">{user?.nickname}</span> <span className="text-gray-400 font-base font-normal">님 환영합니다!</span></h2> 
+        
         {
           // inquiry?.length !== 0 ? <>
           isLoading == false  ? <>
