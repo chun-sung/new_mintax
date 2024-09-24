@@ -57,8 +57,7 @@ export default function Mypage() {
         <h2 className="text-center mt-10 text-xl font-semibold"><span className="text-red-400 stop-dragging">{user?.nickname}</span> <span className="text-gray-400 font-base font-normal">님 환영합니다!</span></h2> 
         
         {
-          // inquiry?.length !== 0 ? <>
-          isLoading == false  ? <>
+          inquiry?.length !== 0 ? <>
             <div className="flex bg-gray-200 m-auto w-[340px] lg:w-[500px] p-2 mt-2 mb-5">
               <div className="text-right mr-2 px-2 py-3">
                 <span>상담 요청 : </span><br/>
@@ -71,23 +70,23 @@ export default function Mypage() {
                 <span>{inquiry[0]?.mis_complete}</span>
               </div>
             </div>
-          </> : null
-                // <><div className="flex bg-gray-200 m-auto w-[340px] lg:w-[500px] p-2 mt-2 mb-5">
-                //   <div className="text-right mr-2 px-2 py-3">
-                //     <span>상담 요청 : </span><br/>
-                //     <span>     완료 : </span> <br/>
-                //     <span>   대기중 : </span>
-                //   </div>
-                //   <div className="font-semibold py-3">
-                //     <span>0</span><br/>
-                //     <span>0</span><br/>
-                //     <span>0</span>
-                //   </div>
-                //   </div>
-                //   <div  className="flex-none text-center mt-10 mb-10 font-bold text-gray-500"> 
-                //     <span>상담 신청 내역이 없습니다.</span>
-                //   </div>
-                // </> 
+          </> : 
+                <><div className="flex bg-gray-200 m-auto w-[340px] lg:w-[500px] p-2 mt-2 mb-5">
+                  <div className="text-right mr-2 px-2 py-3">
+                    <span>상담 요청 : </span><br/>
+                    <span>     완료 : </span> <br/>
+                    <span>   대기중 : </span>
+                  </div>
+                  <div className="font-semibold py-3">
+                    <span>0</span><br/>
+                    <span>0</span><br/>
+                    <span>0</span>
+                  </div>
+                  </div>
+                  <div  className="flex-none text-center mt-10 mb-10 font-bold text-gray-500"> 
+                    <span>상담 신청 내역이 없습니다.</span>
+                  </div>
+                </> 
         }
  
         { inquiry?.length !== 0 ? 
