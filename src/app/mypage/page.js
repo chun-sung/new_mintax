@@ -39,7 +39,7 @@ export default function Mypage() {
         <Seo title='MyPage | MTAX'/>      
         <PageTop />  
         <h1 className="text-center pt-[120px] lg:pt-[200px] text-2xl font-extrabold stop-dragging border-1 border-red-300">my page</h1>
-        <h2 className="text-center mt-10 text-xl font-semibold"><span className="text-red-400 stop-dragging">{user?.nickname}</span> <span className="text-gray-400 font-base font-normal">님 환영합니다!</span></h2> 
+        
 
 
         {isLoading == true ? 
@@ -54,7 +54,7 @@ export default function Mypage() {
           </div>
           : null
         }
-
+        <h2 className="text-center mt-10 text-xl font-semibold"><span className="text-red-400 stop-dragging">{user?.nickname}</span> <span className="text-gray-400 font-base font-normal">님 환영합니다!</span></h2> 
         {
           inquiry.length !== 0 ? <>
             <div className="flex bg-gray-200 m-auto w-[340px] lg:w-[500px] p-2 mt-2 mb-5">
