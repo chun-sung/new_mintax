@@ -69,19 +69,23 @@ export default function Mypage() {
                 <span>{inquiry[0]?.mis_complete}</span>
               </div>
             </div>
-          </> : <><div className="flex bg-gray-200 m-auto w-[340px] lg:w-[500px] p-2 mt-2 mb-5">
-                  <div className="text-right mr-2 px-2 py-3">
-                    <span>상담 요청 : </span><br/>
-                    <span>     완료 : </span> <br/>
-                    <span>   대기중 : </span>
-                  </div>
-                  <div className="font-semibold py-3">
-                    <span>0</span><br/>
-                    <span>0</span><br/>
-                    <span>0</span>
-                  </div>
-                </div>
-                <div  className="flex-none text-center mt-10 mb-[250px] lg:mb-[350px] font-bold text-gray-500"> <span>상담 신청 내역이 없습니다.</span></div></> 
+          </> : null
+              //   <><div className="flex bg-gray-200 m-auto w-[340px] lg:w-[500px] p-2 mt-2 mb-5">
+              //     <div className="text-right mr-2 px-2 py-3">
+              //       <span>상담 요청 : </span><br/>
+              //       <span>     완료 : </span> <br/>
+              //       <span>   대기중 : </span>
+              //     </div>
+              //     <div className="font-semibold py-3">
+              //       <span>0</span><br/>
+              //       <span>0</span><br/>
+              //       <span>0</span>
+              //     </div>
+              //    </div>
+              //    <div  className="flex-none text-center mt-10 mb-[250px] lg:mb-[350px] font-bold text-gray-500"> 
+              //     <span>상담 신청 내역이 없습니다.</span>
+              //    </div>
+              //  </> 
         }
 
         { inquiry.length !== 0 ?    
