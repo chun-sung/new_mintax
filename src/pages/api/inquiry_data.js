@@ -1,12 +1,11 @@
-import { db } from '@vercel/postgres'
+import { db } from '@vercel/postgres';
 
 export default async function handler(req, res) {
+  const { id } = req.query;
+  console.log('API 의 아이디', id);
 
-   const { id } = req.query;   
-   console.log('API 의 아이디',id);
-
-   try{      
-      const rows = await db`
+  try {
+    const rows = await db`
       SELECT 
             ci.*,
             summary.total, 
@@ -31,15 +30,13 @@ export default async function handler(req, res) {
         WHERE 
             ci.id = ${id};
       `;
-      
-      let result = Object.values(JSON.parse(JSON.stringify(rows)));  //  RowDataPacket 을 data (배열에 담긴 객체)로 최종 처리 
-      console.log('결과',result[2])
-      res.json(result[2])
-      return;
 
-   } catch(err) {
-      console.log(err)
-   } finally {
-      
-  }       
+    let result = Object.values(JSON.parse(JSON.stringify(rows))); //  RowDataPacket 을 data (배열에 담긴 객체)로 최종 처리
+    console.log('결과', result[2]);
+    res.json(result[2]);
+    return;
+  } catch (err) {
+    console.log(err);
+  } finally {
+  }
 }

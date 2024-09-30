@@ -94,7 +94,7 @@ export default function Subscribe_btn() {
           <button onClick={()=> { unsubscribeUser(); }}>
             <img src='/bell_on.png' alt="bell_on"
               className='inline bottom-[236px] lg:bottom-[-1px] right-[98px] lg:right-[0px] px-3.5 lg:px-1
-              lg:inline lg:mb-[2px] w-[47px] lg:w-[23px] h-[25px] lg:h-[23px] border-[1px] border-gray-400 p-1 rounded-xl ml-[10px] lg:ml-[23px] bg-blue-200 hover:bg-blue-300' />            
+              lg:inline lg:mb-[2px] w-[47px] lg:w-[25px] h-[25px] lg:h-[23px] border-[1px] border-gray-400 p-1 rounded-xl ml-[10px] lg:ml-[23px] bg-blue-200 hover:bg-blue-300' />            
               <span className='ml-[8px] lg:hidden text-sm'>:Notice </span>
           </button>
         : <button onClick={()=> alert('로그인하기 바랍니다.')}>   
