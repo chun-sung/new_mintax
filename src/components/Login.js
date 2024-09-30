@@ -28,7 +28,7 @@ export default function Login({ mode }) {
     }
     let userInfo = { user_id, password };
 
-    fetch('https://www.n-mintax.store/api/login', {
+    fetch('http://localhost:3005/api/login', {
       method: 'POST',
       body: JSON.stringify(userInfo),
     })
