@@ -45,7 +45,7 @@ export default function Mypage() {
         {isLoading == true ? 
           <div className="text-center mt-[50px] lg:mt-[50px] mb-[800px] p-2 bg-red-00 text-white w-36 rounded-full m-auto">
             <button type="button" className="bg-indigo-00 ..." disabled>
-                <svg width="100" className="animate-spin h-[300px]" 
+                <svg width="100" className="animate-spin h-[60px] lg:h-[70px]" 
                     height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="50" cy="50" r="44.5" stroke="#A4A3A3" strokeWidth="11"/>
                 <path d="M19 10.5L13 17L9.5 21.5L19 26L23 21.5L27 18L32.5 15L39 12.5L45.5 10.5H49.5H55L58.5 1H53.5H49.5H41.5L32.5 3L26.5 6L19 10.5Z" fill="#141313" stroke="black"/>
