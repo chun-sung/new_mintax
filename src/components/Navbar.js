@@ -54,7 +54,7 @@ export default function Navbar({mode}) {
             </Link>
             { user.user_id !== null ?
               <span className="absolute lg:hidden bottom-[-1px] left-[130px] lg:left-[430px] text-blue-500 
-                  border-[1px] px-2 rounded-md text-sm">{user.user_id}</span>
+                  min-w-[65px]  border-[1px] px-2 rounded-md text-sm text-center">{user.user_id}</span>
                 :
               <span className="absolute lg:hidden bottom-[-3px] left-[130px] lg:left-[430px] text-gray-400 
                   px-2 rounded-md text-sm">Guest</span>
