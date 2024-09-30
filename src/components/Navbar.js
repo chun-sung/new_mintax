@@ -131,7 +131,7 @@ export default function Navbar({mode}) {
 
             <div className="lg:inline mt-5 mb-[15px]">
               <button onClick={()=>{ user.user_id !== 'admin' ? router.push('/mypage') : router.push('/adminpage') }} 
-                className={`inline-block min-w-[60px] h-[27px] ml-[-45px] lg:ml-[5px] text-[14px] text-blue-400 lg:hover:bg-slate-700 border-gray-300 lg:border-gray-700 border-[0.5px] lg:border-[1px] rounded-l-xl px-2 leading-[20px] shadow-md`}>
+                className={`inline-block min-w-[60px] h-[27px] ml-[-45px] lg:ml-[5px] text-[14px] text-blue-400 hover:bg-gray-500 lg:hover:bg-slate-700 border-gray-300 lg:border-gray-700 border-[0.5px] lg:border-[1px] rounded-l-xl px-2 leading-[20px] shadow-md`}>
                 {user.user_id}
               </button>
               <button onClick={()=>{
@@ -152,7 +152,7 @@ export default function Navbar({mode}) {
                   }}}
                 // className="mt-[10px] lg:mt-0 ml-[0px] mr-[0px] border-[1px] border-1 bg-slate-000 hover:bg-white text-black lg:font-light lg:text-white lg:hover:text-red-300 w-[70px] h-[0px] text-[12px] text-center rounded-2xl"
                 className="border-[1px] border-gray-300 lg:border-gray-700 shadow-md ml-[-1px] lg:border-[1px] mt-0 lg:mt-0 text-[14px] lg:text-[14px] rounded-r-xl
-                        bg-blue-400 lg:bg-slate-900 text-white h-[27px] px-2 p-0 leading-[23px] lg:leading-[20px] lg:hover:bg-slate-700"
+                        bg-blue-400 lg:bg-slate-900 text-white h-[27px] px-2 p-0 leading-[23px] lg:leading-[20px] hover:bg-red-300 lg:hover:bg-slate-700"
                 >logout
                 </button>
               </div>
@@ -193,15 +193,15 @@ export default function Navbar({mode}) {
           }  
         }}
           className="ml-[-40px] w-[140px] mr-0 lg:mr-5 mt-5 text-sm lg:hidden" href="#">Mode: <span
-          className={ mode?.value !== 'darkMode' ? `ml-1 border-[1px] border-gray-400 bg-white px-3.5 py-[3px] rounded-2xl` 
-          : `ml-1 border-[1px] border-gray-400 bg-black px-3.5 py-[3px] rounded-2xl` }>{ mode?.value == 'darkMode' ? '🌙' : '🌞' }</span>
+          className={ mode?.value !== 'darkMode' ? `ml-1 border-[1px] border-gray-300 bg-white px-3.5 py-[3px] rounded-2xl hover:bg-blue-300` 
+          : `ml-1 border-[1px] border-gray-400 bg-black px-3.5 py-[3px] rounded-2xl hover:bg-blue-300`}>{ mode?.value == 'darkMode' ? '🌙' : '🌞' }</span>
         </span>   
         <Subscribe_btn />
 
       </div>
       <div>
         <p className="mt-[15px] ml-[-41px] text-center text-sm lg:hidden">Test Account </p> 
-        <p className="ml-[-41px] text-center text-[14px] lg:hidden">test / 1234</p>
+        <p className="ml-[-41px] text-center text-[14px] lg:hidden">springstar / 1234</p>
       </div> 
     </nav>   
     <Mobile_btn mode={mode}/>
