@@ -89,28 +89,28 @@ export default function Navbar({mode}) {
             { mode?.value == 'darkMode' ? '🌙' : '🌞' }
         </span>
         <Link href={'/smart'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
-          className={clsx("border-b lg:border-0 ml-4 lg:ml-0 block text-left lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
+          className={clsx("border-b lg:border-0 ml-4 lg:ml-0 block text-left lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 hover:bg-gray-200 lg:hover:bg-slate-700",{
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/smart'
           })}>스마트서비스
         </Link>
         <Link href={'/himoney'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
-          className={clsx("border-b lg:border-0 ml-4 lg:ml-0 text-left block lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
+          className={clsx("border-b lg:border-0 ml-4 lg:ml-0 text-left block lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 hover:bg-gray-200 lg:hover:bg-slate-700",{
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/himoney'
           })}>고소득자플랜</Link>
         <Link  href={'/bubin'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
-          className={clsx("border-b lg:border-0 ml-4 lg:ml-0 text-left block lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
+          className={clsx("border-b lg:border-0 ml-4 lg:ml-0 text-left block lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 hover:bg-gray-200 lg:hover:bg-slate-700",{
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/bubin'
           })}>법인 컨설팅</Link>
         <Link  href={'/consult'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
-          className={clsx("border-b lg:border-0 ml-4 lg:ml-0 text-left block lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
+          className={clsx("border-b lg:border-0 ml-4 lg:ml-0 text-left block lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 hover:bg-gray-200 lg:hover:bg-slate-700",{
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/consult'
           })}>세무상담</Link>    
         <Link href={'/susu'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
-          className={clsx("border-b lg:border-0 ml-4 lg:ml-0 text-left block lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
+          className={clsx("border-b lg:border-0 ml-4 lg:ml-0 text-left block lg:inline mr-5 text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 hover:bg-gray-200 lg:hover:bg-slate-700",{
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/susu'
           })}>수수료안내</Link>
         <Link href={'/board'} onClick={()=> {dispatch(SET_MENU_BTN(false))}}
-          className={clsx("border-b lg:border-0 ml-4 lg:ml-0 text-left block lg:inline mr-5 lg:mr-[15px] text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 lg:hover:bg-slate-700",{
+          className={clsx("border-b lg:border-0 ml-4 lg:ml-0 text-left block lg:inline mr-5 lg:mr-[15px] text-md py-1 px-2 lg:rounded-lg lg:border-1 lg:border-black lg:hover:border-gray-500 hover:bg-gray-200 lg:hover:bg-slate-700",{
             'lg:bg-white bg-gray-200 lg:hover:bg-white text-black': pathname === '/board'
           })}>고객게시판</Link>
         { user.user_id !== null ? 
