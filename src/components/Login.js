@@ -27,6 +27,7 @@ export default function Login({mode}) {
 
 		fetch('https://www.n-mintax.store/api/login', {
 			method: 'POST',
+			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify(userInfo)
 		})
 		.then((res) => {

@@ -70,6 +70,7 @@ export default function Inquiry() {
                     }
                     fetch('https://www.n-mintax.store/api/inquiry/create', {
                         method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
                         body: JSON.stringify({
                             id, 
                             user_id: user.user_id,

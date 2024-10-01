@@ -70,10 +70,8 @@ export default function Subscribe_btn() {
       // 구독 취소 정보를 서버로 전송 (선택 사항)
      let result = await fetch('/api/unsubscribe', {
         method: 'POST',
-        body: JSON.stringify(subscription),
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(subscription)
       });
       console.log(result)
       setIsSubscribed(false);
